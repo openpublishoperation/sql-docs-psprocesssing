@@ -7,7 +7,7 @@
         ],
         "exclude": [
           "**/obj/**",
-          "sqlserver-cmdlets/**",
+          "sqlserver/**",
           "**/includes/**"
         ]
       }
@@ -21,7 +21,7 @@
         ],
         "exclude": [
           "**/obj/**",
-          "sqlserver-cmdlets/**",
+          "sqlserver/**",
           "**/includes/**"
         ]
       }
@@ -29,12 +29,12 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
-        "breadcrumb_path": "/powershell/sqlserver-cmdlets/breadcrumb.json",
+        "breadcrumb_path": "/powershell/sqlserver/breadcrumb.json",
         "ms.devlang": "",
         "brand": ""
       },
     "fileMetadata": {},
     "template": [],
-    "dest": "sqlserver-cmdlets"
+    "dest": "sqlserver"
   }
 }
