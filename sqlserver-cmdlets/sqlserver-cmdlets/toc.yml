@@ -1,0 +1,224 @@
+- name: sqlps
+  items:
+    - name: vlatest
+      href: ../sqlps/vlatest/SQLPS.md
+      items:
+        - name: Add-SqlAvailabilityDatabase
+          href: ../sqlps/vlatest/Add-SqlAvailabilityDatabase.md
+        - name: Add-SqlAvailabilityGroupListenerStaticIp
+          href: ../sqlps/vlatest/Add-SqlAvailabilityGroupListenerStaticIp.md
+        - name: Backup-SqlDatabase
+          href: ../sqlps/vlatest/Backup-SqlDatabase.md
+        - name: Convert-UrnToPath
+          href: ../sqlps/vlatest/Convert-UrnToPath.md
+        - name: Decode-SqlName
+          href: ../sqlps/vlatest/Decode-SqlName.md
+        - name: Disable-SqlAlwaysOn
+          href: ../sqlps/vlatest/Disable-SqlAlwaysOn.md
+        - name: Enable-SqlAlwaysOn
+          href: ../sqlps/vlatest/Enable-SqlAlwaysOn.md
+        - name: Encode-SqlName
+          href: ../sqlps/vlatest/Encode-SqlName.md
+        - name: Invoke-PolicyEvaluation
+          href: ../sqlps/vlatest/Invoke-PolicyEvaluation.md
+        - name: Invoke-Sqlcmd
+          href: ../sqlps/vlatest/Invoke-Sqlcmd.md
+        - name: Join-SqlAvailabilityGroup
+          href: ../sqlps/vlatest/Join-SqlAvailabilityGroup.md
+        - name: New-SqlAvailabilityGroup
+          href: ../sqlps/vlatest/New-SqlAvailabilityGroup.md
+        - name: New-SqlAvailabilityGroupListener
+          href: ../sqlps/vlatest/New-SqlAvailabilityGroupListener.md
+        - name: New-SqlAvailabilityReplica
+          href: ../sqlps/vlatest/New-SqlAvailabilityReplica.md
+        - name: New-SqlHADREndpoint
+          href: ../sqlps/vlatest/New-SqlHADREndpoint.md
+        - name: Remove-SqlAvailabilityDatabase
+          href: ../sqlps/vlatest/Remove-SqlAvailabilityDatabase.md
+        - name: Remove-SqlAvailabilityGroup
+          href: ../sqlps/vlatest/Remove-SqlAvailabilityGroup.md
+        - name: Restore-SqlDatabase
+          href: ../sqlps/vlatest/Restore-SqlDatabase.md
+        - name: Resume-SqlAvailabilityDatabase
+          href: ../sqlps/vlatest/Resume-SqlAvailabilityDatabase.md
+        - name: Set-SqlAvailabilityGroup
+          href: ../sqlps/vlatest/Set-SqlAvailabilityGroup.md
+        - name: Set-SqlAvailabilityGroupListener
+          href: ../sqlps/vlatest/Set-SqlAvailabilityGroupListener.md
+        - name: Set-SqlAvailabilityReplica
+          href: ../sqlps/vlatest/Set-SqlAvailabilityReplica.md
+        - name: Set-SqlHADREndpoint
+          href: ../sqlps/vlatest/Set-SqlHADREndpoint.md
+        - name: Suspend-SqlAvailabilityDatabase
+          href: ../sqlps/vlatest/Suspend-SqlAvailabilityDatabase.md
+        - name: Switch-SqlAvailabilityGroup
+          href: ../sqlps/vlatest/Switch-SqlAvailabilityGroup.md
+        - name: Test-SqlAvailabilityGroup
+          href: ../sqlps/vlatest/Test-SqlAvailabilityGroup.md
+        - name: Test-SqlAvailabilityReplica
+          href: ../sqlps/vlatest/Test-SqlAvailabilityReplica.md
+        - name: Test-SqlDatabaseReplicaState
+          href: ../sqlps/vlatest/Test-SqlDatabaseReplicaState.md
+- name: sqlserver
+  items:
+    - name: vlatest
+      href: ../sqlserver/vlatest/SqlServer.md
+      items:
+        - name: Add-SqlAvailabilityDatabase
+          href: ../sqlserver/vlatest/Add-SqlAvailabilityDatabase.md
+        - name: Add-SqlAvailabilityGroupListenerStaticIp
+          href: ../sqlserver/vlatest/Add-SqlAvailabilityGroupListenerStaticIp.md
+        - name: Add-SqlAzureAuthenticationContext
+          href: ../sqlserver/vlatest/Add-SqlAzureAuthenticationContext.md
+        - name: Add-SqlColumnEncryptionKeyValue
+          href: ../sqlserver/vlatest/Add-SqlColumnEncryptionKeyValue.md
+        - name: Add-SqlFirewallRule
+          href: ../sqlserver/vlatest/Add-SqlFirewallRule.md
+        - name: Add-SqlLogin
+          href: ../sqlserver/vlatest/Add-SqlLogin.md
+        - name: Backup-SqlDatabase
+          href: ../sqlserver/vlatest/Backup-SqlDatabase.md
+        - name: Complete-SqlColumnMasterKeyRotation
+          href: ../sqlserver/vlatest/Complete-SqlColumnMasterKeyRotation.md
+        - name: Convert-UrnToPath
+          href: ../sqlserver/vlatest/Convert-UrnToPath.md
+        - name: ConvertFrom-EncodedSqlName
+          href: ../sqlserver/vlatest/ConvertFrom-EncodedSqlName.md
+        - name: ConvertTo-EncodedSqlName
+          href: ../sqlserver/vlatest/ConvertTo-EncodedSqlName.md
+        - name: Disable-SqlAlwaysOn
+          href: ../sqlserver/vlatest/Disable-SqlAlwaysOn.md
+        - name: Enable-SqlAlwaysOn
+          href: ../sqlserver/vlatest/Enable-SqlAlwaysOn.md
+        - name: Get-SqlAgent
+          href: ../sqlserver/vlatest/Get-SqlAgent.md
+        - name: Get-SqlAgentJob
+          href: ../sqlserver/vlatest/Get-SqlAgentJob.md
+        - name: Get-SqlAgentJobHistory
+          href: ../sqlserver/vlatest/Get-SqlAgentJobHistory.md
+        - name: Get-SqlAgentJobSchedule
+          href: ../sqlserver/vlatest/Get-SqlAgentJobSchedule.md
+        - name: Get-SqlAgentJobStep
+          href: ../sqlserver/vlatest/Get-SqlAgentJobStep.md
+        - name: Get-SqlAgentSchedule
+          href: ../sqlserver/vlatest/Get-SqlAgentSchedule.md
+        - name: Get-SqlColumnEncryptionKey
+          href: ../sqlserver/vlatest/Get-SqlColumnEncryptionKey.md
+        - name: Get-SqlColumnMasterKey
+          href: ../sqlserver/vlatest/Get-SqlColumnMasterKey.md
+        - name: Get-SqlCredential
+          href: ../sqlserver/vlatest/Get-SqlCredential.md
+        - name: Get-SqlDatabase
+          href: ../sqlserver/vlatest/Get-SqlDatabase.md
+        - name: Get-SqlErrorLog
+          href: ../sqlserver/vlatest/Get-SqlErrorLog.md
+        - name: Get-SqlInstance
+          href: ../sqlserver/vlatest/Get-SqlInstance.md
+        - name: Get-SqlLogin
+          href: ../sqlserver/vlatest/Get-SqlLogin.md
+        - name: Get-SqlSmartAdmin
+          href: ../sqlserver/vlatest/Get-SqlSmartAdmin.md
+        - name: Invoke-PolicyEvaluation
+          href: ../sqlserver/vlatest/Invoke-PolicyEvaluation.md
+        - name: Invoke-Sqlcmd
+          href: ../sqlserver/vlatest/Invoke-Sqlcmd.md
+        - name: Invoke-SqlColumnMasterKeyRotation
+          href: ../sqlserver/vlatest/Invoke-SqlColumnMasterKeyRotation.md
+        - name: Join-SqlAvailabilityGroup
+          href: ../sqlserver/vlatest/Join-SqlAvailabilityGroup.md
+        - name: New-SqlAvailabilityGroup
+          href: ../sqlserver/vlatest/New-SqlAvailabilityGroup.md
+        - name: New-SqlAvailabilityGroupListener
+          href: ../sqlserver/vlatest/New-SqlAvailabilityGroupListener.md
+        - name: New-SqlAvailabilityReplica
+          href: ../sqlserver/vlatest/New-SqlAvailabilityReplica.md
+        - name: New-SqlAzureKeyVaultColumnMasterKeySettings
+          href: ../sqlserver/vlatest/New-SqlAzureKeyVaultColumnMasterKeySettings.md
+        - name: New-SqlBackupEncryptionOption
+          href: ../sqlserver/vlatest/New-SqlBackupEncryptionOption.md
+        - name: New-SqlCertificateStoreColumnMasterKeySettings
+          href: ../sqlserver/vlatest/New-SqlCertificateStoreColumnMasterKeySettings.md
+        - name: New-SqlCngColumnMasterKeySettings
+          href: ../sqlserver/vlatest/New-SqlCngColumnMasterKeySettings.md
+        - name: New-SqlColumnEncryptionKey
+          href: ../sqlserver/vlatest/New-SqlColumnEncryptionKey.md
+        - name: New-SqlColumnEncryptionKeyEncryptedValue
+          href: ../sqlserver/vlatest/New-SqlColumnEncryptionKeyEncryptedValue.md
+        - name: New-SqlColumnEncryptionSettings
+          href: ../sqlserver/vlatest/New-SqlColumnEncryptionSettings.md
+        - name: New-SqlColumnMasterKey
+          href: ../sqlserver/vlatest/New-SqlColumnMasterKey.md
+        - name: New-SqlColumnMasterKeySettings
+          href: ../sqlserver/vlatest/New-SqlColumnMasterKeySettings.md
+        - name: New-SqlCredential
+          href: ../sqlserver/vlatest/New-SqlCredential.md
+        - name: New-SqlCspColumnMasterKeySettings
+          href: ../sqlserver/vlatest/New-SqlCspColumnMasterKeySettings.md
+        - name: New-SqlHADREndpoint
+          href: ../sqlserver/vlatest/New-SqlHADREndpoint.md
+        - name: Read-SqlTableData
+          href: ../sqlserver/vlatest/Read-SqlTableData.md
+        - name: Read-SqlViewData
+          href: ../sqlserver/vlatest/Read-SqlViewData.md
+        - name: Remove-SqlAvailabilityDatabase
+          href: ../sqlserver/vlatest/Remove-SqlAvailabilityDatabase.md
+        - name: Remove-SqlAvailabilityGroup
+          href: ../sqlserver/vlatest/Remove-SqlAvailabilityGroup.md
+        - name: Remove-SqlAvailabilityReplica
+          href: ../sqlserver/vlatest/Remove-SqlAvailabilityReplica.md
+        - name: Remove-SqlColumnEncryptionKey
+          href: ../sqlserver/vlatest/Remove-SqlColumnEncryptionKey.md
+        - name: Remove-SqlColumnEncryptionKeyValue
+          href: ../sqlserver/vlatest/Remove-SqlColumnEncryptionKeyValue.md
+        - name: Remove-SqlColumnMasterKey
+          href: ../sqlserver/vlatest/Remove-SqlColumnMasterKey.md
+        - name: Remove-SqlCredential
+          href: ../sqlserver/vlatest/Remove-SqlCredential.md
+        - name: Remove-SqlFirewallRule
+          href: ../sqlserver/vlatest/Remove-SqlFirewallRule.md
+        - name: Remove-SqlLogin
+          href: ../sqlserver/vlatest/Remove-SqlLogin.md
+        - name: Restore-SqlDatabase
+          href: ../sqlserver/vlatest/Restore-SqlDatabase.md
+        - name: Resume-SqlAvailabilityDatabase
+          href: ../sqlserver/vlatest/Resume-SqlAvailabilityDatabase.md
+        - name: Save-SqlMigrationReport
+          href: ../sqlserver/vlatest/Save-SqlMigrationReport.md
+        - name: Set-SqlAuthenticationMode
+          href: ../sqlserver/vlatest/Set-SqlAuthenticationMode.md
+        - name: Set-SqlAvailabilityGroup
+          href: ../sqlserver/vlatest/Set-SqlAvailabilityGroup.md
+        - name: Set-SqlAvailabilityGroupListener
+          href: ../sqlserver/vlatest/Set-SqlAvailabilityGroupListener.md
+        - name: Set-SqlAvailabilityReplica
+          href: ../sqlserver/vlatest/Set-SqlAvailabilityReplica.md
+        - name: Set-SqlColumnEncryption
+          href: ../sqlserver/vlatest/Set-SqlColumnEncryption.md
+        - name: Set-SqlCredential
+          href: ../sqlserver/vlatest/Set-SqlCredential.md
+        - name: Set-SqlErrorLog
+          href: ../sqlserver/vlatest/Set-SqlErrorLog.md
+        - name: Set-SqlHADREndpoint
+          href: ../sqlserver/vlatest/Set-SqlHADREndpoint.md
+        - name: Set-SqlNetworkConfiguration
+          href: ../sqlserver/vlatest/Set-SqlNetworkConfiguration.md
+        - name: Set-SqlSmartAdmin
+          href: ../sqlserver/vlatest/Set-SqlSmartAdmin.md
+        - name: Start-SqlInstance
+          href: ../sqlserver/vlatest/Start-SqlInstance.md
+        - name: Stop-SqlInstance
+          href: ../sqlserver/vlatest/Stop-SqlInstance.md
+        - name: Suspend-SqlAvailabilityDatabase
+          href: ../sqlserver/vlatest/Suspend-SqlAvailabilityDatabase.md
+        - name: Switch-SqlAvailabilityGroup
+          href: ../sqlserver/vlatest/Switch-SqlAvailabilityGroup.md
+        - name: Test-SqlAvailabilityGroup
+          href: ../sqlserver/vlatest/Test-SqlAvailabilityGroup.md
+        - name: Test-SqlAvailabilityReplica
+          href: ../sqlserver/vlatest/Test-SqlAvailabilityReplica.md
+        - name: Test-SqlDatabaseReplicaState
+          href: ../sqlserver/vlatest/Test-SqlDatabaseReplicaState.md
+        - name: Test-SqlSmartAdmin
+          href: ../sqlserver/vlatest/Test-SqlSmartAdmin.md
+        - name: Write-SqlTableData
+          href: ../sqlserver/vlatest/Write-SqlTableData.md
