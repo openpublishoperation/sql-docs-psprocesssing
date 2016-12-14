@@ -3,11 +3,11 @@
     "content": [
       {
         "files": [
-          "**/*.md"
+          "**/*.md","**/*.yml"
         ],
         "exclude": [
           "**/obj/**",
-          "sqlserver-cmdlets/**",
+          "sqlserver/**",
           "**/includes/**"
         ]
       }
@@ -16,20 +16,25 @@
       {
         "files": [
           "**/*.png",
-          "**/*.jpg"
+          "**/*.jpg",
+          "breadcrumb.json"
         ],
         "exclude": [
           "**/obj/**",
-          "sqlserver-cmdlets/**",
+          "sqlserver/**",
           "**/includes/**"
         ]
       }
     ],
     "overwrite": [],
     "externalReference": [],
-    "globalMetadata": {},
+    "globalMetadata": {
+        "breadcrumb_path": "/powershell/sqlserver/breadcrumb.json",
+        "ms.devlang": "",
+        "brand": ""
+      },
     "fileMetadata": {},
     "template": [],
-    "dest": "sqlserver-cmdlets"
+    "dest": "sqlserver"
   }
 }
