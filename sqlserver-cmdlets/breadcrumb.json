@@ -1,1 +1,23 @@
-
+[
+   {
+      "toc_title": "Docs",
+      "href": "/",
+      "level": 1,
+      "children": [
+         {
+            "href": "/powershell/sqlserver/",
+            "homepage": "/powershell/sqlserver/",
+            "toc_title": "sqlserver",
+            "level": 2,
+            "children": [
+               {
+                  "href": "/powershell/sqlserver/sqlserver-cmdlets/",
+                  "homepage": "/powershell/sqlserver/sqlserver-cmdlets/",
+                  "toc_title": "sqlserver cmdlets",
+                  "level": 3
+               }
+            ]
+         }
+      ]
+   }
+]
