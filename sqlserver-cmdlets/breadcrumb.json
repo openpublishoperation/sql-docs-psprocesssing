@@ -7,7 +7,7 @@
          {
             "href": "/powershell/sqlserver/",
             "homepage": "/powershell/sqlserver/",
-            "toc_title": "sqlserver",
+            "toc_title": "SQL Server Cmdlets",
             "level": 2,
             "children": [
                {
