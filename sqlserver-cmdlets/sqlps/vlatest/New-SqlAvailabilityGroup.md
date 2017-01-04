@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: EEBC7D3F-7161-4474-AE0D-6F64A5009BA3
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 1/4/2017 6:38 PM
+ms.date: 1/4/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlps/vlatest/New-SqlAvailabilityGroup.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlps/vlatest/New-SqlAvailabilityGroup.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlps/vlatest/New-SqlAvailabilityGroup.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/4c48bd1c26220ff873e612527853aeeef98777da/sqlserver-cmdlets/sqlps/vlatest/New-SqlAvailabilityGroup.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -44,28 +44,28 @@ New-SqlAvailabilityGroup -AvailabilityReplica <AvailabilityReplica[]> [-Database
 
 ## DESCRIPTION
 The **New-SqlAvailabilityGroup** cmdlet creates an availability group in AlwaysOn Availability Groups.
-The **InputObject** or **Path** parameter specifies the server that hosts the initial primary replica.
+The *InputObject* or *Path* parameter specifies the server that hosts the initial primary replica.
 
 ## EXAMPLES
 
 ### Example 1: Create an availability group
 ```
-PS C:\>$PrimaryServer = Get-Item "SQLSERVER:\SQL\PrimaryServer\Instance22"
-PS C:\>$SecondaryServer = Get-Item "SQLSERVER:\SQL\SecondaryServer\Instance22"
-PS C:\>$PrimaryReplica = New-SqlAvailabilityReplica -Name "PrimaryServer\Instance22" -EndpointUrl "TCP://PrimaryServer.domain:5022" -FailoverMode "Automatic" -AvailabilityMode "SynchronousCommit" -AsTemplate -Version ($PrimaryServer.Version)
-PS C:\>$SecondaryReplica = New-SqlAvailabilityReplica -Name "SecondaryServer\Instance22" -EndpointUrl "TCP://SecondaryServer.domain:5022" -FailoverMode "Automatic" -AvailabilityMode "SynchronousCommit" -AsTemplate -Version ($SecondaryServer.Version) 
-PS C:\>New-SqlAvailabilityGroup -InputObject $PrimaryServer -Name "MainAG" -AvailabilityReplica ($PrimaryReplica, $SecondaryReplica) -Database @("Database01","Database02")
+PS C:\> $PrimaryServer = Get-Item "SQLSERVER:\SQL\PrimaryServer\Instance22"
+PS C:\> $SecondaryServer = Get-Item "SQLSERVER:\SQL\SecondaryServer\Instance22"
+PS C:\> $PrimaryReplica = New-SqlAvailabilityReplica -Name "PrimaryServer\Instance22" -EndpointUrl "TCP://PrimaryServer.domain:5022" -FailoverMode "Automatic" -AvailabilityMode "SynchronousCommit" -AsTemplate -Version ($PrimaryServer.Version)
+PS C:\> $SecondaryReplica = New-SqlAvailabilityReplica -Name "SecondaryServer\Instance22" -EndpointUrl "TCP://SecondaryServer.domain:5022" -FailoverMode "Automatic" -AvailabilityMode "SynchronousCommit" -AsTemplate -Version ($SecondaryServer.Version) 
+PS C:\> New-SqlAvailabilityGroup -InputObject $PrimaryServer -Name "MainAG" -AvailabilityReplica ($PrimaryReplica, $SecondaryReplica) -Database @("Database01","Database02")
 ```
 
-The first command gets an instance of SQL Server on the primary server, and then stores it in the **$PrimaryServer** variable.
+The first command gets an instance of SQL Server on the primary server, and then stores it in the $PrimaryServer variable.
 
-The second command gets an instance of SQL Server on the secondary server, and then stores it in the **$SecondaryServer** variable.
+The second command gets an instance of SQL Server on the secondary server, and then stores it in the $SecondaryServer variable.
 
-The third command creates a replica that includes the primary server instance by using the **New-SqlAvailabilityReplica** cmdlet, and then stores it in the **$PrimaryReplica** variable.
-The command specifies the version of the server instance by using the **Version** property of **$PrimaryServer**.
+The third command creates a replica that includes the primary server instance by using the **New-SqlAvailabilityReplica** cmdlet, and then stores it in the $PrimaryReplica variable.
+The command specifies the version of the server instance by using the **Version** property of $PrimaryServer.
 
-The fourth command creates a replica that includes the secondary server instance by using **New-SqlAvailabilityReplica**, and then stores it in the **$SeconayrReplica** variable.
-The command specifies the version of the server instance by using the **Version** property of **$SeconardyServer**.
+The fourth command creates a replica that includes the secondary server instance by using **New-SqlAvailabilityReplica**, and then stores it in the $SecondaryReplica variable.
+The command specifies the version of the server instance by using the **Version** property of $SecondaryServer.
 
 The final command creates the availability group.
 It specifies the name, the primary server, the replicas, and other information.
@@ -103,8 +103,8 @@ Accept wildcard characters: False
 
 ### -AvailabilityReplica
 Specifies an array of availability replicas that this cmdlet includes in the availability group.
-To obtain an **AvailabilityReplica**, use the New-SqlAvailabilityReplica cmdlet.
-Specify the **AsTemplate** parameter.
+To obtain an **AvailabilityReplica** object, use the [New-SqlAvailabilityReplica](./New-SqlAvailabilityReplica.md) cmdlet.
+Specify the *AsTemplate* parameter.
 
 ```yaml
 Type: AvailabilityReplica[]
@@ -241,7 +241,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -257,7 +257,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -345,5 +344,3 @@ This cmdlet returns an availability group.
 [Switch-SqlAvailabilityGroup](xref:sqlps/vlatest/Switch-SqlAvailabilityGroup.md)
 
 [Test-SqlAvailabilityGroup](xref:sqlps/vlatest/Test-SqlAvailabilityGroup.md)
-
-

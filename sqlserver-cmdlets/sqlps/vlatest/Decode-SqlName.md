@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSProvider.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: D090069E-D04C-4D5E-B7B2-A3F1EC035928
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 1/4/2017 6:38 PM
+ms.date: 1/4/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlps/vlatest/Decode-SqlName.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlps/vlatest/Decode-SqlName.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlps/vlatest/Decode-SqlName.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/4c48bd1c26220ff873e612527853aeeef98777da/sqlserver-cmdlets/sqlps/vlatest/Decode-SqlName.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -49,7 +49,7 @@ This cmdlet converts the following encodings to the corresponding characters:
 
 ### Example 1: Decode a SQL Server identifier that is encoded in a hexadecimal representation
 ```
-PS C:\>Decode-SqlName -SqlName "My%3ATable`/"
+PS C:\> Decode-SqlName -SqlName "My%3ATable`/"
 My:Table/
 ```
 
@@ -73,4 +73,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-
+[Encode-SqlName](xref:sqlps/vlatest/Encode-SqlName.md)

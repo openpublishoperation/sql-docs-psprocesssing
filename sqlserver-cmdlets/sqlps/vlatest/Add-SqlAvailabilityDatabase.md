@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 78FBC553-E510-4F00-A09A-A987D1B9E5A1
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 1/4/2017 6:38 PM
+ms.date: 1/4/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlps/vlatest/Add-SqlAvailabilityDatabase.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlps/vlatest/Add-SqlAvailabilityDatabase.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlps/vlatest/Add-SqlAvailabilityDatabase.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/4c48bd1c26220ff873e612527853aeeef98777da/sqlserver-cmdlets/sqlps/vlatest/Add-SqlAvailabilityDatabase.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -38,7 +38,7 @@ Add-SqlAvailabilityDatabase -Database <String[]> [-InputObject] <AvailabilityGro
 
 ## DESCRIPTION
 The **Add-SqlAvailabilityDatabase** cmdlet adds primary databases to an availability group or joins secondary databases to an availability group.
-The **InputObject** or **Path** parameter specifies the availability group.
+The **InputObject** or *Path* parameter specifies the availability group.
 A database can belong to only one availability group.
 
 To add databases to an availability group, run this cmdlet on the server instance that hosts the primary replica.
@@ -67,16 +67,16 @@ This command joins a secondary database named Database16 to the availability gro
 
 ### Example 3: Add a database and join a secondary database to an availability group
 ```
-PS C:\>$DatabaseBackupFile = "\\share\backups\Database16.bak"
-PS C:\>$LogBackupFile = "\\share\backups\Database16.trn"
-PS C:\>$AGPrimaryPath = "SQLSERVER:\SQL\PrimaryServer\InstanceName\AvailabilityGroups\MainAG"
-PS C:\>$MyAGSecondaryPath = "SQLSERVER:\SQL\SecondaryServer\InstanceName\AvailabilityGroups\MainAG"
-PS C:\>Backup-SqlDatabase -Database "Database16" -BackupFile $DatabaseBackupFile -ServerInstance "PrimaryServer\InstanceName"
-PS C:\>Backup-SqlDatabase -Database "Database16" -BackupFile $LogBackupFile -ServerInstance "PrimaryServer\InstanceName" -BackupAction Log
-PS C:\>Restore-SqlDatabase -Database "Database16" -BackupFile $DatabaseBackupFile -ServerInstance "SecondaryServer\InstanceName" -NoRecovery
-PS C:\>Restore-SqlDatabase -Database "Database16" -BackupFile $LogBackupFile -ServerInstance "SecondaryServer\InstanceName" -RestoreAction Log -NoRecovery
-PS C:\>Add-SqlAvailabilityDatabase -Path $AGPrimaryPath -Database 'Database16'
-PS C:\>Add-SqlAvailabilityDatabase -Path $AGSecondaryPath -Database "Database16"
+PS C:\> $DatabaseBackupFile = "\\share\backups\Database16.bak"
+PS C:\> $LogBackupFile = "\\share\backups\Database16.trn"
+PS C:\> $AGPrimaryPath = "SQLSERVER:\SQL\PrimaryServer\InstanceName\AvailabilityGroups\MainAG"
+PS C:\> $MyAGSecondaryPath = "SQLSERVER:\SQL\SecondaryServer\InstanceName\AvailabilityGroups\MainAG"
+PS C:\> Backup-SqlDatabase -Database "Database16" -BackupFile $DatabaseBackupFile -ServerInstance "PrimaryServer\InstanceName"
+PS C:\> Backup-SqlDatabase -Database "Database16" -BackupFile $LogBackupFile -ServerInstance "PrimaryServer\InstanceName" -BackupAction Log
+PS C:\> Restore-SqlDatabase -Database "Database16" -BackupFile $DatabaseBackupFile -ServerInstance "SecondaryServer\InstanceName" -NoRecovery
+PS C:\> Restore-SqlDatabase -Database "Database16" -BackupFile $LogBackupFile -ServerInstance "SecondaryServer\InstanceName" -RestoreAction Log -NoRecovery
+PS C:\> Add-SqlAvailabilityDatabase -Path $AGPrimaryPath -Database 'Database16'
+PS C:\> Add-SqlAvailabilityDatabase -Path $AGSecondaryPath -Database "Database16"
 ```
 
 This example prepares a secondary database from a database on the server instance that hosts the primary replica of an availability group.
@@ -84,11 +84,11 @@ It adds the database to an availability group as a primary database.
 Finally, it joins the secondary database to the availability group.
 
 The first four commands store paths in variables for use later in the example.
-The commands assign values to the **$DatabaseBackupFile**, **$LogBackupFile**, **$AGPrimaryPath**, and **$AGSecondaryPath** variables.
+The commands assign values to the $DatabaseBackupFile, $LogBackupFile, $AGPrimaryPath, and $AGSecondaryPath variables.
 
-The fifth command backs up the database named Database16 that is on the primary server to the location in **$DatabaseBackupFile**.
+The fifth command backs up the database named Database16 that is on the primary server to the location in $DatabaseBackupFile.
 
-The sixth command backs up the log file for Database16 on the primary server to the location in **$LogBackupFile**.
+The sixth command backs up the log file for Database16 on the primary server to the location in $LogBackupFile.
 
 The seventh command restores the database backup for Database16 on a secondary server.
 
@@ -172,7 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet. 
 
 ```yaml
 Type: SwitchParameter
@@ -188,7 +188,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -225,5 +224,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Resume-SqlAvailabilityDatabase](xref:sqlps/vlatest/Resume-SqlAvailabilityDatabase.md)
 
 [Suspend-SqlAvailabilityDatabase](xref:sqlps/vlatest/Suspend-SqlAvailabilityDatabase.md)
-
-

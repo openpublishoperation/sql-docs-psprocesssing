@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 87470C13-E3F0-4709-AA61-8F740CC5AD99
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 1/4/2017 6:38 PM
+ms.date: 1/4/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlps/vlatest/Set-SqlAvailabilityReplica.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlps/vlatest/Set-SqlAvailabilityReplica.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlps/vlatest/Set-SqlAvailabilityReplica.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/4c48bd1c26220ff873e612527853aeeef98777da/sqlserver-cmdlets/sqlps/vlatest/Set-SqlAvailabilityReplica.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -52,21 +52,21 @@ Run this cmdlet on the server instance that hosts the primary replica.
 
 ### Example 1: Modify a replica availability mode and automatic failover
 ```
-PS C:\>Set-SqlAvailabilityReplica -AvailabilityMode "SynchronousCommit" -FailoverMode Automatic -Path "SQLSERVER:\Sql\PrimaryServer\InstanceName\AvailabilityGroups\MainAG\AvailabilityReplicas\Replica02"
+PS C:\> Set-SqlAvailabilityReplica -AvailabilityMode "SynchronousCommit" -FailoverMode Automatic -Path "SQLSERVER:\Sql\PrimaryServer\InstanceName\AvailabilityGroups\MainAG\AvailabilityReplicas\Replica02"
 ```
 
 This command modifies the replica named Replica02 in the availability group named MainAG to use synchronous-commit availability mode and to support automatic failover.
 
 ### Example 2: Modify a replica to support forced manual failover
 ```
-PS C:\>Set-SqlAvailabilityReplica -AvailabilityMode AsynchronousCommit -FailoverMode Manual -Path "SQLSERVER:\Sql\PrimaryServer\InstanceName\AvailabilityGroups\MainAG\AvailabilityReplicas\Replica02"
+PS C:\> Set-SqlAvailabilityReplica -AvailabilityMode AsynchronousCommit -FailoverMode Manual -Path "SQLSERVER:\Sql\PrimaryServer\InstanceName\AvailabilityGroups\MainAG\AvailabilityReplicas\Replica02"
 ```
 
 This command modifies the replica named Replica02 in the availability group named MainAG to use asynchronous-commit availability mode and to support only forced manual failover, which could incur data loss.
 
 ### Example 3: Allow all connections in the secondary role
 ```
-PS C:\>Set-SqlAvailabilityReplica -ConnectionModeInSecondaryRole AllowAllConnections -Path "SQLSERVER:\Sql\PrimaryServer\InstanceName\AvailabilityGroups\MainAG\AvailabilityReplicas\Replica02"
+PS C:\> Set-SqlAvailabilityReplica -ConnectionModeInSecondaryRole AllowAllConnections -Path "SQLSERVER:\Sql\PrimaryServer\InstanceName\AvailabilityGroups\MainAG\AvailabilityReplicas\Replica02"
 ```
 
 This command modifies the replica 'Replica02' in the availability group MainAG to allow all connections in the secondary role.
@@ -74,19 +74,19 @@ This lets you offload read-only data processing workloads to secondary replicas.
 
 ### Example 4: Configure a primary replica and secondary replica for read-only routing
 ```
-PS C:\>Set-Location "SQLSERVER:\SQL\PrimaryServer\default\AvailabilityGroups\MainAG"
-C:\PS>$PrimaryReplica = Get-Item "AvailabilityReplicas\PrimaryServer"
-C:\PS>$SecondaryReplica = Get-Item "AvailabilityReplicas\SecondaryServer"
-C:\PS>Set-SqlAvailabilityReplica -ReadOnlyRoutingConnectionUrl "TCP://PrimaryServer.domain.com:5022" -InputObject $PrimaryReplica
-C:\PS>Set-SqlAvailabilityReplica -ReadOnlyRoutingConnectionUrl "TCP://SecondaryServer.domain.com:5022" -InputObject $SecondaryReplica
-C:\PS>Set-SqlAvailabilityReplica -ReadOnlyRoutingList "SecondaryServer","PrimaryServer" -InputObject $PrimaryReplica
+PS C:\> Set-Location "SQLSERVER:\SQL\PrimaryServer\default\AvailabilityGroups\MainAG"
+C:\PS> $PrimaryReplica = Get-Item "AvailabilityReplicas\PrimaryServer"
+C:\PS> $SecondaryReplica = Get-Item "AvailabilityReplicas\SecondaryServer"
+C:\PS> Set-SqlAvailabilityReplica -ReadOnlyRoutingConnectionUrl "TCP://PrimaryServer.domain.com:5022" -InputObject $PrimaryReplica
+C:\PS> Set-SqlAvailabilityReplica -ReadOnlyRoutingConnectionUrl "TCP://SecondaryServer.domain.com:5022" -InputObject $SecondaryReplica
+C:\PS> Set-SqlAvailabilityReplica -ReadOnlyRoutingList "SecondaryServer","PrimaryServer" -InputObject $PrimaryReplica
 ```
 
 The first command changes location to a location in the SQLSERVER: provider.
 
-The second command gets the replica for the primary server, and then stores it in the **$PrimaryReplica** variable.
+The second command gets the replica for the primary server, and then stores it in the $PrimaryReplica variable.
 
-The third command gets the replica for the secondary server, and then stores it in the **$SeconardyReplica** variable.
+The third command gets the replica for the secondary server, and then stores it in the $SecondaryReplica variable.
 
 The fourth command assigns a read-only routing URL to the primary replica.
 Then it sets the read-only routing list on the primary replica.
@@ -99,7 +99,7 @@ If the secondary replica is not readable, the connection is directed back to the
 
 ### Example 5: Modify backup priority
 ```
-PS C:\>Set-SqlAvailabilityReplica -BackupPriority 60 -Path "SQLSERVER:\Sql\Computer\Instance\AvailabilityGroups\MainAG\AvailabilityReplicas\Replica02"
+PS C:\> Set-SqlAvailabilityReplica -BackupPriority 60 -Path "SQLSERVER:\Sql\Computer\Instance\AvailabilityGroups\MainAG\AvailabilityReplicas\Replica02"
 ```
 
 This command sets the backup priority of the availability replica 'Replica02' to 60.
@@ -115,7 +115,7 @@ The acceptable values for this parameter are:
 - SynchronousCommit 
 - AsynchronousCommit
 
-You can specify a value of **$Null**.
+You can specify a value of $Null.
 
 ```yaml
 Type: AvailabilityReplicaAvailabilityMode
@@ -216,7 +216,7 @@ The acceptable values for this parameter are:
 
 - Automatic 
 - Manual.
-You can specify a value of **$Null**.
+You can specify a value of $Null.
 
 ```yaml
 Type: AvailabilityReplicaFailoverMode
@@ -325,7 +325,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -341,7 +341,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -372,5 +371,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [New-SqlAvailabilityReplica](xref:sqlps/vlatest/New-SqlAvailabilityReplica.md)
 
 [Test-SqlAvailabilityReplica](xref:sqlps/vlatest/Test-SqlAvailabilityReplica.md)
-
-
