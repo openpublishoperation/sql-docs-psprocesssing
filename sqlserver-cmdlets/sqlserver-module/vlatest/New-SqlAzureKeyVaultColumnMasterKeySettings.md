@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 4E782D81-0B0E-49A2-8E18-C6A76F1B6C5D
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/New-SqlAzureKeyVaultColumnMasterKeySettings.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/New-SqlAzureKeyVaultColumnMasterKeySettings.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/New-SqlAzureKeyVaultColumnMasterKeySettings.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/New-SqlAzureKeyVaultColumnMasterKeySettings.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -39,7 +39,7 @@ This cmdlet sets the **KeyStoreProviderName** property to contain the name of co
 
 ### Example 1: Create a SqlColumnMasterKey object
 ```
-PS C:\>$CMKSettings = New-SqlAzureKeyVaultColumnMasterKeySettings -KeyUrl "https://myvault.vault.contoso.net:443/keys/CMK/4c05f1a41b12488f9cba2ea964b6a700"
+PS C:\> $CMKSettings = New-SqlAzureKeyVaultColumnMasterKeySettings -KeyUrl "https://myvault.vault.contoso.net:443/keys/CMK/4c05f1a41b12488f9cba2ea964b6a700"
 ```
 
 This command creates a **SqlColumnMasterKeySettings** object that references a key in Azure Key Vault and stores the result in the variable named CMKSettings.
@@ -116,5 +116,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Configure Always Encrypted using PowerShell](https://msdn.microsoft.com/library/mt755926.aspx)
 
 [SQL Server Cmdlets](xref:sqlserver-module/vlatest/SqlServer.md)
-
-

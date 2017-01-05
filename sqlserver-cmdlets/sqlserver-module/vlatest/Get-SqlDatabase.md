@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 0AC14338-3BF1-46FE-BADE-D5EE6DA4E732
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/Get-SqlDatabase.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/Get-SqlDatabase.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/Get-SqlDatabase.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/Get-SqlDatabase.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -57,7 +57,7 @@ This cmdlet supports the following modes of operation to get the SQL database ob
 
 ### Example 1: Get a SQL database object
 ```
-PS C:\>CD SQLSERVER:\SQL\Computer\Instance;
+PS C:\> CD SQLSERVER:\SQL\Computer\Instance;
 PS SQLSERVER:\SQL\Computer\Instance> Get-SqlDatabase -Name "DbName" -Credential $SqlCredential;
 ```
 
@@ -68,7 +68,7 @@ The current working directory is used to determine the server instance where the
 
 ### Example 2: Get all instances of SQL Server on a computer
 ```
-PS C:\>Get-SqlInstance -Credential $Credential -MachineName "Computer001" | Get-SqlDatabase -Credential $SqlCredential;
+PS C:\> Get-SqlInstance -Credential $Credential -MachineName "Computer001" | Get-SqlDatabase -Credential $SqlCredential;
 ```
 
 This command gets all instances of SQL Server on the computer named Computer001and returns all the databases that are present in the instances.
@@ -162,7 +162,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -178,7 +177,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -268,5 +267,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Backup-SqlDatabase](xref:sqlserver-module/vlatest/Backup-SqlDatabase.md)
 
 [Restore-SqlDatabase](xref:sqlserver-module/vlatest/Restore-SqlDatabase.md)
-
-

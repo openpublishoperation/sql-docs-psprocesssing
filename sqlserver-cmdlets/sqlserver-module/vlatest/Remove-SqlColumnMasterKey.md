@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 736238C8-995A-4D62-8233-BA542A35715A
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/Remove-SqlColumnMasterKey.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/Remove-SqlColumnMasterKey.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/Remove-SqlColumnMasterKey.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/Remove-SqlColumnMasterKey.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -43,7 +43,7 @@ The **Remove-SqlColumnMasterKey** cmdlet removes the column master key object wi
 
 ### Example 1: Remove a column master key object from the database
 ```
-PS C:\>Remove-SqlColumnMasterKey -Name "CMK1"
+PS C:\> Remove-SqlColumnMasterKey -Name "CMK1"
 ```
 
 This command removes the column master key object named CMK1 from the database.
@@ -166,5 +166,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Get-SqlColumnMasterKey](xref:sqlserver-module/vlatest/Get-SqlColumnMasterKey.md)
 
 [New-SqlColumnMasterKey](xref:sqlserver-module/vlatest/New-SqlColumnMasterKey.md)
-
-

@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: CD641CBF-C521-4B02-A580-7752D7200464
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/New-SqlColumnMasterKeySettings.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/New-SqlColumnMasterKeySettings.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/New-SqlColumnMasterKeySettings.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/New-SqlColumnMasterKeySettings.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -38,7 +38,7 @@ Use the *KeyStoreProviderName* and *KeyPath* parameters to specify values for th
 
 ### Example 1: Create column master key settings that contain Azure Key Vault as the provider
 ```
-PS C:\>$CmkSettings = New-SqlColumnMasterKeySettings -KeyStoreProviderName "AZURE_KEY_VAULT" -KeyPath "https://myvault.vault.azure.net:443/keys/CMK/4c05f1a41b12488f9cba2ea964b6a700"
+PS C:\> $CmkSettings = New-SqlColumnMasterKeySettings -KeyStoreProviderName "AZURE_KEY_VAULT" -KeyPath "https://myvault.vault.azure.net:443/keys/CMK/4c05f1a41b12488f9cba2ea964b6a700"
 ```
 
 This command creates a **SqlColumnMasterKeySettings** object that contains Azure Key Vault as the provider.
@@ -46,7 +46,7 @@ The command stores the result in the $CmkSettings variable.
 
 ### Example 2: Create column master key settings that contain a custom key provider
 ```
-PS C:\>$CmkSettings = New-SqlColumnMasterKeySettings -KeyStoreProviderName "CUSTOM_PROVIDER" -KeyPath "\\SecureNetworkShare\Keys\AlwaysEncrypted.key"
+PS C:\> $CmkSettings = New-SqlColumnMasterKeySettings -KeyStoreProviderName "CUSTOM_PROVIDER" -KeyPath "\\SecureNetworkShare\Keys\AlwaysEncrypted.key"
 ```
 
 This command creates a **SqlColumnMasterKeySettings** object that contains a custom key provider.
@@ -139,5 +139,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [New-SqlCngColumnMasterKeySettings](xref:sqlserver-module/vlatest/New-SqlCngColumnMasterKeySettings.md)
 
 [New-SqlCspColumnMasterKeySettings](xref:sqlserver-module/vlatest/New-SqlCspColumnMasterKeySettings.md)
-
-

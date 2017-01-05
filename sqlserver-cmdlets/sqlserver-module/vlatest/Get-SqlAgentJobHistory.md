@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 54FC22A5-8B32-4D4E-A9AB-59AD04323C96
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/Get-SqlAgentJobHistory.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/Get-SqlAgentJobHistory.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/Get-SqlAgentJobHistory.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/Get-SqlAgentJobHistory.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -58,13 +58,13 @@ This cmdlet supports the following modes of operation to get the **JobHistory** 
 
 - Specify the path of the SQL Agent instance. 
 - Pass the instance of the SQL Agent in the input. 
---. Invoke the cmdlet in a valid context.
+- Invoke the cmdlet in a valid context.
 
 ## EXAMPLES
 
 ### Example 1: Get the entire job history from the specified server instance
 ```
-PS C:\>Get-SqlAgentJobHistory -ServerInstance "MyServerInstance" | Format-Table
+PS C:\> Get-SqlAgentJobHistory -ServerInstance "MyServerInstance" | Format-Table
 InstanceID SqlMessageID Message
 ---------- ------------ -------
         34            0 The job succeeded.  The Job was invoked by Schedule 8 (syspolicy_purge_history_schedule).  T... 
@@ -75,7 +75,7 @@ This command gets the entire job history in the server instance named MyServerIn
 
 ### Example 2: Get the job history from the specified server instance
 ```
-PS C:\>Get-SqlAgentJobHistory -ServerInstance "MyServerInstance" -JobID 187112d7-84e1-4b66-b093-e97201c441ed
+PS C:\> Get-SqlAgentJobHistory -ServerInstance "MyServerInstance" -JobID 187112d7-84e1-4b66-b093-e97201c441ed
 JobID            : 187112d7-84e1-4b66-b093-e97201c441ed
 JobName          : Job_73cc6990-6386-49f9-9826-96c318ad8afa
 RunStatus        : 3
@@ -85,7 +85,7 @@ This command gets the job history of the job object with ID 187112d7-84e1-4b66-b
 
 ### Example 3: Get the job history from a time duration from the specified server instance
 ```
-PS C:\>Get-SqlAgentJobHistory -ServerInstance "MyServerInstance" -Since Yesterday
+PS C:\> Get-SqlAgentJobHistory -ServerInstance "MyServerInstance" -Since Yesterday
 InstanceID       : 4
 SqlMessageID     : 0
 Message          : The job was stopped prior to completion by User admin.  The Job was invoked by User
@@ -419,5 +419,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Get-SqlAgentJobSchedule](xref:sqlserver-module/vlatest/Get-SqlAgentJobSchedule.md)
 
 [Get-SqlAgentJobStep](xref:sqlserver-module/vlatest/Get-SqlAgentJobStep.md)
-
-

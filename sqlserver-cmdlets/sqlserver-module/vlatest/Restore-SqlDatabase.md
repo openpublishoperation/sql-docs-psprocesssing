@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: EE22EDC7-16C7-4E6F-8CA1-19F6F7ED8F78
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/Restore-SqlDatabase.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/Restore-SqlDatabase.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/Restore-SqlDatabase.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/Restore-SqlDatabase.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -92,21 +92,21 @@ The parameters on this cmdlet generally correspond to properties on the **Smo.Re
 
 ### Example 1: Restore a database from a backup file on a network share
 ```
-PS C:\>Restore-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -BackupFile "\\mainserver\databasebackup\MainDB.bak"
+PS C:\> Restore-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -BackupFile "\\mainserver\databasebackup\MainDB.bak"
 ```
 
 This command restores the full database MainDB from the file \\\\mainserver\databasebackup\MainDB.bak to the server instance Computer\Instance.
 
 ### Example 2: Restore a database transaction log
 ```
-PS C:\>Restore-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -BackupFile "\\mainserver\databasebackup\MainDB.trn" -RestoreAction Log
+PS C:\> Restore-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -BackupFile "\\mainserver\databasebackup\MainDB.trn" -RestoreAction Log
 ```
 
 This command restores the transaction log for the database MainDB from the file \\\\mainserver\databasebackup\MainDB.trn to the server instance Computer\Instance.
 
 ### Example 3: Restore a database and prompt for a password
 ```
-PS C:\>Restore-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -BackupFile "\\mainserver\databasebackup\MainDB.bak" -Credential (Get-Credential "sa")
+PS C:\> Restore-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -BackupFile "\\mainserver\databasebackup\MainDB.bak" -Credential (Get-Credential "sa")
 ```
 
 This command restores the full database MainDB from the file \\\\mainserver\databasebackup\MainDB.trn to the server instance Computer\Instance, using the sa SQL login.
@@ -114,23 +114,23 @@ This command will prompt you for a password to complete the authentication.
 
 ### Example 4: Restore a transaction log with the NORECOVERY option
 ```
-PS C:\>Restore-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -BackupFile "\\mainserver\databasebackup\MainDB.trn" -RestoreAction Log -NoRecovery
+PS C:\> Restore-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -BackupFile "\\mainserver\databasebackup\MainDB.trn" -RestoreAction Log -NoRecovery
 ```
 
 This command restores the transaction log of the database MainDB with the NORECOVERY option from the file \\\\mainserver\databasebackup\MainDB.trn to the server instance 'Computer\Instance'.
 
 ### Example 5: Restore transaction log records up to a point in time
 ```
-PS C:\>Restore-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -BackupFile "\\mainserver\databasebackup\MainDB.trn" -RestoreAction Log -ToPointInTime "Nov 11, 2011 11:11 AM"
+PS C:\> Restore-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -BackupFile "\\mainserver\databasebackup\MainDB.trn" -RestoreAction Log -ToPointInTime "Nov 11, 2011 11:11 AM"
 ```
 
 This command restores the transaction log of the database MainDB up to the date passed to the **ToPointInTime** parameter, Nov 11, 2011 11:11 AM.
 
 ### Example 6: Restore a database and relocate the data and log files
 ```
-PS C:\>$RelocateData = New-Object Microsoft.SqlServer.Management.Smo.RelocateFile("MainDB_Data", "c:\MySQLServer\MainDB.mdf")
-PS C:\>$RelocateLog = New-Object Microsoft.SqlServer.Management.Smo.RelocateFile("MainDB_Log", "c:\MySQLServer\MainDB.ldf")
-PS C:\>Restore-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -BackupFile "\\mainserver\databasebackup\MainDB.trn" -RelocateFile @($RelocateData,$RelocateLog)
+PS C:\> $RelocateData = New-Object Microsoft.SqlServer.Management.Smo.RelocateFile("MainDB_Data", "c:\MySQLServer\MainDB.mdf")
+PS C:\> $RelocateLog = New-Object Microsoft.SqlServer.Management.Smo.RelocateFile("MainDB_Log", "c:\MySQLServer\MainDB.ldf")
+PS C:\> Restore-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -BackupFile "\\mainserver\databasebackup\MainDB.trn" -RelocateFile @($RelocateData,$RelocateLog)
 ```
 
 This example restores the full database MainDB to the server instance Computer\Instance, and relocates the data and log files.
@@ -140,8 +140,8 @@ The **RelocateFile** objects are passed to the **RelocateFile** parameter of the
 
 ### Example 7: Restore a database from tape
 ```
-PS C:\>$TapeDevice = New-Object Microsoft.Sqlserver.Management.Smo.BackupDeviceItem("\\.\tape0", "Tape")
-PS C:\>Restore-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -BackupDevice $TapeDevice
+PS C:\> $TapeDevice = New-Object Microsoft.Sqlserver.Management.Smo.BackupDeviceItem("\\.\tape0", "Tape")
+PS C:\> Restore-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -BackupDevice $TapeDevice
 ```
 
 This example restores the database MainDB from the tape device named \\\\.\tape0 to the server instance Computer\Instance.
@@ -151,7 +151,7 @@ This **BackupDeviceItem** object is then passed to the -**BackupDevice** paramet
 
 ### Example 8: Restore a database from the Azure Blob Storage service
 ```
-PS C:\>Restore-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -BackupFile "https://mystorageaccountname.blob.core.windows.net/container/MyDB.bak" -SqlCredential "mySqlCredential"
+PS C:\> Restore-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -BackupFile "https://mystorageaccountname.blob.core.windows.net/container/MyDB.bak" -SqlCredential "mySqlCredential"
 ```
 
 This command restores the full database MainDB from the file on the Windows Azure Blob Storage service to the server instance Computer\Instance.
@@ -238,7 +238,7 @@ Accept wildcard characters: False
 
 ### -Offset
 Specifies the page addresses to be restored.
-This is only used when **RestoreAction** is set to OnlinePage.
+This is only used when the *RestoreAction* parameter is set to OnlinePage.
 
 ```yaml
 Type: Int64[]
@@ -292,14 +292,14 @@ Valid values are:
 The database is restored. 
 - Files.
 One or more data files are restored.
-The **DatabaseFile** or **DatabaseFileGroup** parameter must be specified. 
+The *DatabaseFile* or *DatabaseFileGroup* parameter must be specified. 
 - Log.
 The translaction log is restored. 
 - OnlinePage.
 A data page is restored online so that the database remains available to users. 
 - OnlineFiles.
 Data files are restored online so that the database remains available to users.
-The **DatabaseFile** or **DatabaseFileGroup** parameter must be specified.
+The *DatabaseFile* or *DatabaseFileGroup* parameter must be specified.
 
 ```yaml
 Type: RestoreActionType
@@ -329,7 +329,7 @@ Accept wildcard characters: False
 ```
 
 ### -StopAtMarkAfterDate
-Specifies the date to be used with the mark name specified by the **StopAtMarkName** parameter to determine the stopping point of the recovery operation.
+Specifies the date to be used with the mark name specified by the *StopAtMarkName* parameter to determine the stopping point of the recovery operation.
 
 ```yaml
 Type: String
@@ -345,9 +345,9 @@ Accept wildcard characters: False
 
 ### -StopAtMarkName
 Specifies the marked transaction at which to stop the recovery operation.
-This is used with **StopAtMarkAfterDate** to determine the stopping point of the recovery operation.
-The recoverd data includes the transaction that contains the mark.
-If the **StopAtMarkAfterDate** value is not set, recovery stops at the first mark with the specified name.
+This is used with the *StopAtMarkAfterDate* parameter to determine the stopping point of the recovery operation.
+The recovered data includes the transaction that contains the mark.
+If the *StopAtMarkAfterDate* parameter value is not set, recovery stops at the first mark with the specified name.
 
 ```yaml
 Type: String
@@ -362,7 +362,7 @@ Accept wildcard characters: False
 ```
 
 ### -StopBeforeMarkAfterDate
-Specifies the date to be used with **StopBeforeMarkName** to determine the stopping point of the recovery operation.
+Specifies the date to be used with the *StopBeforeMarkName* parameter to determine the stopping point of the recovery operation.
 
 ```yaml
 Type: String
@@ -378,7 +378,7 @@ Accept wildcard characters: False
 
 ### -StopBeforeMarkName
 Specifies the marked transaction before which to stop the recovery operation.
-This is used with **StopBeforeMarkAfterDate** to determine the stopping point of the recovery operation.
+This is used with the *StopBeforeMarkAfterDate* parameter to determine the stopping point of the recovery operation.
 
 ```yaml
 Type: String
@@ -394,7 +394,7 @@ Accept wildcard characters: False
 
 ### -ToPointInTime
 Specifies the endpoint for database log restoration.
-This only applies when **RestoreAction** is set to Log.
+This only applies when the *RestoreAction* parameter is set to Log.
 
 ```yaml
 Type: String
@@ -410,8 +410,8 @@ Accept wildcard characters: False
 
 ### -Database
 Specifies the name of the database to restore.
-This cannot be used with the **DatabaseObject** parameter.
-When this parameter is used, the **Path**, **InputObject**, or **ServerInstance** parameters must also be specified.
+This cannot be used with the *DatabaseObject* parameter.
+When this parameter is used, the *Path*, *InputObject*, or *ServerInstance* parameters must also be specified.
 
 ```yaml
 Type: String
@@ -446,7 +446,7 @@ Accept wildcard characters: False
 Specifies the location or locations where the backup files are stored.
 This parameter is optional.
 If not specified, the default backup location of the server is searched for the name \<database name\>.trn for log restores, or \<database name\>.bak for all other types of restores.
-This parameter cannot be used with the BackupDevice parameter.
+This parameter cannot be used with the *BackupDevice* parameter.
 If you are backing to the Windows Azure Blob Storage service (URL), this parameter or the **BackupDevice** parameter must be specified.
 
 ```yaml
@@ -886,5 +886,3 @@ Specifies an **SMO.Server** object that describes the SQL Server instance on whi
 ## RELATED LINKS
 
 [Backup-SqlDatabase](xref:sqlserver-module/vlatest/Backup-SqlDatabase.md)
-
-

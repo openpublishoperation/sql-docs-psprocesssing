@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 137482FC-6D5B-4E66-BEC1-EFA9AABC15D7
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/Set-SqlSmartAdmin.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/Set-SqlSmartAdmin.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/Set-SqlSmartAdmin.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/Set-SqlSmartAdmin.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -53,7 +53,7 @@ This cmdlet supports the following modes of operation to return the object:
 
 ### Example 1: Configure backup retention and storage settings
 ```
-PS C:\>$EncryptionOption = New-SqlBackupEncryptionOption -EncryptionAlgorithm Aes128 -EncryptorType ServerCertificate -EncryptorName "MyBackupCert"
+PS C:\> $EncryptionOption = New-SqlBackupEncryptionOption -EncryptionAlgorithm Aes128 -EncryptorType ServerCertificate -EncryptorName "MyBackupCert"
 ```
 
 This command configures backup retention for storage settings that uses the encryptor named MyBackupCert and stores the result in the variable named $EncryptionOption.
@@ -225,7 +225,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -241,7 +240,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -257,7 +256,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Specifies the Smo Smart Admin object.
-You can use the Get-SqlSmartAdmin cmdlet to get this object.
+You can use the **Get-SqlSmartAdmin** cmdlet to get this object.
 
 ```yaml
 Type: SmartAdmin
@@ -283,5 +282,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## RELATED LINKS
 
 [Get-SqlSmartAdmin](xref:sqlserver-module/vlatest/Get-SqlSmartAdmin.md)
-
-

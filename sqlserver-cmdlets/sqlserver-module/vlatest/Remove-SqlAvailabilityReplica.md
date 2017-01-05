@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 490B8962-9DDE-4B0C-8F3E-2262282F8F73
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/Remove-SqlAvailabilityReplica.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/Remove-SqlAvailabilityReplica.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/Remove-SqlAvailabilityReplica.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/Remove-SqlAvailabilityReplica.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -38,14 +38,14 @@ Remove-SqlAvailabilityReplica [-InputObject] <AvailabilityReplica[]> [-Script]
 ```
 
 ## DESCRIPTION
-The **Remove-SqlAvailabilityReplica** cmdlet removes the secondary replica that is specified by the **InputObject** or **Path** parameters.
+The **Remove-SqlAvailabilityReplica** cmdlet removes the secondary replica that is specified by the *InputObject* or *Path* parameters.
 This cmdlet must be executed at the server instance that hosts the primary replica.
 
 ## EXAMPLES
 
 ### Example 1: Remove an availability replica
 ```
-PS C:\>Remove-SqlAvailabilityReplica -Path "SQLSERVER:\SQL\PrimaryServer\InstanceName\AvailabilityGroups\MainAg\AvailabilityReplicas\MainReplica"
+PS C:\> Remove-SqlAvailabilityReplica -Path "SQLSERVER:\SQL\PrimaryServer\InstanceName\AvailabilityGroups\MainAg\AvailabilityReplicas\MainReplica"
 ```
 
 This command removes the availability replica named MainReplica from the availability group named MainAg.
@@ -53,7 +53,7 @@ This command must be run on the server instance that hosts the primary replica o
 
 ### Example 2: Generate a Transact-SQL script that removes an availability replica
 ```
-PS C:\>Remove-SqlAvailabilityReplica -Path "SQLSERVER:\SQL\PrimaryServer\InstanceName\AvailabilityGroups\MainAg\AvailabilityReplicas\MainReplica" -Script
+PS C:\> Remove-SqlAvailabilityReplica -Path "SQLSERVER:\SQL\PrimaryServer\InstanceName\AvailabilityGroups\MainAg\AvailabilityReplicas\MainReplica" -Script
 ```
 
 This command outputs the Transact-SQL script that removes the availability replica named MainReplica from the availability group named MainAg.
@@ -133,7 +133,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -149,7 +148,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -197,5 +196,3 @@ Specifies the availability replica to remove.
 [Set-SqlAvailabilityReplica](xref:sqlserver-module/vlatest/Set-SqlAvailabilityReplica.md)
 
 [Test-SqlAvailabilityReplica](xref:sqlserver-module/vlatest/Test-SqlAvailabilityReplica.md)
-
-

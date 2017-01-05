@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: D68F4E0B-249B-4173-AE2F-A63EE420AD40
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/Remove-SqlLogin.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/Remove-SqlLogin.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/Remove-SqlLogin.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/Remove-SqlLogin.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -53,16 +53,16 @@ If you specify the name of the **Login** object, the cmdlet removes that specifi
 
 ### Example 1: Remove a Login object by name
 ```
-PS C:\>Get-SqlLogin -ServerInstance "MyServerInstance" -LoginName "Login01" | Remove-SqlLogin
+PS C:\> Get-SqlLogin -ServerInstance "MyServerInstance" -LoginName "Login01" | Remove-SqlLogin
 ```
 
-This command gets the **Login** object named Login01 on the specified instance by using the Get-SqlLogin cmdlet.
+This command gets the **Login** object named Login01 on the specified instance by using the **Get-SqlLogin** cmdlet.
 The command passes it to the current cmdlet by using the pipeline operator.
 That cmdlet removes the **Login** object.
 
 ### Example 2: Remove objects that match a string
 ```
-PS C:\>Get-SqlLogin -ServerInstance "MyServerInstance" -LoginName 'Login.*' -Regex | Remove-SqlLogin -RemoveAssociatedUsers
+PS C:\> Get-SqlLogin -ServerInstance "MyServerInstance" -LoginName 'Login.*' -Regex | Remove-SqlLogin -RemoveAssociatedUsers
 ```
 
 This command gets the **Login** objects that contain the string Login.* as a regular expression on the specified instance by using **Get-SqlLogin**.
@@ -72,7 +72,7 @@ The command removes associated users.
 
 ### Example 3: Remove several Login objects
 ```
-PS C:\>Remove-Login -ServerInstance "MyServerInstance" -LoginName "login01","login02","login03"
+PS C:\> Remove-Login -ServerInstance "MyServerInstance" -LoginName "login01","login02","login03"
 ```
 
 This command removes the **Login** objects named login01, login02, and login03.
@@ -197,7 +197,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -213,7 +212,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -261,7 +260,7 @@ Accept wildcard characters: False
 
 ### -Credential
 Specifies a **PSCredential** object for the connection to SQL Server.
-To obtain a credential object, use the Get-Credential cmdlet.
+To obtain a credential object, use the **Get-Credential** cmdlet.
 For more information, type `Get-Help Get-Credential`.
 
 ```yaml
@@ -307,5 +306,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Add-SqlLogin](xref:sqlserver-module/vlatest/Add-SqlLogin.md)
 
 [Get-SqlLogin](xref:sqlserver-module/vlatest/Get-SqlLogin.md)
-
-

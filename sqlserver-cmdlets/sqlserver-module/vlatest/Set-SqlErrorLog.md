@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: EC6746BF-919B-47FE-8675-67257AB1A2CA
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/Set-SqlErrorLog.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/Set-SqlErrorLog.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/Set-SqlErrorLog.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/Set-SqlErrorLog.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -56,14 +56,14 @@ This cmdlet supports the following modes of operation to set logs:
 
 ### Example 1: Set the maximum number or error logs
 ```
-PS C:\>Set-SqlErrorLog -ServerInstance "MyServer\MyInstance" -MaxLogCount 11 | Out-Null
+PS C:\> Set-SqlErrorLog -ServerInstance "MyServer\MyInstance" -MaxLogCount 11 | Out-Null
 ```
 
 This command sets the maximum number of error log files to 11.
 
 ### Example 2: Return the T-SQL script code to set the maximum number or error logs
 ```
-PS C:\>Set-SqlErrorLog -ServerInstance "MyServer\MyInstance" -MaxLogCount 11 -Script
+PS C:\> Set-SqlErrorLog -ServerInstance "MyServer\MyInstance" -MaxLogCount 11 -Script
 USE [master] 
 GO
 EXEC xp_instance_regwrite N'HKEY_LOCAL_MACHINE', N'Software\Microsoft\MSSQLServer\MSSQLServer', N'NumErrorLogs', REG_DWORD, 10
@@ -239,5 +239,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## RELATED LINKS
 
 [Get-SqlErrorLog](xref:sqlserver-module/vlatest/Get-SqlErrorLog.md)
-
-

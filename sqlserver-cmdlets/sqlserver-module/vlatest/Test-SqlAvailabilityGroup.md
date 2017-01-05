@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: D51BD77D-A5A2-4C37-92F4-89DE8E004E3F
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/Test-SqlAvailabilityGroup.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/Test-SqlAvailabilityGroup.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/Test-SqlAvailabilityGroup.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/Test-SqlAvailabilityGroup.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -47,7 +47,7 @@ To run this cmdlet, you must have CONNECT, VIEW SERVER STATE, and VIEW ANY DEFIN
 
 ### Example 1: Evaluate the health of an availability group
 ```
-PS C:\>Test-SqlAvailabilityGroup -Path "SQLSERVER:\Sql\Server\InstanceName\AvailabilityGroups\MainAG"
+PS C:\> Test-SqlAvailabilityGroup -Path "SQLSERVER:\Sql\Server\InstanceName\AvailabilityGroups\MainAG"
 ```
 
 This command evaluates the health of the availability group named MainAG.
@@ -55,7 +55,7 @@ The command returns a summary.
 
 ### Example 2: Evaluate the health of all availability group
 ```
-PS C:\>Get-ChildItem "SQLSERVER:\Sql\Server\InstanceName\AvailabilityGroups" | Test-SqlAvailabilityGroup
+PS C:\> Get-ChildItem "SQLSERVER:\Sql\Server\InstanceName\AvailabilityGroups" | Test-SqlAvailabilityGroup
 ```
 
 This command gets all availability groups that have availability replicas in the specified location in the SQLSERVER: provider.
@@ -64,16 +64,16 @@ That cmdlet evaluates the health of each availability group.
 
 ### Example 3: Display results for each policy of an availability group
 ```
-PS C:\>Test-SqlAvailabilityGroup -Path "SQLSERVER:\Sql\Server\InstanceName\AvailabilityGroups\MainAG" -ShowPolicyDetails
+PS C:\> Test-SqlAvailabilityGroup -Path "SQLSERVER:\Sql\Server\InstanceName\AvailabilityGroups\MainAG" -ShowPolicyDetails
 ```
 
 This command evaluates the health of the availability group named MainAG.
-This command specifies the **ShowPolicyDetails** parameter.
+This command specifies the *ShowPolicyDetails* parameter.
 Therefore, it displays the evaluation results for each policy-based management policy that ran.
 
 ### Example 4: Display results for user-defined policies of an availability group
 ```
-PS C:\>Test-SqlAvailabilityGroup -Path "SQLSERVER:\Sql\Server\InstanceName\AvailabilityGroups\MainAG" -AllowUserPolicies
+PS C:\> Test-SqlAvailabilityGroup -Path "SQLSERVER:\Sql\Server\InstanceName\AvailabilityGroups\MainAG" -AllowUserPolicies
 ```
 
 This command evaluates the health of the availability group named MainAG.
@@ -81,13 +81,13 @@ The command includes user-defined policies in this evaluation.
 
 ### Example 5: Get groups that have an error state
 ```
-PS C:\>Get-ChildItem "SQLSERVER:\Sql\Server\InstanceName\AvailabilityGroups" | Test-SqlAvailabilityGroup | Where-Object { $_.HealthState -eq "Error" }
+PS C:\> Get-ChildItem "SQLSERVER:\Sql\Server\InstanceName\AvailabilityGroups" | Test-SqlAvailabilityGroup | Where-Object { $_.HealthState -eq "Error" }
 ```
 
 This command gets all availability groups that have availability replicas in the specified location in the SQLSERVER: provider.
 The command passes them to the current cmdlet by using the pipeline operator.
 That cmdlet evaluates the health of each availability group.
-The command passes those results to the Where-Object cmdlet, which returns results based on the **HealthState** property.
+The command passes those results to the **Where-Object** cmdlet, which returns results based on the **HealthState** property.
 
 ## PARAMETERS
 
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoRefresh
-Indicates that will not refresh the objects specified by the **Path** or **InputObject** parameter.
+Indicates that will not refresh the objects specified by the *Path* or *InputObject* parameter.
 
 ```yaml
 Type: SwitchParameter
@@ -196,7 +196,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -212,7 +211,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -264,5 +263,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Set-SqlAvailabilityGroup](xref:sqlserver-module/vlatest/Set-SqlAvailabilityGroup.md)
 
 [Switch-SqlAvailabilityGroup](xref:sqlserver-module/vlatest/Switch-SqlAvailabilityGroup.md)
-
-

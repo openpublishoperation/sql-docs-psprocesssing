@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 59D942A5-9998-42D6-ABF0-9CE8C55FEFEA
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/New-SqlBackupEncryptionOption.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/New-SqlBackupEncryptionOption.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/New-SqlBackupEncryptionOption.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/New-SqlBackupEncryptionOption.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -31,13 +31,13 @@ New-SqlBackupEncryptionOption [-NoEncryption] [-Algorithm <BackupEncryptionAlgor
 ```
 
 ## DESCRIPTION
-The **New-SqlBackupEncryptionOption** cmdlet creates the encryption options for the Backup-SqlDatabase cmdlet or the Set-SqlSmartAdmin cmdlet.
+The **New-SqlBackupEncryptionOption** cmdlet creates the encryption options for the [Backup-SqlDatabase](./Backup-SqlDatabase.md) cmdlet or the [Set-SqlSmartAdmin](./Set-SqlSmartAdmin.md) cmdlet.
 
 ## EXAMPLES
 
 ### Example 1: Create encryption options
 ```
-PS C:\>$EncryptionOption = New-SqlBackupEncryptionOption -Algorithm Aes256 -EncryptorType ServerCertificate -EncryptorName "BackupCert"
+PS C:\> $EncryptionOption = New-SqlBackupEncryptionOption -Algorithm Aes256 -EncryptorType ServerCertificate -EncryptorName "BackupCert"
 ```
 
 This command creates the encryption options and stores the result in the variable named $EncrytionOption.
@@ -171,5 +171,3 @@ This cmdlet is used as input to the *EncryptionOption* parameter for the **Backu
 [Backup-SqlDatabase](xref:sqlserver-module/vlatest/Backup-SqlDatabase.md)
 
 [Set-SqlSmartAdmin](xref:sqlserver-module/vlatest/Set-SqlSmartAdmin.md)
-
-

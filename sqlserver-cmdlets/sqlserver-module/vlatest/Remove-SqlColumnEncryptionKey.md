@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 0E6AC5C3-E790-43DE-A21B-1EBFB6115AC8
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/Remove-SqlColumnEncryptionKey.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/Remove-SqlColumnEncryptionKey.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/Remove-SqlColumnEncryptionKey.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/Remove-SqlColumnEncryptionKey.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -43,7 +43,7 @@ The **Remove-SqlColumnEncryptionKey** cmdlet removes the column encryption key o
 
 ### Example 1: Remove a column encryption key by name
 ```
-PS C:\>Remove-SqlColumnEncryptionKey -Name "CEK1"
+PS C:\> Remove-SqlColumnEncryptionKey -Name "CEK1"
 ```
 
 This command removes the column encryption key named CEK1.
@@ -166,5 +166,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Get-SqlColumnEncryptionKey](xref:sqlserver-module/vlatest/Get-SqlColumnEncryptionKey.md)
 
 [New-SqlColumnEncryptionKey](xref:sqlserver-module/vlatest/New-SqlColumnEncryptionKey.md)
-
-

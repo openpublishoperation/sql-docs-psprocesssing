@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: B8074299-ED33-4209-9B5E-6EA4A5E3E513
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/Get-SqlColumnEncryptionKey.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/Get-SqlColumnEncryptionKey.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/Get-SqlColumnEncryptionKey.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/Get-SqlColumnEncryptionKey.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -44,14 +44,14 @@ If the name of the column encryption key is provided, the cmdlet returns one spe
 
 ### Example 1: Get all column encryption keys from a database
 ```
-PS C:\>Get-SqlColumnEncryptionKey
+PS C:\> Get-SqlColumnEncryptionKey
 ```
 
 This command gets all column encryption keys from the database.
 
 ### Example 2: Get a column encryption key from a specified
 ```
-PS C:\>Get-SqlColumnEncryptionKey -Name "CEK1"
+PS C:\> Get-SqlColumnEncryptionKey -Name "CEK1"
 ```
 
 This command gets a column encryption key from the column encryption key object named CEK1.
@@ -176,5 +176,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [New-SqlColumnEncryptionKey](xref:sqlserver-module/vlatest/New-SqlColumnEncryptionKey.md)
 
 [Remove-SqlColumnEncryptionKey](xref:sqlserver-module/vlatest/Remove-SqlColumnEncryptionKey.md)
-
-

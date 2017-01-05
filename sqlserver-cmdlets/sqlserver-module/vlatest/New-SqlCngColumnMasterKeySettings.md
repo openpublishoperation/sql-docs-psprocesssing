@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: EB155EFC-6536-4A28-B811-D0682C50C485
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/New-SqlCngColumnMasterKeySettings.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/New-SqlCngColumnMasterKeySettings.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/New-SqlCngColumnMasterKeySettings.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/New-SqlCngColumnMasterKeySettings.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -39,7 +39,7 @@ This cmdlet sets the **KeyStoreProviderName** property to contain the name of th
 
 ### Example 1: Create a SqlColumnMasterKeySettings object
 ```
-PS C:\>$CMKSettings = New-SqlCngColumnMasterKeySettings -CngProviderName "Microsoft Software Key Storage Provider" -KeyName "AlwaysEncryptedKey"
+PS C:\> $CMKSettings = New-SqlCngColumnMasterKeySettings -CngProviderName "Microsoft Software Key Storage Provider" -KeyName "AlwaysEncryptedKey"
 ```
 
 This command creates a **SqlColumnMasterKeySettings** object referencing a key in a key store encapsulated by a CNG provider named Microsoft Software Key Storage Provider.
@@ -132,5 +132,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Configure Always Encrypted using PowerShell](https://msdn.microsoft.com/library/mt755926.aspx)
 
 [SQL Server Cmdlets](xref:sqlserver-module/vlatest/SqlServer.md)
-
-

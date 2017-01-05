@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 11191A9E-2CE9-4C98-B08A-EE92A0CFB899
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/Get-SqlAgentJobStep.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/Get-SqlAgentJobStep.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/Get-SqlAgentJobStep.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/Get-SqlAgentJobStep.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -50,7 +50,7 @@ This cmdlet supports the following modes of operation to return a collection of 
 
 ### Example 1: Get all JobStep instances in the job instances
 ```
-PS C:\>Get-SqlAgent -ServerInstance "MyServerInstance" | Get-SqlAgentJob | Get-SqlAgentJobStep
+PS C:\> Get-SqlAgent -ServerInstance "MyServerInstance" | Get-SqlAgentJob | Get-SqlAgentJobStep
     Name      ID         OnSuccessAction           OnFailAction              LastRunDate               LastRunDuration 
     ----      --         ---------------           ------------              -----------               --------------- 
     step1     1          QuitWithSuccess           QuitWithFailure           1/1/0001 12:00:00 AM      4.03:23:45      
@@ -63,7 +63,7 @@ The command then passes the result using the pipeline to the **Get-SqlAgentJobSt
 
 ### Example 2: Get a JobStep instance by name
 ```
-PS C:\>Get-SqlAgent -ServerInstance "MyServerInstance" | Get-SqlAgentJob | Get-SqlAgentJobStep -Name "Step1"
+PS C:\> Get-SqlAgent -ServerInstance "MyServerInstance" | Get-SqlAgentJob | Get-SqlAgentJobStep -Name "Step1"
     Name      ID         OnSuccessAction           OnFailAction              LastRunDate               LastRunDuration               
     ----      --         ---------------           ------------              -----------               ---------------               
     step1     1          QuitWithSuccess           QuitWithFailure           1/1/0001 12:00:00 AM      4.03:23:45
@@ -179,5 +179,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Get-SqlAgentJobSchedule](xref:sqlserver-module/vlatest/Get-SqlAgentJobSchedule.md)
 
 [Get-SqlAgentSchedule](xref:sqlserver-module/vlatest/Get-SqlAgentSchedule.md)
-
-

@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: A7B1C97E-5DF8-413E-81DB-BC7DD9C67824
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/Get-SqlAgentSchedule.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver-module/vlatest/Get-SqlAgentSchedule.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/Get-SqlAgentSchedule.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/Get-SqlAgentSchedule.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -48,7 +48,7 @@ The **Get-SqlAgentSchedule** cmdlet gets a SQL **JobSchedule** object for each s
 If you provide the name of the schedule, the cmdlet only gets that specific **JobSchedule** object.
 
 The cmdlet queries the **Microsoft.SqlServer.Management.Smo.Agent.SharedSchedules** SQL Server Management Object (SMO) object.
-If you are interested in schedules associated to a specific job, use the Get-SqlAgentJobSchedule cmdlet.
+If you are interested in schedules associated to a specific job, use the [Get-SqlAgentJobSchedule](./Get-SqlAgentJobSchedule.md) cmdlet.
 
 This cmdlet supports the following modes of operation to return a collection of **JobSchedule** objects:
 
@@ -60,7 +60,7 @@ This cmdlet supports the following modes of operation to return a collection of 
 
 ### Example 1: Get all job schedules on the specified server instance
 ```
-PS C:\>Get-SqlAgentSchedule -ServerInstance MyComputer | ? { $_.JobCount -eq 0 }
+PS C:\> Get-SqlAgentSchedule -ServerInstance MyComputer | ? { $_.JobCount -eq 0 }
 Name                           Jobs  Enabled    DateCreated               ActiveStartDate           ActiveEndDate             ID
 ----                           ----  -------    -----------               ---------------           -------------             --
 EveryDay                       0     True       4/13/2016 11:36:30 AM     4/13/2016 12:00:00 AM     12/31/9999 12:00:00 AM    3
@@ -223,5 +223,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Get-SqlAgentJobHistory](xref:sqlserver-module/vlatest/Get-SqlAgentJobHistory.md)
 
 [Get-SqlAgentJobStep](xref:sqlserver-module/vlatest/Get-SqlAgentJobStep.md)
-
-
