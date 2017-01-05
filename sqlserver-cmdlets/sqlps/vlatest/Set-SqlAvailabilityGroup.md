@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 32D36186-DA82-40BE-A9FD-7DEFACF63E76
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 1/4/2017 6:38 PM
+ms.date: 1/4/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlps/vlatest/Set-SqlAvailabilityGroup.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlps/vlatest/Set-SqlAvailabilityGroup.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlps/vlatest/Set-SqlAvailabilityGroup.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/4c48bd1c26220ff873e612527853aeeef98777da/sqlserver-cmdlets/sqlps/vlatest/Set-SqlAvailabilityGroup.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -48,7 +48,7 @@ You must run this cmdlet on the server instance that hosts the primary replica.
 
 ### Example 1: Change the health check timeout period
 ```
-PS C:\>Set-SqlAvailabilityGroup -Path "SQLSERVER:\Sql\PrimaryServer\InstanceName\AvailabilityGroups\MAinAG" -HealthCheckTimeout 120000
+PS C:\> Set-SqlAvailabilityGroup -Path "SQLSERVER:\Sql\PrimaryServer\InstanceName\AvailabilityGroups\MAinAG" -HealthCheckTimeout 120000
 ```
 
 This command changes the health check timeout property on the availability group named MainAG to 120,000 milliseconds, or two minutes.
@@ -56,7 +56,7 @@ If automatic failover is enabled, after this length of time, AlwaysOn Availabili
 
 ### Example 2: Change automated backup preference
 ```
-PS C:\>Set-SqlAvailabilityGroup -Path "SQLSERVER:\Sql\PrimaryServer\InstanceName\AvailabilityGroups\MainAG" -AutomatedBackupPreference SecondaryOnly
+PS C:\> Set-SqlAvailabilityGroup -Path "SQLSERVER:\Sql\PrimaryServer\InstanceName\AvailabilityGroups\MainAG" -AutomatedBackupPreference SecondaryOnly
 ```
 
 This command changes the automated backup preference on the availability group named MainAG to be SecondaryOnly.
@@ -65,7 +65,7 @@ Instead, automated backups occur on the secondary replica that has the highest b
 
 ### Example 3: Change the failure condition level
 ```
-PS C:\>Set-SqlAvailabilityGroup -Path "SQLSERVER:\Sql\PrimaryServer\InstanceName\AvailabilityGroups\MainAG" -FailureConditionLevel OnServerDown
+PS C:\> Set-SqlAvailabilityGroup -Path "SQLSERVER:\Sql\PrimaryServer\InstanceName\AvailabilityGroups\MainAG" -FailureConditionLevel OnServerDown
 ```
 
 This command changes the failure condition level on the availability group named MainAG to be OnServerDown.
@@ -109,7 +109,7 @@ The acceptable values for this parameter are:
 - OnServerDown.
 Failover or restart if the SQL Server service stops.
 - OnServerUnresponsive.
-Failover or restart if any condition of lower value is satisfied, plus when the SQL Server service is connected to the cluster and the **HealthCheckTimeout** threshold is exceeded, or if the availability replica currently in primary role is in a failed state. 
+Failover or restart if any condition of lower value is satisfied, plus when the SQL Server service is connected to the cluster and the *HealthCheckTimeout* threshold is exceeded, or if the availability replica currently in primary role is in a failed state. 
 - OnCriticalServerError.
 Failover or restart if any condition of lower value is satisfied, plus when an internal critical server error occurs, which include out of memory condition, serious write-access violation, or too much dumping. 
 - OnModerateServerError.
@@ -191,7 +191,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -207,7 +207,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -257,5 +256,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Switch-SqlAvailabilityGroup](xref:sqlps/vlatest/Switch-SqlAvailabilityGroup.md)
 
 [Test-SqlAvailabilityGroup](xref:sqlps/vlatest/Test-SqlAvailabilityGroup.md)
-
-

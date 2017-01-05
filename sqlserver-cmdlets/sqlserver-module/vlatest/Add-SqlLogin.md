@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 594723B8-DC49-4D51-9677-D9050C1F66AB
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/Add-SqlLogin.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/Add-SqlLogin.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/Add-SqlLogin.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/Add-SqlLogin.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -58,7 +58,7 @@ The **Add-SqlLogin** cmdlet creates a **Login** object in an instance of SQL Ser
 
 ### Example 1: Create an SqlLogin type
 ```
-PS C:\>Add-SqlLogin -ServerInstance "MyServerInstance" -LoginName "MyLogin" -LoginType "SqlLogin" -DefaultDatabase "OtherDatabase"
+PS C:\> Add-SqlLogin -ServerInstance "MyServerInstance" -LoginName "MyLogin" -LoginType "SqlLogin" -DefaultDatabase "OtherDatabase"
 Name                                          Login Type    Created
 ----                                          ----------    -------
 MyLogin                                       SqlLogin      8/11/2016 3:19 PM
@@ -70,7 +70,7 @@ This command prompts you for a password for the **Login**.
 
 ### Example 2: Create an asymmetric key type
 ```
-PS C:\>Add-SqlLogin -ServerInstance "MyServerInstance" -LoginName "MyLogin" -LoginType "AsymmetricKey" -AsymmetricKey "MyKey" -CredentialName "MyCredential"
+PS C:\> Add-SqlLogin -ServerInstance "MyServerInstance" -LoginName "MyLogin" -LoginType "AsymmetricKey" -AsymmetricKey "MyKey" -CredentialName "MyCredential"
 Name                                          Login Type    Created
 ----                                          ----------    -------
 MyLogin                                       AsymmetricKey 8/11/2016 4:08 PM
@@ -196,7 +196,7 @@ Accept wildcard characters: False
 
 ### -Certificate
 Specify the name of the certificate for the **Login** object.
-If *LoginType* has the value Certificate, specify a certificate.
+If the *LoginType* parameter has the value Certificate, specify a certificate.
 
 ```yaml
 Type: String
@@ -395,7 +395,7 @@ Accept wildcard characters: False
 
 ### -Credential
 Specifies a **PSCredential** object for the connection to SQL Server.
-To obtain a credential object, use the Get-Credential cmdlet.
+To obtain a credential object, use the **Get-Credential** cmdlet.
 For more information, type `Get-Help Get-Credential`.
 
 ```yaml
@@ -441,5 +441,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Get-SqlLogin](xref:sqlserver-module/vlatest/Get-SqlLogin.md)
 
 [Remove-SqlLogin](xref:sqlserver-module/vlatest/Remove-SqlLogin.md)
-
-

@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: D15D3DE9-B1B2-45F7-A80B-D62E837D8C43
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/New-SqlAvailabilityReplica.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/New-SqlAvailabilityReplica.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/New-SqlAvailabilityReplica.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/New-SqlAvailabilityReplica.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -61,32 +61,32 @@ New-SqlAvailabilityReplica -AvailabilityMode <AvailabilityReplicaAvailabilityMod
 The **New-SqlAvailabilityReplica** cmdlet creates an availability replica.
 Run this cmdlet on the instance of SQL Server that hosts the primary replica.
 
-To create an availability replica before you create an availability group, specify the **AsTemplate** parameter.
-To add a replica to an existing availability group, either the **InputObject** or **Path** parameter specifies the availability group.
+To create an availability replica before you create an availability group, specify the *AsTemplate* parameter.
+To add a replica to an existing availability group, either the *InputObject* or *Path* parameter specifies the availability group.
 
 ## EXAMPLES
 
 ### Example 1: Creates a representation of an availability replica
 ```
-PS C:\>$ServerObject = Get-Item "SQLSERVER:\Sql\PrimaryServer\InstanceName"
-PS C:\>New-SqlAvailabilityReplica -Name "PrimaryServer\Instance" -EndpointUrl "TCP://PrimaryServerName.domain.com:5022" -FailoverMode Automatic -AvailabilityMode SynchronousCommit -AsTemplate -Version $ServerObject.Version
+PS C:\> $ServerObject = Get-Item "SQLSERVER:\Sql\PrimaryServer\InstanceName"
+PS C:\> New-SqlAvailabilityReplica -Name "PrimaryServer\Instance" -EndpointUrl "TCP://PrimaryServerName.domain.com:5022" -FailoverMode Automatic -AvailabilityMode SynchronousCommit -AsTemplate -Version $ServerObject.Version
 ```
 
 This example creates an in-memory representation of an availability replica.
 No changes are committed to the server.
-You can use this replica as a value for the **AvailabilityReplica** parameter of **New-SqlAvailabilityGroup**
+You can use this replica as a value for the *AvailabilityReplica* parameter of *New-SqlAvailabilityGroup*
 
 The first command gets an instance of the primary server.
 
 The second command creates the availability replica.
 This replica uses the database mirroring endpoint located at the specified URL to communicate with other replicas in the availability group.
 This replica supports automatic failover and the synchronous-commit availability mode. 
-The **Version** parameter specifies the version of the server instance that will host this new replica.
+The *Version* parameter specifies the version of the server instance that will host this new replica.
 
 ### Example 2: Creates an availability replica that supports manual failover and the asynchronous-commit
 ```
-PS C:\>$ServerObject = Get-Item "SQLSERVER:\Sql\PrimaryServer\InstanceName"
-PS C:\>New-SqlAvailabilityReplica -Name "SecondaryServer\Instance" -EndpointUrl "TCP://PrimaryServerName.domain.com:5022" -FailoverMode Manual -AvailabilityMode AsynchronousCommit -AsTemplate -Version $ServerObject.Version
+PS C:\> $ServerObject = Get-Item "SQLSERVER:\Sql\PrimaryServer\InstanceName"
+PS C:\> New-SqlAvailabilityReplica -Name "SecondaryServer\Instance" -EndpointUrl "TCP://PrimaryServerName.domain.com:5022" -FailoverMode Manual -AvailabilityMode AsynchronousCommit -AsTemplate -Version $ServerObject.Version
 ```
 
 This example creates an in-memory representation of an availability replica.
@@ -97,11 +97,11 @@ The first command gets an instance of the primary server.
 The second command creates the availability replica.
 This replica uses the database mirroring endpoint located at the specified URL to communicate with other replicas in the availability group.
 This replica supports manual failover and the asynchronous-commit availability mode.
-The **Version** parameter specifies the version of the server instance that will host this new replica.
+The *Version* parameter specifies the version of the server instance that will host this new replica.
 
 ### Example 3: Add an availability replica to an availability group
 ```
-PS C:\>New-SqlAvailabilityReplica -Name "SecondaryServer\Instance" -EndpointUrl "TCP://PrimaryServerName.domain.com:5022" -FailoverMode Manual -AvailabilityMode AsynchronousCommit -ConnectionModeInSecondaryRole AllowAllConnections -Path "SQLSERVER:\Sql\PrimaryServer\InstanceName\AvailabilityGroups\MainAG"
+PS C:\> New-SqlAvailabilityReplica -Name "SecondaryServer\Instance" -EndpointUrl "TCP://PrimaryServerName.domain.com:5022" -FailoverMode Manual -AvailabilityMode AsynchronousCommit -ConnectionModeInSecondaryRole AllowAllConnections -Path "SQLSERVER:\Sql\PrimaryServer\InstanceName\AvailabilityGroups\MainAG"
 ```
 
 This command adds an availability replica to an existing availability group named MainAG.
@@ -118,7 +118,7 @@ The acceptable values for this parameter are:
 - SynchronousCommit 
 - AsynchronousCommit
 
-You can specify a value of **$Null**.
+You can specify a value of $Null.
 
 ```yaml
 Type: AvailabilityReplicaAvailabilityMode
@@ -137,7 +137,7 @@ Specifies the failover mode.
 The acceptable values for this parameter are:
 
 - Automatic 
-- Manual You can specify a value of **$Null**.
+- Manual You can specify a value of $Null.
 
 ```yaml
 Type: AvailabilityReplicaFailoverMode
@@ -367,7 +367,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -383,7 +382,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -401,11 +400,11 @@ Accept wildcard characters: False
 Indicates that this cmdlet creates a temporary **AvailabilityReplica** object in memory.
 Specify this parameter to create an availability group before you create an availability replica.
 Create an availability group by using the New-SqlAvailabilityGroup cmdlet.
-Specify the temporary availability replica as the value of the **AvailabilityReplica** parameter.
+Specify the temporary availability replica as the value of the *AvailabilityReplica* parameter.
 
-If you specify **AsTemplate**, this cmdlet ignores values for the **InputObject** and **Path** parameters.
+If you specify *AsTemplate*, this cmdlet ignores values for the *InputObject* and *Path* parameters.
 
-If you specify this parameter, you must also specify  a SQL Server version for the **Version** parameter, or your current session must have an active connection to an instance.
+If you specify this parameter, you must also specify a SQL Server version for the *Version* parameter, or your current session must have an active connection to an instance.
 
 ```yaml
 Type: SwitchParameter
@@ -421,7 +420,7 @@ Accept wildcard characters: False
 
 ### -Version
 Specifies a SQL Server version.
-If you specify the **AsTemplate** parameter, you must specify a version.
+If you specify the *AsTemplate* parameter, you must specify a version.
 The template object is created in design mode on a server that includes this version.
 You can specify an integer or a string, as in the following examples: 
 
@@ -479,5 +478,3 @@ This cmdlet returns an availability replica.
 [Set-SqlAvailabilityReplica](xref:sqlserver-module/vlatest/Set-SqlAvailabilityReplica.md)
 
 [Test-SqlAvailabilityReplica](xref:sqlserver-module/vlatest/Test-SqlAvailabilityReplica.md)
-
-

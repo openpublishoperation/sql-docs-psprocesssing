@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 32D36186-DA82-40BE-A9FD-7DEFACF63E76
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/Set-SqlAvailabilityGroup.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/Set-SqlAvailabilityGroup.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/Set-SqlAvailabilityGroup.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/Set-SqlAvailabilityGroup.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -50,7 +50,7 @@ You must run this cmdlet on the server instance that hosts the primary replica.
 
 ### Example 1: Change the health check timeout period
 ```
-PS C:\>Set-SqlAvailabilityGroup -Path "SQLSERVER:\Sql\PrimaryServer\InstanceName\AvailabilityGroups\MAinAG" -HealthCheckTimeout 120000
+PS C:\> Set-SqlAvailabilityGroup -Path "SQLSERVER:\Sql\PrimaryServer\InstanceName\AvailabilityGroups\MAinAG" -HealthCheckTimeout 120000
 ```
 
 This command changes the health check timeout property on the availability group named MainAG to 120,000 milliseconds, or two minutes.
@@ -58,7 +58,7 @@ If automatic failover is enabled, after this length of time, AlwaysOn Availabili
 
 ### Example 2: Change automated backup preference
 ```
-PS C:\>Set-SqlAvailabilityGroup -Path "SQLSERVER:\Sql\PrimaryServer\InstanceName\AvailabilityGroups\MainAG" -AutomatedBackupPreference SecondaryOnly
+PS C:\> Set-SqlAvailabilityGroup -Path "SQLSERVER:\Sql\PrimaryServer\InstanceName\AvailabilityGroups\MainAG" -AutomatedBackupPreference SecondaryOnly
 ```
 
 This command changes the automated backup preference on the availability group named MainAG to be SecondaryOnly.
@@ -67,7 +67,7 @@ Instead, automated backups occur on the secondary replica that has the highest b
 
 ### Example 3: Change the failure condition level
 ```
-PS C:\>Set-SqlAvailabilityGroup -Path "SQLSERVER:\Sql\PrimaryServer\InstanceName\AvailabilityGroups\MainAG" -FailureConditionLevel OnServerDown
+PS C:\> Set-SqlAvailabilityGroup -Path "SQLSERVER:\Sql\PrimaryServer\InstanceName\AvailabilityGroups\MainAG" -FailureConditionLevel OnServerDown
 ```
 
 This command changes the failure condition level on the availability group named MainAG to be OnServerDown.
@@ -233,7 +233,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -249,7 +248,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -298,5 +297,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Switch-SqlAvailabilityGroup](xref:sqlserver-module/vlatest/Switch-SqlAvailabilityGroup.md)
 
 [Test-SqlAvailabilityGroup](xref:sqlserver-module/vlatest/Test-SqlAvailabilityGroup.md)
-
-

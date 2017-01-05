@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 9A498878-903C-44D7-A0BD-6837BEED7738
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/New-SqlCredential.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/New-SqlCredential.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/New-SqlCredential.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/New-SqlCredential.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -47,7 +47,7 @@ The SQL Server credential is required when backing up to or restoring from the W
 
 ### Example 1: Create a SQL credential for the current instance of SQL Server
 ```
-PS C:\>cd SQLServer:\SQL\Computer\Instance
+PS C:\> cd SQLServer:\SQL\Computer\Instance
 PS SQLServer:\SQL\Computer\Instance> New-SqlCredential -Name "MySqlCredential" -Identity "MyWindowsAzureStorageAccount" -Secret "P4ssw0rd"
 ```
 
@@ -57,7 +57,7 @@ The second command creates a SQL credential named MySqlCredential in the current
 
 ### Example 2: Create a SQL credential for all instances of SQL Server
 ```
-PS C:\>cd SQLServer:\SQL\Computer\Instance
+PS C:\> cd SQLServer:\SQL\Computer\Instance
 PS SQLServer:\SQL\Computer\Instance> $SecureString = ConvertTo-SecureString "P4ssw0rd" -AsPlainText -Force
 PS SQLServer:\SQL\Computer\Instance> $Instances = Get-ChildItem
 PS SQLServer:\SQL\Computer\Instance> $Instances | New-SqlCredential -Name "MySqlCredential" -Identity "MyWindowsAzureStorageAccount" -Secret $SecureString
@@ -207,7 +207,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -223,7 +222,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -268,5 +267,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Remove-SqlCredential](xref:sqlserver-module/vlatest/Remove-SqlCredential.md)
 
 [Set-SqlCredential](xref:sqlserver-module/vlatest/Set-SqlCredential.md)
-
-

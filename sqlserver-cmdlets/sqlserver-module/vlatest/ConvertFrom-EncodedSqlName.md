@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSProvider.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 7DAADDA3-C07F-40BD-84BE-2B8D25A152E9
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/ConvertFrom-EncodedSqlName.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/ConvertFrom-EncodedSqlName.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/ConvertFrom-EncodedSqlName.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/ConvertFrom-EncodedSqlName.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -43,7 +43,7 @@ Decode-SqlName converts the following encodings to the corresponding characters:
 
 ### Example 1: Decode a SQL Server identifier
 ```
-PS C:\>ConvertFrom-EncodedSqlName -SqlName "My%3ATable`/" "My:Table/"
+PS C:\> ConvertFrom-EncodedSqlName -SqlName "My%3ATable`/" "My:Table/"
 ```
 
 This command decodes a SQL Server identifier that has an encoded hexadecimal representation for the : character.
@@ -123,5 +123,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Using SQL Server Identifiers in PowerShell](https://technet.microsoft.com/en-us/library/cc281841(v=sql.110).aspx)
 
 [ConvertTo-EncodedSqlName](xref:sqlserver-module/vlatest/ConvertTo-EncodedSqlName.md)
-
-

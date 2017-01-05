@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 3FC92A7F-BCB2-4418-9AB5-1C194226406B
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/Set-SqlNetworkConfiguration.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/Set-SqlNetworkConfiguration.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/Set-SqlNetworkConfiguration.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/Set-SqlNetworkConfiguration.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -66,7 +66,7 @@ This cmdlet supports the following modes of operation:
 
 ### Example 1: Set the network configuration of the target SQL Server
 ```
-PS C:\>CD SQLSERVER:\SQL\Computer\Instance;
+PS C:\> CD SQLSERVER:\SQL\Computer\Instance;
 PS SQLSERVER:\SQL\Computer\Instance> Set-SqlNetworkConfiguration -Credential $credential -Protocol TCP -Port 1433-NoServiceRestart -AcceptSelfSignedCertificate;
 ```
 
@@ -78,7 +78,7 @@ The self-signed certificate of the target machine is automatically accepted with
 
 ### Example 2: Set the network configuration of the target SQL Server using the pipeline
 ```
-PS C:\>Get-SqlInstance -Credential $Credential -MachineName "Computer006" | Set-SqlNetworkConfiguration -Credential $Credential -Protocol TCP -Disable -NoServiceRestart -AcceptSelfSignedCertificate;
+PS C:\> Get-SqlInstance -Credential $Credential -MachineName "Computer006" | Set-SqlNetworkConfiguration -Credential $Credential -Protocol TCP -Disable -NoServiceRestart -AcceptSelfSignedCertificate;
 ```
 
 This command gets all instances of SQL Server on the computer named Computer006 and disables TCP connections for each one of them.
@@ -285,7 +285,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -301,7 +300,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -357,5 +356,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## RELATED LINKS
 
 [SQL Server Cmdlets](xref:sqlserver-module/vlatest/SqlServer.md)
-
-

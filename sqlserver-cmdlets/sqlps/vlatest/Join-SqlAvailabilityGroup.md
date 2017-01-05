@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 907367D4-31EB-4339-9483-672FF9F6770D
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 1/4/2017 6:38 PM
+ms.date: 1/4/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlps/vlatest/Join-SqlAvailabilityGroup.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlps/vlatest/Join-SqlAvailabilityGroup.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlps/vlatest/Join-SqlAvailabilityGroup.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/4c48bd1c26220ff873e612527853aeeef98777da/sqlserver-cmdlets/sqlps/vlatest/Join-SqlAvailabilityGroup.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -44,7 +44,7 @@ Run this cmdlet on an instance of SQL Server that hosts a secondary replica that
 
 ### Example 1: Join a secondary replica to an availability group
 ```
-PS C:\>Join-SqlAvailabilityGroup -Path "SQLSERVER:\SQL\SecondaryServer\InstanceName" -Name "MainAG"
+PS C:\> Join-SqlAvailabilityGroup -Path "SQLSERVER:\SQL\SecondaryServer\InstanceName" -Name "MainAG"
 ```
 
 This command joins a secondary replica to the availability group named MainAG.
@@ -52,7 +52,7 @@ This server instance must host a secondary replica in this availability group.
 
 ### Example 2: Create a script that joins a secondary replica to an availability group
 ```
-PS C:\>Join-SqlAvailabilityGroup -Path "SQLSERVER:\SQL\SecondaryServer\InstanceName" -Name "MainAG" -Script
+PS C:\> Join-SqlAvailabilityGroup -Path "SQLSERVER:\SQL\SecondaryServer\InstanceName" -Name "MainAG" -Script
 ```
 
 This command creates a Transact-SQL script that joins a secondary replica to the availability group named MainAG.
@@ -121,7 +121,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -137,7 +137,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -163,7 +162,7 @@ You can pass a server instance to this cmdlet.
 ## OUTPUTS
 
 ## NOTES
-* The high availability data recovery service must be enabled on the server instance. The availability replica specified by the **Path** parameter must exist.
+* The high availability data recovery service must be enabled on the server instance. The availability replica specified by the *Path* parameter must exist.
 
 ## RELATED LINKS
 
@@ -176,5 +175,3 @@ You can pass a server instance to this cmdlet.
 [Switch-SqlAvailabilityGroup](xref:sqlps/vlatest/Switch-SqlAvailabilityGroup.md)
 
 [Test-SqlAvailabilityGroup](xref:sqlps/vlatest/Test-SqlAvailabilityGroup.md)
-
-

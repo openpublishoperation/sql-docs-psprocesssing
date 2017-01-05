@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 0C74D224-F9AA-4694-85C0-2428B3D1AD5E
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/Get-SqlColumnMasterKey.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/Get-SqlColumnMasterKey.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/Get-SqlColumnMasterKey.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/Get-SqlColumnMasterKey.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -44,14 +44,14 @@ If the name of the column master key is provided, the cmdlet returns one specifi
 
 ### Example 1: Get all column master keys
 ```
-PS C:\>Get-SqlColumnMasterKey
+PS C:\> Get-SqlColumnMasterKey
 ```
 
 This command gets all column master keys from the database.
 
 ### Example 2: Get a column master key with a specific name
 ```
-PS C:\>Get-SqlColumnMasterKey -Name "CMK1"
+PS C:\> Get-SqlColumnMasterKey -Name "CMK1"
 ```
 
 This command gets a column master key named CMK1.
@@ -176,5 +176,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [New-SqlColumnMasterKey](xref:sqlserver-module/vlatest/New-SqlColumnMasterKey.md)
 
 [Remove-SqlColumnMasterKey](xref:sqlserver-module/vlatest/Remove-SqlColumnMasterKey.md)
-
-

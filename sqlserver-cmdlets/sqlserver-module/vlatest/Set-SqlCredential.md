@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: F7BCEF94-2FF3-4B9C-AC8F-84977532F668
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/Set-SqlCredential.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/Set-SqlCredential.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/Set-SqlCredential.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/Set-SqlCredential.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -49,14 +49,14 @@ This cmdlet supports the two following modes of operation:
 
 ### Example 1: Set the identity of a SQL credential object
 ```
-PS C:\>Set-SqlCredential -Path SQLSERVER:\SQL\Computer\Instance\Credentials\MySqlCredential -Identity "MyStorageAccount"
+PS C:\> Set-SqlCredential -Path SQLSERVER:\SQL\Computer\Instance\Credentials\MySqlCredential -Identity "MyStorageAccount"
 ```
 
 This command sets the identity of MySqlCredential to MyStorageAccount by specifying the path of the SQL Credential.
 
 ### Example 2: Set the identity of a SQL credential object using the pipeline
 ```
-PS C:\>$Cred = Get-SqlCredential -Name "MySqlCredential"
+PS C:\> $Cred = Get-SqlCredential -Name "MySqlCredential"
 PS C:\> $Cred | Set-SqlCredential -Identity "MyStorageAccount"
 ```
 
@@ -66,8 +66,8 @@ The second command pipes the result stored in the $Cred variable to the **Set-Sq
 
 ### Example 3: Set the identity of a SQL credential object prompting the user
 ```
-PS C:\>$Secret = Read-Host "Please enter the storage account access key"
-PS C:\>  Set-SqlCredential -Identity "MyStorageAccount" -Secret $Secret
+PS C:\> $Secret = Read-Host "Please enter the storage account access key"
+PS C:\> Set-SqlCredential -Identity "MyStorageAccount" -Secret $Secret
 ```
 
 The first command prompts for the storage access key information and stores the result in the variable named $Secret.
@@ -180,7 +180,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -196,7 +195,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -212,7 +211,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Specifies an input **Credential** object.
-To get this object, use the Get-SqlCredential cmdlet.
+To get this object, use the **Get-SqlCredential** cmdlet.
 
 ```yaml
 Type: Credential
@@ -238,5 +237,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## RELATED LINKS
 
 [Get-SqlCredential](xref:sqlserver-module/vlatest/Get-SqlCredential.md)
-
-

@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 41D1496B-5767-4B2F-A0CD-734892A422B9
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 1/4/2017 6:38 PM
+ms.date: 1/4/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlps/vlatest/Switch-SqlAvailabilityGroup.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlps/vlatest/Switch-SqlAvailabilityGroup.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlps/vlatest/Switch-SqlAvailabilityGroup.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/4c48bd1c26220ff873e612527853aeeef98777da/sqlserver-cmdlets/sqlps/vlatest/Switch-SqlAvailabilityGroup.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -45,7 +45,7 @@ After the failover, the secondary replica becomes the primary replica.
 
 ### Example 1: Fail over an availability group
 ```
-PS C:\>Switch-SqlAvailabilityGroup -Path "SQLSERVER:\Sql\SecondaryServer\InstanceName\AvailabilityGroups\MainAG"
+PS C:\> Switch-SqlAvailabilityGroup -Path "SQLSERVER:\Sql\SecondaryServer\InstanceName\AvailabilityGroups\MainAG"
 ```
 
 This command performs a manual failover of the availability group MainAG to the server instance named SecondaryServer\InstanceName.
@@ -54,13 +54,13 @@ Run this command on the server instance that hosts the secondary replica to whic
 
 ### Example 2: Force an availability group to fail over
 ```
-PS C:\>Switch-SqlAvailabilityGroup -Path "SQLSERVER:\Sql\SecondaryServer\InstanceName\AvailabilityGroups\MainAG" -AllowDataLoss
+PS C:\> Switch-SqlAvailabilityGroup -Path "SQLSERVER:\Sql\SecondaryServer\InstanceName\AvailabilityGroups\MainAG" -AllowDataLoss
 ```
 
 This command performs a manual failover of the availability group MainAG to the server instance named SecondaryServer\InstanceName.
-The command specifies the **AllowDataLoss** parameter.
+The command specifies the *AllowDataLoss* parameter.
 Therefore, the failover has the potential of data loss, and the command prompts you for confirmation.
-Specify the **Force** parameter to skip the confirmation.
+Specify the *Force* parameter to skip the confirmation.
 
 ### Example 3: Create a script to fail over an availability group
 ```
@@ -76,7 +76,7 @@ The command does not cause failover.
 ### -AllowDataLoss
 Indicates that this cmdlet starts a forced failover to the target secondary replica. 
 Data loss is possible.
-Unless you specify the **Force** or **Script** parameter, the cmdlet prompts you for confirmation.
+Unless you specify the *Force* or *Script* parameter, the cmdlet prompts you for confirmation.
 
 ```yaml
 Type: SwitchParameter
@@ -92,7 +92,7 @@ Accept wildcard characters: False
 
 ### -Force
 Forces the command to run without asking for user confirmation.
-This cmdlet prompts you for confirmation only if you specify the **AllowDataLoss** parameter.
+This cmdlet prompts you for confirmation only if you specify the *AllowDataLoss* parameter.
 
 ```yaml
 Type: SwitchParameter
@@ -153,7 +153,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -169,7 +169,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -207,5 +206,3 @@ You can pass an availability group to this cmdlet.
 [Set-SqlAvailabilityGroup](xref:sqlps/vlatest/Set-SqlAvailabilityGroup.md)
 
 [Test-SqlAvailabilityGroup](xref:sqlps/vlatest/Test-SqlAvailabilityGroup.md)
-
-

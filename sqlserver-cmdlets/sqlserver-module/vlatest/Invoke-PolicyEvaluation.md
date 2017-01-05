@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 4E1CA4A8-D0BA-4425-ADFE-7E06D1DEB8C5
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/Invoke-PolicyEvaluation.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/Invoke-PolicyEvaluation.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/Invoke-PolicyEvaluation.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/Invoke-PolicyEvaluation.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -49,8 +49,8 @@ In configure mode, this cmdlet reconfigures any objects in the target set that d
 
 ### Example 1: Evaluate a policy on the default instance of the computer
 ```
-PS C:\>Set-Location "C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Policies\DatabaseEngine\1033"
-PS C:\>Invoke-PolicyEvaluation -Policy "Trustworthy Database.xml" -TargetServer "MYCOMPUTER"
+PS C:\> Set-Location "C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Policies\DatabaseEngine\1033"
+PS C:\> Invoke-PolicyEvaluation -Policy "Trustworthy Database.xml" -TargetServer "MYCOMPUTER"
 ```
 
 This command evaluate a policy on the default instance of the specified computer.
@@ -58,16 +58,16 @@ The policy is read from an XML file and the connection is authenticated by using
 
 ### Example 2: Evaluate policies from XML files
 ```
-PS C:\>Set-Location "C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Policies\DatabaseEngine\1033"
-PS C:\>Get-ChildItem "Database Status.xml", "Trustworthy Database.xml" | Invoke-PolicyEvaluation -TargetServer "MYCOMPUTER"
+PS C:\> Set-Location "C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Policies\DatabaseEngine\1033"
+PS C:\> Get-ChildItem "Database Status.xml", "Trustworthy Database.xml" | Invoke-PolicyEvaluation -TargetServer "MYCOMPUTER"
 ```
 
 This command reads two policies from XML files in a folder, and then passes them to **Invoke-PolicyEvaluation** by using the pipeline operator.
 
 ### Example 3: Evaluate policies and format the output according to the SML-IF schema
 ```
-PS C:\>Set-Location "C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Policies\DatabaseEngine\1033"
-PS C:\>Invoke-PolicyEvaluation -Policy "Database Status.xml" -TargetServer "MYCOMPUTER" -OutputXML > C:\MyReportFolder\MyReport.xml
+PS C:\> Set-Location "C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Policies\DatabaseEngine\1033"
+PS C:\> Invoke-PolicyEvaluation -Policy "Database Status.xml" -TargetServer "MYCOMPUTER" -OutputXML > C:\MyReportFolder\MyReport.xml
 ```
 
 This command evaluates a policy and formats the output by using the Services Modeling Language Interchange Format (SML-IF) schema.
@@ -75,8 +75,8 @@ The output is redirected to a file.
 
 ### Example 4: Evaluate a filtered set of policies
 ```
-PS C:\>Set-Location "SQLSERVER:\SQLPolicy\MYCOMPUTER\DEFAULT\Policies"
-PS C:\>Get-ChildItem | Where-Object { $_.PolicyCategory -eq "Microsoft Best Practices: Maintenance" } | Invoke-PolicyEvaluation -TargetServer 'MYCOMPUTER'
+PS C:\> Set-Location "SQLSERVER:\SQLPolicy\MYCOMPUTER\DEFAULT\Policies"
+PS C:\> Get-ChildItem | Where-Object { $_.PolicyCategory -eq "Microsoft Best Practices: Maintenance" } | Invoke-PolicyEvaluation -TargetServer 'MYCOMPUTER'
 ```
 
 The first command sets the current path to a SQL Server policy store.
@@ -85,9 +85,9 @@ The output is sent to **Invoke-PolicyEvaluation** by using the pipeline operator
 
 ### Example 5: Evaluate policies from XML files by using a SqlStoreConnection object
 ```
-PS C:\>Set-Location "C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Policies\DatabaseEngine\1033"
-PS C:\>$Connection = New-Object Microsoft.SqlServer.Management.Sdk.Sfc.SqlStoreConnection("server='MYCOMPUTER';Trusted_Connection=True")
-PS C:\>Invoke-PolicyEvaluation -Policy "Database Status.xml" -TargetServer $Connection
+PS C:\> Set-Location "C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Policies\DatabaseEngine\1033"
+PS C:\> $Connection = New-Object Microsoft.SqlServer.Management.Sdk.Sfc.SqlStoreConnection("server='MYCOMPUTER';Trusted_Connection=True")
+PS C:\> Invoke-PolicyEvaluation -Policy "Database Status.xml" -TargetServer $Connection
 ```
 
 The first command sets the current location to a local folder that contains policy evaulations in XML files.
@@ -96,11 +96,11 @@ The third command evaluates policy from an XML file against the server defined b
 
 ### Example 6: Evaluate policy using a manually loaded assembly
 ```
-PS C:\>Set-Location "C:\Program Files (x86)\Microsoft SQL Server\130\ tools\Policies\analysisservices\1033"
-PS C:\>[System.Reflection.Assembly]::LoadWithPartialName("Microsoft.AnalysisServices")
-PS C:\>$SSASsvr = New-Object Microsoft.AnalysisServices.Server
-PS C:\>$SSASsvr.Connect("Data Source=localhost")
-PS C:\>Invoke-PolicyEvaluation "Surface Area Configuration for Analysis Services Features.xml" -TargetObject $SSASsvr
+PS C:\> Set-Location "C:\Program Files (x86)\Microsoft SQL Server\130\ tools\Policies\analysisservices\1033"
+PS C:\> [System.Reflection.Assembly]::LoadWithPartialName("Microsoft.AnalysisServices")
+PS C:\> $SSASsvr = New-Object Microsoft.AnalysisServices.Server
+PS C:\> $SSASsvr.Connect("Data Source=localhost")
+PS C:\> Invoke-PolicyEvaluation "Surface Area Configuration for Analysis Services Features.xml" -TargetObject $SSASsvr
 ```
 
 The first command sets the current folder location.
@@ -111,18 +111,18 @@ The fifth command evaluates the Analysis Services surface area configuration pol
 
 ### Example 7: Evaluate a filterd set of policies
 ```
-PS C:\>Set-Location "C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Policies\DatabaseEngine\1033"
-PS C:\>Invoke-PolicyEvaluation "Database Status.xml" -TargetServer "MYCOMPUTER" -TargetExpression "Server[@Name='MYCOMPUTER']/Database[@Name='AdventureWorks2014']"
+PS C:\> Set-Location "C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Policies\DatabaseEngine\1033"
+PS C:\> Invoke-PolicyEvaluation "Database Status.xml" -TargetServer "MYCOMPUTER" -TargetExpression "Server[@Name='MYCOMPUTER']/Database[@Name='AdventureWorks2014']"
 ```
 
 This command uses the TargetExpression parameter to specify a query expression that filters the database status policy be evaluated against the AdventureWorks2014 sample database and performs the evaluation.
 
 ### Example 8: Evaluate the reporting services surface area configuration policy
 ```
-PS C:\>Set-Location "C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Policies\ReportingServices\1033"
-PS C:\>[System.Reflection.Assembly]::LoadWithPartialName("Microsoft.SqlServer.Dmf.Adapters")
-PS C:\>$SSRSsvr = New-Object Microsoft.SqlServer.Management.Adapters.RSContainer('MyComputer')
-PS C:\>Invoke-PolicyEvaluation -Policy "Surface Area Configuration for Reporting Services 2008 Features.xml" -TargetObject $SSRSsvr
+PS C:\> Set-Location "C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Policies\ReportingServices\1033"
+PS C:\> [System.Reflection.Assembly]::LoadWithPartialName("Microsoft.SqlServer.Dmf.Adapters")
+PS C:\> $SSRSsvr = New-Object Microsoft.SqlServer.Management.Adapters.RSContainer('MyComputer')
+PS C:\> Invoke-PolicyEvaluation -Policy "Surface Area Configuration for Reporting Services 2008 Features.xml" -TargetObject $SSRSsvr
 ```
 
 This command loads the SQL Server Reporting Services assembly, creates a connection to the default server instance on the local computer, and runs the Reporting Services surface area configuration policy.
@@ -207,7 +207,7 @@ The nodes must follow the hierarchy of the SMO objects.
 For example, the following query expression returns the AdventureWorks sample database: 
 `Server\[@Name='MyComputer'\]/Database\[@Name='AdventureWorks'\]`
 
-If **TargetExpression** is specified, do not specify **TargetObject**.
+If *TargetExpression* is specified, do not specify **TargetObject**.
 
 ```yaml
 Type: String
@@ -279,7 +279,7 @@ Accept wildcard characters: False
 Specifies the set of SQL Server objects against which the policy is evaluated.
 To connect to an instance of SQL Server analysis services, specify a **Microsoft.AnalysisServices.Server** object for **TargetObject**.
 
-If **TargetObject** is specified, do not specify **TargetExpression**.
+If the *TargetObjects* parameter is specified, do not specify *TargetExpression*.
 
 ```yaml
 Type: PSObject[]
@@ -305,5 +305,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## RELATED LINKS
 
 [SQL Server Cmdlets](xref:sqlserver-module/vlatest/SqlServer.md)
-
-

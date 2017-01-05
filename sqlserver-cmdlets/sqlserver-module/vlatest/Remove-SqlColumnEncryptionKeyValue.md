@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 0AEDBDE0-95F5-4345-8AC2-7C3BD422ECC0
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/Remove-SqlColumnEncryptionKeyValue.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/Remove-SqlColumnEncryptionKeyValue.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/Remove-SqlColumnEncryptionKeyValue.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/Remove-SqlColumnEncryptionKeyValue.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -43,7 +43,7 @@ The **Remove-SqlColumnEncryptionKeyValue** cmdlet modifies a column encryption k
 
 ### Example 1: Remove a column encryption key value
 ```
-PS C:\>Remove-SqlColumnEncryptionKeyValue -Name "CEK1" -ColumnMasterKey "CMK1"
+PS C:\> Remove-SqlColumnEncryptionKeyValue -Name "CEK1" -ColumnMasterKey "CMK1"
 ```
 
 This command removes the column encryption key value encrypted with a column master key named CMK1 from the column encryption key database object named CEK1.
@@ -179,5 +179,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Configure Always Encrypted using PowerShell](https://msdn.microsoft.com/library/mt755926.aspx)
 
 [Add-SqlColumnEncryptionKeyValue](xref:sqlserver-module/vlatest/Add-SqlColumnEncryptionKeyValue.md)
-
-

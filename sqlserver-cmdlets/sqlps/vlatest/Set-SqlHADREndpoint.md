@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 7BBEF9E5-35B2-450D-8128-EF070DE75D15
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 1/4/2017 6:38 PM
+ms.date: 1/4/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlps/vlatest/Set-SqlHADREndpoint.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlps/vlatest/Set-SqlHADREndpoint.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlps/vlatest/Set-SqlHADREndpoint.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/4c48bd1c26220ff873e612527853aeeef98777da/sqlserver-cmdlets/sqlps/vlatest/Set-SqlHADREndpoint.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -47,14 +47,14 @@ The **Set-SqlHADREndpoint** cmdlet changes the properties of a database mirrorin
 
 ### Example 1: Set the port number of a database mirroring endpoint
 ```
-PS C:\>Set-SqlHADREndpoint -Path "SQLSERVER:\Sql\Computer\Instance\Endpoints\MainDbmEndpoint" -Port 5050
+PS C:\> Set-SqlHADREndpoint -Path "SQLSERVER:\Sql\Computer\Instance\Endpoints\MainDbmEndpoint" -Port 5050
 ```
 
 This command sets the port number of the database mirroring endpoint named MainDbmEndpoint to 5050 on the server instance named Computer\Instance.
 
 ### Example 2: Start a database mirroring endpoint
 ```
-PS C:\>Set-SqlHADREndpoint -Path "SQLSERVER:\Sql\Computer\Instance\Endpoints\MainDbmEndpoint" -State Started
+PS C:\> Set-SqlHADREndpoint -Path "SQLSERVER:\Sql\Computer\Instance\Endpoints\MainDbmEndpoint" -State Started
 ```
 
 This command starts the database mirroring endpoint named MainDbmEndpoint on the server instance Computer\Instance.
@@ -63,7 +63,7 @@ This command starts the database mirroring endpoint named MainDbmEndpoint on the
 
 ### -AuthenticationOrder
 Specifies the order and type of authentication that is used by the endpoint.
-. If the specified option calls for a certificate, the **Certificate** parameter must be set unless a certificate is already associated with the endpoint.
+. If the specified option calls for a certificate, the *Certificate* parameter must be set unless a certificate is already associated with the endpoint.
 Valid values are: 
 
 - Certificate
@@ -135,7 +135,7 @@ Valid values are:
 - RC4
 - RC4Aes
 
-NOTE: The RC4 algorithm is only supported for backward compatibility.
+The RC4 algorithm is only supported for backward compatibility.
 New material can only be encrypted using RC4 or RC4_128 when the database is in compatibility level 90 or 100, but this is not recommended.
 For improved security, use a newer algorithm such as one of the AES algorithms instead.
 
@@ -265,7 +265,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -281,7 +281,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -312,5 +311,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## RELATED LINKS
 
 [New-SqlHADREndpoint](xref:sqlps/vlatest/New-SqlHADREndpoint.md)
-
-

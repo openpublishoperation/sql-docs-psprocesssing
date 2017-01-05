@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: CEC02D90-7B4E-4973-AE57-30708B0F680A
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 1/4/2017 6:38 PM
+ms.date: 1/4/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlps/vlatest/Invoke-Sqlcmd.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlps/vlatest/Invoke-Sqlcmd.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlps/vlatest/Invoke-Sqlcmd.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/4c48bd1c26220ff873e612527853aeeef98777da/sqlserver-cmdlets/sqlps/vlatest/Invoke-Sqlcmd.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -48,13 +48,13 @@ When this cmdlet is run, the first result set that the script returns is display
 If subsequent result sets contain different column lists than the first, those result sets are not displayed.
 If subsequent result sets after the first set have the same column list, their rows are appended to the formatted table that contains the rows that were returned by the first result set.
 
-You can display SQL Server message output, such as those that result from the SQL PRINT statement, by specifying the **Verbose** parameter.
+You can display SQL Server message output, such as those that result from the SQL PRINT statement, by specifying the *Verbose* parameter.
 
 ## EXAMPLES
 
 ### Example 1: Connect to a named instance and run a script
 ```
-PS C:\>Invoke-Sqlcmd -Query "SELECT GETDATE() AS TimeOfQuery;" -ServerInstance "MyComputer\MainInstance"
+PS C:\> Invoke-Sqlcmd -Query "SELECT GETDATE() AS TimeOfQuery;" -ServerInstance "MyComputer\MainInstance"
  TimeOfQuery
  -----------
  5/13/2010 8:49:43 PM
@@ -64,7 +64,7 @@ This command connects to a named instance of the SQL Database Engine on a comput
 
 ### Example 2: Invoke commands in a script file and save the output in a text file
 ```
-PS C:\>Invoke-Sqlcmd -InputFile "C:\ScriptFolder\TestSqlCmd.sql" | Out-File -FilePath "C:\ScriptFolder\TestSqlCmd.rpt"
+PS C:\> Invoke-Sqlcmd -InputFile "C:\ScriptFolder\TestSqlCmd.sql" | Out-File -FilePath "C:\ScriptFolder\TestSqlCmd.rpt"
 Output sent to TestSqlCmd.rpt.
 ```
 
@@ -73,8 +73,8 @@ The output file may contain proprietary information, so you should secure the ou
 
 ### Example 3: Invoke a script and pass in variable values from a string
 ```
-PS C:\>$StringArray = "MYVAR1='String1'", "MYVAR2='String2'"
-PS C:\>Invoke-Sqlcmd -Query "SELECT `$(MYVAR1) AS Var1, `$(MYVAR2) AS Var2;" -Variable $StringArray
+PS C:\> $StringArray = "MYVAR1='String1'", "MYVAR2='String2'"
+PS C:\> Invoke-Sqlcmd -Query "SELECT `$(MYVAR1) AS Var1, `$(MYVAR2) AS Var2;" -Variable $StringArray
 Var1     Var2
 ----     ----
 String1  String2
@@ -98,15 +98,15 @@ Then it calls **Get-Item** to retrieve a SQL Management Object **Server** object
 
 ### Example 5: Run a query and display verbose output
 ```
-PS C:\>Invoke-Sqlcmd -Query "PRINT N'abc'" -Verbose
+PS C:\> Invoke-Sqlcmd -Query "PRINT N'abc'" -Verbose
 VERBOSE: abc
 ```
 
-This command uses the Windows PowerShell*Verbose* parameter to return the message output of the SQL PRINT command.
+This command uses the Windows PowerShell *Verbose* parameter to return the message output of the SQL PRINT command.
 
 ### Example 6: Invoke a command using a positional string as input
 ```
-PS C:\>Invoke-Sqlcmd "SELECT DB_NAME() AS DatabaseName;"
+PS C:\> Invoke-Sqlcmd "SELECT DB_NAME() AS DatabaseName;"
  WARNING: Using provider context. Server = MyComputer, Database = AdventureWorks2014. 
 
  DatabaseName
@@ -496,5 +496,3 @@ Formatted table
 ## RELATED LINKS
 
 [SQL Server 2016 with Windows PowerShell Cmdlets](xref:sqlps/vlatest/SQLPS.md)
-
-

@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 6E725DAB-116A-4E67-B3C6-C0EA32DA878A
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/Resume-SqlAvailabilityDatabase.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/Resume-SqlAvailabilityDatabase.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/Resume-SqlAvailabilityDatabase.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/Resume-SqlAvailabilityDatabase.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -46,14 +46,14 @@ If you resume a particular secondary database, only that database is affected.
 
 ### Example 1: Resume synchronization for a database
 ```
-PS C:\>Resume-SqlAvailabilityDatabase -Path "SQLSERVER:\Sql\Server\Instance\AvailabilityGroups\MainAG\AvailabilityDatabases\Database16"
+PS C:\> Resume-SqlAvailabilityDatabase -Path "SQLSERVER:\Sql\Server\Instance\AvailabilityGroups\MainAG\AvailabilityDatabases\Database16"
 ```
 
 This command resumes data synchronization for the availability database named Database16 in the availability group named MainAG.
 
 ### Example 2: Resume synchronization for all databases
 ```
-PS C:\>Get-ChildItem "SQLSERVER:\Sql\Server\Instance\AvailabilityGroups\MainAG\AvailabilityDatabases" | Resume-SqlAvailabilityDatabase
+PS C:\> Get-ChildItem "SQLSERVER:\Sql\Server\Instance\AvailabilityGroups\MainAG\AvailabilityDatabases" | Resume-SqlAvailabilityDatabase
 ```
 
 This command gets all the availability databases that belong to MainAG, and then passes them to the current cmdlet by using the pipeline operator.
@@ -61,7 +61,7 @@ The current cmdlet resumes synchronization for each availability database.
 
 ### Example 3: Create a script to resume a database
 ```
-PS C:\>Resume-SqlAvailabilityDatabase -Path "SQLSERVER:\Sql\Server\Instance\AvailabilityGroups\MainAG\AvailabilityDatabases\Database16" -Script
+PS C:\> Resume-SqlAvailabilityDatabase -Path "SQLSERVER:\Sql\Server\Instance\AvailabilityGroups\MainAG\AvailabilityDatabases\Database16" -Script
 ```
 
 This command creates a Transact-SQL script that resumes database synchronization for the availability database named Database16 in the availability group named MainAG.
@@ -141,7 +141,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -157,7 +156,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -205,5 +204,3 @@ You can pass an availability database to this cmdlet.
 [Remove-SqlAvailabilityDatabase](xref:sqlserver-module/vlatest/Remove-SqlAvailabilityDatabase.md)
 
 [Suspend-SqlAvailabilityDatabase](xref:sqlserver-module/vlatest/Suspend-SqlAvailabilityDatabase.md)
-
-

@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 0E1098BE-B126-4A2E-82ED-7C07DBCA9B2A
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 1/4/2017 6:38 PM
+ms.date: 1/4/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlps/vlatest/Suspend-SqlAvailabilityDatabase.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlps/vlatest/Suspend-SqlAvailabilityDatabase.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlps/vlatest/Suspend-SqlAvailabilityDatabase.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/4c48bd1c26220ff873e612527853aeeef98777da/sqlserver-cmdlets/sqlps/vlatest/Suspend-SqlAvailabilityDatabase.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -46,14 +46,14 @@ If you suspend a primary database, data movement stops on every secondary replic
 
 ### Example 1: Suspend synchronization for a database
 ```
-PS C:\>Suspend-SqlAvailabilityDatabase -Path "SQLSERVER:\Sql\Server\Instance\AvailabilityGroups\MainAG\AvailabilityDatabases\Database16"
+PS C:\> Suspend-SqlAvailabilityDatabase -Path "SQLSERVER:\Sql\Server\Instance\AvailabilityGroups\MainAG\AvailabilityDatabases\Database16"
 ```
 
 This command suspends data synchronization for the availability database Database16 in the availability group named MainAG on the server instance named Server\Instance.
 
 ### Example 2: Suspend synchronization for all databases
 ```
-PS C:\>Get-ChildItem "SQLSERVER:\Sql\Server\Instance\AvailabilityGroups\MainAG\AvailabilityDatabases" | Suspend-SqlAvailabilityDatabase
+PS C:\> Get-ChildItem "SQLSERVER:\Sql\Server\Instance\AvailabilityGroups\MainAG\AvailabilityDatabases" | Suspend-SqlAvailabilityDatabase
 ```
 
 This command gets all the availability databases that belong to MainAG, and then passes them to the current cmdlet by using the pipeline operator.
@@ -61,7 +61,7 @@ The current cmdlet suspends each availability database.
 
 ### Example 3: Create a script to suspend a database
 ```
-PS C:\>Suspend-SqlAvailabilityDatabase -Path "SQLSERVER:\Sql\Server\Instance\AvailabilityGroups\MainAG\AvailabilityDatabases\Database16" -Script
+PS C:\> Suspend-SqlAvailabilityDatabase -Path "SQLSERVER:\Sql\Server\Instance\AvailabilityGroups\MainAG\AvailabilityDatabases\Database16" -Script
 ```
 
 This command creates a Transact-SQL script that suspends the availability database named Database16 in the availability group named MainAG.
@@ -116,7 +116,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -132,7 +132,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -167,5 +166,3 @@ You can pass an availability database to this cmdlet.
 [Remove-SqlAvailabilityDatabase](xref:sqlps/vlatest/Remove-SqlAvailabilityDatabase.md)
 
 [Resume-SqlAvailabilityDatabase](xref:sqlps/vlatest/Resume-SqlAvailabilityDatabase.md)
-
-

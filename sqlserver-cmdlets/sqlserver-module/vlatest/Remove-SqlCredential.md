@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 175BEB2E-1087-48E6-AD60-B80CDE2F84DF
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/Remove-SqlCredential.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/Remove-SqlCredential.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/Remove-SqlCredential.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/Remove-SqlCredential.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -41,20 +41,20 @@ The **Remove-SqlCredential** cmdlet removes a SQL Server credential object.
 This cmdlet supports the following two modes of operation:
 
 - Specifies the path or location of the credential including the credential name using the *Path* parameter.
-- Passes a **Smo.Credential** object to the object using the **InputObject** parameter.
+- Passes a **Smo.Credential** object to the object using the *InputObject* parameter.
 
 ## EXAMPLES
 
 ### Example 1: Remove a SQL credential
 ```
-PS C:\>Remove-SqlCredential -Path "SQLSERVER:\SQL\Computer\Instance\Credentials\MySqlCredential"
+PS C:\> emove-SqlCredential -Path "SQLSERVER:\SQL\Computer\Instance\Credentials\MySqlCredential"
 ```
 
 This command removes the SQL credential named MySqlCredential using the path specified in the *Path* parameter.
 
 ### Example 2: Remove a SQL credential through input pipe
 ```
-PS C:\>$Cred = Get-SqlCredential -Name MySqlCredential $Cred | Remove-SqlCredential
+PS C:\> $Cred = Get-SqlCredential -Name MySqlCredential $Cred | Remove-SqlCredential
 ```
 
 The command gets the credential object from the **Get-Credential** cmdlet and then uses the pipeline to pass it to the **Remove-SqlCredential** cmdlet to remove the SQL credential named MySqlCredential.
@@ -133,7 +133,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -149,7 +148,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -165,7 +164,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Specifies an input credential object, as an array.
-You can use the Get-SqlCredential to get the object.
+You can use the **Get-SqlCredential** to get the object.
 
 ```yaml
 Type: Credential[]
@@ -195,5 +194,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [New-SqlCredential](xref:sqlserver-module/vlatest/New-SqlCredential.md)
 
 [Set-SqlCredential](xref:sqlserver-module/vlatest/Set-SqlCredential.md)
-
-

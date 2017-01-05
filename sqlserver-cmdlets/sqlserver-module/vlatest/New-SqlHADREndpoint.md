@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 5379F9EF-55E2-4170-BFBC-C3AC6595F586
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/New-SqlHADREndpoint.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/New-SqlHADREndpoint.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/New-SqlHADREndpoint.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/New-SqlHADREndpoint.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -52,7 +52,7 @@ If a server instance possesses a database mirroring endpoint, use the existing e
 
 ### Example 1: Create a database mirroring endpoint
 ```
-PS C:\>New-SqlHADREndpoint -Path "SQLSERVER:\Sql\Computer\Instance" -Name "MainEndpoint"
+PS C:\> New-SqlHADREndpoint -Path "SQLSERVER:\Sql\Computer\Instance" -Name "MainEndpoint"
 ```
 
 This command creates a database mirroring endpoint named MainEndpoint on the server instance located at the specified path.
@@ -60,7 +60,7 @@ This endpoint uses the default port, 5022.
 
 ### Example 2: Create a database mirroring endpoint that requires encryption
 ```
-PS C:\>New-SqlHADREndpoint -Path "SQLSERVER:\Sql\Computer\Instance" -Name "MainEndpoint" -Port 4022 -EncryptionAlgorithm Aes' -Encryption Required
+PS C:\> New-SqlHADREndpoint -Path "SQLSERVER:\Sql\Computer\Instance" -Name "MainEndpoint" -Port 4022 -EncryptionAlgorithm Aes' -Encryption Required
 ```
 
 This command creates a database mirroring endpoint named MainEndpoint on the server instance located at the specified path.
@@ -69,7 +69,7 @@ The endpoint uses the AES algorithm for encryption and requires that connections
 
 ### Example 3: Create a database mirroring endpoint that is encrypted with a certificate
 ```
-PS C:\>New-SqlHADREndpoint -Path "SQLSERVER:\Sql\Computer\Instance" -Name "MainEndpoint" -AuthenticationOrder 
+PS C:\> New-SqlHADREndpoint -Path "SQLSERVER:\Sql\Computer\Instance" -Name "MainEndpoint" -AuthenticationOrder 
 Certificate -Certificate "EncryptionCertificate"
 ```
 
@@ -78,7 +78,7 @@ This endpoint uses the certificate named EncryptionCertificate to authenticate c
 
 ### Example 4: Create a database mirroring endpoint script
 ```
-PS C:\>New-SqlHADREndpoint -Path "SQLSERVER:\Sql\Computer\Instance" -Name "MainEndpoint" -Script
+PS C:\> New-SqlHADREndpoint -Path "SQLSERVER:\Sql\Computer\Instance" -Name "MainEndpoint" -Script
 ```
 
 This command outputs the Transact-SQL script that creates a database mirroring endpoint named MainEndpoint on the server instance located at the specified path.
@@ -159,7 +159,7 @@ Valid values are:
 - CertificateNegotiate
 - CertificateNtlm
 - Kerberos
--  KerberosCertificate
+- KerberosCertificate
 - Negotiate
 - NegotiateCertificate
 - Ntlm
@@ -213,7 +213,7 @@ Valid values are:
 
 By default the endpoint will use Aes encryption.
 
-NOTE: The RC4 algorithm is only supported for backward compatibility.
+The RC4 algorithm is only supported for backward compatibility.
 New material can only be encrypted using RC4 or RC4_128 when the database is in compatibility level 90 or 100, but this is not recommended.
 For increased security, use a newer algorithm such as one of the AES algorithms instead.
 
@@ -318,7 +318,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -334,8 +333,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
-
+Prompts you for confirmation before running the cmdlet.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
@@ -379,5 +377,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## RELATED LINKS
 
 [Set-SqlHADREndpoint](xref:sqlserver-module/vlatest/Set-SqlHADREndpoint.md)
-
-

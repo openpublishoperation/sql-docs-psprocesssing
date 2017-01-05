@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 00B5B96E-5E48-43D3-869F-E2E6D666ED38
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/Read-SqlTableData.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/Read-SqlTableData.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/Read-SqlTableData.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/Read-SqlTableData.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -68,7 +68,7 @@ A collection of **System.Data.DateRow** objects.
 
 ### Example 1: Get three rows from a table
 ```
-PS C:\>Read-SqlTableData -ServerInstance "MyServer\MyInstance" -DatabaseName "MyDatabase" -SchemaName "dbo" -TableName "MyTable" -TopN 3
+PS C:\> Read-SqlTableData -ServerInstance "MyServer\MyInstance" -DatabaseName "MyDatabase" -SchemaName "dbo" -TableName "MyTable" -TopN 3
 Id Name   Amount
 -- ----   ------
 10 AAAAA  -1.2
@@ -81,7 +81,7 @@ The *TopN* parameter specifies the number of rows.
 
 ### Example 2: Display a whole table
 ```
-PS C:\>cd SQLSERVER:\sql\MyServer\MyInstance\Databases\MyDatabase\Tables\dbo.CSVTable
+PS C:\> cd SQLSERVER:\sql\MyServer\MyInstance\Databases\MyDatabase\Tables\dbo.CSVTable
 PS SQLSERVER:\sql\MyServer\MyInstance\Databases\MyDatabase\Tables\dbo.CSVTable> Read-SqlTableData
 Id Name Amount
 -- ---- ------
@@ -101,7 +101,7 @@ Because the command uses its context, it does not specify any parameters.
 
 ### Example 3: Display selected sorted columns
 ```
-PS C:\>cd SQLSERVER:\sql\MyServer\MyInstance\Databases\MyDatabase\Tables\dbo.CSVTable
+PS C:\> cd SQLSERVER:\sql\MyServer\MyInstance\Databases\MyDatabase\Tables\dbo.CSVTable
 PS SQLSERVER:\sql\MyServer\MyInstance\Databases\MyDatabase\Tables\dbo.CSVTable> Read-SqlTableData -TopN 3 -ColumnName "Id","Name" -ColumnOrder "Id","Name" -ColumnOrderType DESC,ASC
 Id Name
 -- ----
@@ -370,7 +370,7 @@ Accept wildcard characters: False
 
 ### -Credential
 Specifies a **PSCredential** object for the connection to SQL Server.
-To obtain a credential object, use the Get-Credential cmdlet.
+To obtain a credential object, use the **Get-Credential** cmdlet.
 For more information, type `Get-Help Get-Credential`.
 
 ```yaml
@@ -431,5 +431,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Read-SqlViewData](xref:sqlserver-module/vlatest/Read-SqlViewData.md)
 
 [Write-SqlTableData](xref:sqlserver-module/vlatest/Write-SqlTableData.md)
-
-

@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 9136A0F5-E4EC-424F-874C-D317BA49CACB
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/Get-SqlInstance.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/Get-SqlInstance.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/Get-SqlInstance.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/Get-SqlInstance.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -41,7 +41,7 @@ You must ensure that you run SQL Server Cloud Adapter on the computer that hosts
 
 ### Example 1: Get an SQL Server instance on a computer
 ```
-PS C:\>Get-SqlInstance -Credential $Credential -MachineName "Computer002" -Name "InstanceName" -AcceptSelfSignedCertificate;
+PS C:\> Get-SqlInstance -Credential $Credential -MachineName "Computer002" -Name "InstanceName" -AcceptSelfSignedCertificate;
 ```
 
 This command gets the SQL Server instance named InstanceName on the computer named Computer002.
@@ -49,7 +49,7 @@ The self-signed certificate of the target machine will be automatically accepted
 
 ### Example 2: Get all instances of SQL Server on a computer
 ```
-PS C:\>Get-SqlInstance -Credential $Credential -MachineName "Computer005" -AcceptSelfSignedCertificate;
+PS C:\> Get-SqlInstance -Credential $Credential -MachineName "Computer005" -AcceptSelfSignedCertificate;
 ```
 
 This command gets all instances of SQL Server on the computer named Computer005.
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Specifies the name of the instance of SQL Server, when you want to retrieve a specific instance of SQL Serveron the target machine.
+Specifies the name of the instance of SQL Server, when you want to retrieve a specific instance of SQL Server on the target machine.
 
 ```yaml
 Type: String
@@ -89,7 +89,7 @@ Accept wildcard characters: False
 
 ### -Credential
 Specifies a **PSCredential** object for the connection to the SQL Server.
-To obtain a credential object, use the Get-Credential cmdlet.
+To obtain a credential object, use the **Get-Credential** cmdlet.
 For more information, type `Get-Help Get-Credential`.
 
 ```yaml
@@ -194,7 +194,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -210,7 +209,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -238,5 +237,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Start-SqlInstance](xref:sqlserver-module/vlatest/Start-SqlInstance.md)
 
 [Stop-SqlInstance](xref:sqlserver-module/vlatest/Stop-SqlInstance.md)
-
-

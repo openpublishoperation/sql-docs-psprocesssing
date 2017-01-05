@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 588A3F9A-938D-4C64-BEEE-F83D1455960C
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 1/4/2017 6:38 PM
+ms.date: 1/4/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlps/vlatest/New-SqlAvailabilityGroupListener.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlps/vlatest/New-SqlAvailabilityGroupListener.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlps/vlatest/New-SqlAvailabilityGroupListener.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/4c48bd1c26220ff873e612527853aeeef98777da/sqlserver-cmdlets/sqlps/vlatest/New-SqlAvailabilityGroupListener.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -44,7 +44,7 @@ Run this cmdlet on the server instance that hosts the primary replica.
 
 ### Example 1: Create a listener for an availability group
 ```
-PS C:\>New-SqlAvailabilityGroupListener -Name "MainListener" -Path "SQLSERVER:\SQL\PrimaryServer\InstanceName\AvailabilityGroups\MainAG"
+PS C:\> New-SqlAvailabilityGroupListener -Name "MainListener" -Path "SQLSERVER:\SQL\PrimaryServer\InstanceName\AvailabilityGroups\MainAG"
 ```
 
 This command creates an availability group listener named MainListener for the availability group named MainAG.
@@ -53,7 +53,7 @@ Run this command on the server instance that hosts the primary replica.
 
 ### Example 2: Create a listener for an availability group that has a non-default port
 ```
-PS C:\>New-SqlAvailabilityGroupListener -Name "MainListener" -Path "SQLSERVER:\SQL\PrimaryServer\InstanceName\AvailabilityGroups\MainAG" -Port 1434
+PS C:\> New-SqlAvailabilityGroupListener -Name "MainListener" -Path "SQLSERVER:\SQL\PrimaryServer\InstanceName\AvailabilityGroups\MainAG" -Port 1434
 ```
 
 This command creates an availability group listener named MainListener for the availability group named MainAG.
@@ -62,7 +62,7 @@ This example assigns the port 1434 on which it listens.
 
 ### Example 3: Create a listener for an availability group that uses DHCP
 ```
-PS C:\>New-SqlAvailabilityGroupListener -Name "MainListener" -DhcpSubnet "192.169.0.1/255.255.252.0" -Path "SQLSERVER:\SQL\PrimaryServer\InstanceName\AvailabilityGroups\MainAG"
+PS C:\> New-SqlAvailabilityGroupListener -Name "MainListener" -DhcpSubnet "192.169.0.1/255.255.252.0" -Path "SQLSERVER:\SQL\PrimaryServer\InstanceName\AvailabilityGroups\MainAG"
 ```
 
 This command creates an availability group listener named MainListener for the availability group named MainAG.
@@ -70,15 +70,15 @@ This listener acquires a virtual IP address in the specified subnet by using DHC
 
 ### Example 4: Create a listener for an availability group that uses a static address
 ```
-PS C:\>New-SqlAvailabilityGroupListener -Name "MainListener" -StaticIp "192.168.3.1/255.255.252.0" -Path "SQLSERVER:\Sql\Computer\Instance\AvailabilityGroups\MainAG"
+PS C:\> New-SqlAvailabilityGroupListener -Name "MainListener" -StaticIp "192.168.3.1/255.255.252.0" -Path "SQLSERVER:\Sql\Computer\Instance\AvailabilityGroups\MainAG"
 ```
 
 This command creates an availability group listener named MainListener for the availability group named MainAG.
-This listener uses the IPv4 address specified by the **StaticIp** parameter as its virtual IP address.
+This listener uses the IPv4 address specified by the *StaticIp* parameter as its virtual IP address.
 
 ### Example 5: Create a script that creates a listener
 ```
-PS C:\>New-SqlAvailabilityGroupListener -Name "MainListener" -Path "SQLSERVER:\Sql\Computer\Instance\AvailabilityGroups\MainAG" -Script
+PS C:\> New-SqlAvailabilityGroupListener -Name "MainListener" -Path "SQLSERVER:\Sql\Computer\Instance\AvailabilityGroups\MainAG" -Script
 ```
 
 This command creates a Transact-SQL script that creates an availability group listener named MainListener for the availability group named MainAG.
@@ -91,7 +91,7 @@ Specifies an IPv4 address and subnet mask of a network.
 The listener determines the address on this network by using DHCP.
 Specify the address in for following format: 192.168.0.1\255.255.255.0.
 
-If you specify this parameter, do not specify the **StaticIp** parameter.
+If you specify this parameter, do not specify the *StaticIp* parameter.
 
 ```yaml
 Type: String
@@ -187,7 +187,7 @@ Specifies an array of addresses.
 Each address entry is either an IPv4 address and subnet mask or an IPv6 address.
 The listener listens on the addresses that this parameter specifies.
 
-If you specify this parameter, do not specify the **DhcpSubnet** parameter.
+If you specify this parameter, do not specify the *DhcpSubnet* parameter.
 
 ```yaml
 Type: String[]
@@ -202,7 +202,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -218,7 +218,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -249,5 +248,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Add-SqlAvailabilityGroupListenerStaticIp](xref:sqlps/vlatest/Add-SqlAvailabilityGroupListenerStaticIp.md)
 
 [Set-SqlAvailabilityGroupListener](xref:sqlps/vlatest/Set-SqlAvailabilityGroupListener.md)
-
-

@@ -3,11 +3,11 @@ external help file: Microsoft.SqlServer.Management.PSProvider.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 40A494F2-8238-4DB3-9F6E-B0A1A53A8FED
-updated_at: 12/13/2016 8:09 PM
-ms.date: 12/13/2016
+updated_at: 1/5/2017 8:57 AM
+ms.date: 1/5/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/Convert-UrnToPath.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/live/sqlserver-cmdlets/sqlserver-module/vlatest/Convert-UrnToPath.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/f97823fbeb2d71358573a8e4b5c2c322a3a5c138/sqlserver-cmdlets/sqlserver-module/vlatest/Convert-UrnToPath.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/0d97835841eb5cfbe37d096037375a2e0c3eb87c/sqlserver-cmdlets/sqlserver-module/vlatest/Convert-UrnToPath.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
@@ -39,8 +39,8 @@ For example, a table name "Main:Table" is encoded as "Main%3ATable".
 
 ### Example 1: Get a string containing the current path
 ```
-PS C:\>Set-Location "SQLSERVER:\SQL\MyComputer\MyInstance\Databases\AdventureWorks2014"
-PS SQLSERVER:\SQL\MyComputer\MyInstance\Databases\AdventureWorks2014>Convert-UrnToPath -Urn (Get-Item .).Urn.ToString()
+PS C:\> Set-Location "SQLSERVER:\SQL\MyComputer\MyInstance\Databases\AdventureWorks2014"
+PS SQLSERVER:\SQL\MyComputer\MyInstance\Databases\AdventureWorks2014> Convert-UrnToPath -Urn (Get-Item .).Urn.ToString()
 SQLSERVER:\SQL\MyComputer\MyInstance\Databases\AdventureWorks2014
 ```
 
@@ -49,15 +49,15 @@ The example uses the ToString() function of the Urn property to return the Urn a
 
 ### Example 2: Set the path location based on a URN
 ```
-PS C:\>Set-Location (Convert-UrnToPath -Urn "Server[@Name='MyComputer']/Database[@Name='AdventureWorks']/Table[@Name='Address' and @Schema = 'Person']")
+PS C:\> Set-Location (Convert-UrnToPath -Urn "Server[@Name='MyComputer']/Database[@Name='AdventureWorks']/Table[@Name='Address' and @Schema = 'Person']")
 ```
 
 This command sets the path to the location specified in a SQL Server Management Object URN.
 
 ### Example 3: Get database paths
 ```
-PS C:\>Set-Location "SQLSERVER:\SQL\MyComputer\DEFAULT\Databases"
-PS SQLSERVER:\SQL\MyComputer\DEFAULT\Databases>foreach ($Item in Get-ChildItem) { $Item.Urn.ToString() | Convert-UrnToPath }
+PS C:\> Set-Location "SQLSERVER:\SQL\MyComputer\DEFAULT\Databases"
+PS SQLSERVER:\SQL\MyComputer\DEFAULT\Databases> ForEach ($Item in Get-ChildItem) { $Item.Urn.ToString() | Convert-UrnToPath }
 SQLSERVER:\SQL\MyComputer\DEFAULT\Databases\AdventureWorks2014
 ```
 
@@ -136,5 +136,3 @@ Specifies a string that represents a SQL Server PowerShell provider path.
 ## NOTES
 
 ## RELATED LINKS
-
-
