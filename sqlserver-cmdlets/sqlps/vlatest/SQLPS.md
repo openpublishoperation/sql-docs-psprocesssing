@@ -16,7 +16,7 @@ author: stevestein
 ms.author: sstein
 keywords: powershell, cmdlet
 manager: jhubbard
-open_to_public_contributors: true
+open_to_public_contributors: True
 ms.service: sql-server
 ---
 
