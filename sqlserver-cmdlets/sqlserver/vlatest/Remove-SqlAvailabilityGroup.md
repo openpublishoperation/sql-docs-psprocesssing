@@ -3,17 +3,17 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: EBC4CDAF-03BD-477F-BD5C-DA965727620E
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 3/13/2017 4:14 PM
+ms.date: 3/13/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Remove-SqlAvailabilityGroup.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Remove-SqlAvailabilityGroup.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlserver/vlatest/Remove-SqlAvailabilityGroup.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/6eefe64a0ce19459190f09768267a4c79f9a6af9/sqlserver-cmdlets/sqlserver/vlatest/Remove-SqlAvailabilityGroup.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
 keywords: powershell, cmdlet
 manager: jhubbard
-open_to_public_contributors: true
+open_to_public_contributors: True
 ms.service: sql-server
 ---
 
@@ -45,7 +45,7 @@ You can run this cmdlet on any instance of SQL Server that has AlwaysOn Availabi
 
 ### Example 1: Remove an availabity group
 ```
-PS C:\>Remove-SqlAvailabilityGroup -Path "SQLSERVER:\Sql\Server\InstanceName\AvailabilityGroups\MainAG"
+PS C:\> Remove-SqlAvailabilityGroup -Path "SQLSERVER:\Sql\Server\InstanceName\AvailabilityGroups\MainAG"
 ```
 
 This command removes the availability group named MainAG.
@@ -53,7 +53,7 @@ You can run this command on any server instance that hosts an availability repli
 
 ### Example 2: Remove all availability groups
 ```
-PS C:\>Get-ChildItem "SQLSERVER:\Sql\Server\InstanceName\AvailabilityGroups" | Remove-SqlAvailabilityGroup
+PS C:\> Get-ChildItem "SQLSERVER:\Sql\Server\InstanceName\AvailabilityGroups" | Remove-SqlAvailabilityGroup
 ```
 
 This command gets all availability groups that have availability replicas in the specified location in the SQLSERVER: provider.
@@ -62,7 +62,7 @@ That cmdlet deletes each availability group.
 
 ### Example 3: Create a script to remove an availability group
 ```
-PS C:\>Remove-SqlAvailabilityGroup -Path "SQLSERVER:\Sql\Server\InstanceName\AvailabilityGroups\MainAG" -Script
+PS C:\> Remove-SqlAvailabilityGroup -Path "SQLSERVER:\Sql\Server\InstanceName\AvailabilityGroups\MainAG" -Script
 ```
 
 This command creates a Transact-SQL script that removes the availability group named MainAG.
@@ -141,7 +141,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -157,7 +156,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -208,5 +207,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Switch-SqlAvailabilityGroup](xref:sqlserver/vlatest/Switch-SqlAvailabilityGroup.md)
 
 [Test-SqlAvailabilityGroup](xref:sqlserver/vlatest/Test-SqlAvailabilityGroup.md)
-
-

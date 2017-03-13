@@ -3,17 +3,17 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 3FC92A7F-BCB2-4418-9AB5-1C194226406B
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 3/13/2017 4:14 PM
+ms.date: 3/13/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Set-SqlNetworkConfiguration.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Set-SqlNetworkConfiguration.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlserver/vlatest/Set-SqlNetworkConfiguration.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/6eefe64a0ce19459190f09768267a4c79f9a6af9/sqlserver-cmdlets/sqlserver/vlatest/Set-SqlNetworkConfiguration.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
 keywords: powershell, cmdlet
 manager: jhubbard
-open_to_public_contributors: true
+open_to_public_contributors: True
 ms.service: sql-server
 ---
 
@@ -66,7 +66,7 @@ This cmdlet supports the following modes of operation:
 
 ### Example 1: Set the network configuration of the target SQL Server
 ```
-PS C:\>CD SQLSERVER:\SQL\Computer\Instance;
+PS C:\> CD SQLSERVER:\SQL\Computer\Instance;
 PS SQLSERVER:\SQL\Computer\Instance> Set-SqlNetworkConfiguration -Credential $credential -Protocol TCP -Port 1433-NoServiceRestart -AcceptSelfSignedCertificate;
 ```
 
@@ -78,7 +78,7 @@ The self-signed certificate of the target machine is automatically accepted with
 
 ### Example 2: Set the network configuration of the target SQL Server using the pipeline
 ```
-PS C:\>Get-SqlInstance -Credential $Credential -MachineName "Computer006" | Set-SqlNetworkConfiguration -Credential $Credential -Protocol TCP -Disable -NoServiceRestart -AcceptSelfSignedCertificate;
+PS C:\> Get-SqlInstance -Credential $Credential -MachineName "Computer006" | Set-SqlNetworkConfiguration -Credential $Credential -Protocol TCP -Disable -NoServiceRestart -AcceptSelfSignedCertificate;
 ```
 
 This command gets all instances of SQL Server on the computer named Computer006 and disables TCP connections for each one of them.
@@ -285,7 +285,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -301,7 +300,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -357,5 +356,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## RELATED LINKS
 
 [SQL Server Cmdlets](xref:sqlserver/vlatest/SqlServer.md)
-
-

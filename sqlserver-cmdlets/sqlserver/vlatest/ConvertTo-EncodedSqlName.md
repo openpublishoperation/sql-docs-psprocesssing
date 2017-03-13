@@ -3,17 +3,17 @@ external help file: Microsoft.SqlServer.Management.PSProvider.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 7942B878-8FE8-4928-9F54-BCF46E622805
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 3/13/2017 4:14 PM
+ms.date: 3/13/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/ConvertTo-EncodedSqlName.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/ConvertTo-EncodedSqlName.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlserver/vlatest/ConvertTo-EncodedSqlName.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/6eefe64a0ce19459190f09768267a4c79f9a6af9/sqlserver-cmdlets/sqlserver/vlatest/ConvertTo-EncodedSqlName.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
 keywords: powershell, cmdlet
 manager: jhubbard
-open_to_public_contributors: true
+open_to_public_contributors: True
 ms.service: sql-server
 ---
 
@@ -41,7 +41,7 @@ The characters encoded by **ConvertTo-EncodedSqlName** are: \:./%\<\>*?\[\]|
 
 ### Example 1: Encode a SQL Server table name
 ```
-PS C:\>ConvertTo-EncodedSqlName -SqlName "My:Table/" "My%3ATable%2F"
+PS C:\> ConvertTo-EncodedSqlName -SqlName "My:Table/" "My%3ATable%2F"
 ```
 
 This command encodes a SQL Server table name that contains : and / characters.
@@ -120,5 +120,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Using SQL Server Identifiers in PowerShell](https://technet.microsoft.com/en-us/library/cc281841(v=sql.110).aspx)
 
 [ConvertFrom-EncodedSqlName](xref:sqlserver/vlatest/ConvertFrom-EncodedSqlName.md)
-
-

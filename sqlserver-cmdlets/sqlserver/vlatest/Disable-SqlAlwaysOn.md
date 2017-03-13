@@ -3,17 +3,17 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 4CC1D3F8-E533-4B66-8077-512EAC50A502
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 3/13/2017 4:14 PM
+ms.date: 3/13/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Disable-SqlAlwaysOn.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Disable-SqlAlwaysOn.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlserver/vlatest/Disable-SqlAlwaysOn.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/6eefe64a0ce19459190f09768267a4c79f9a6af9/sqlserver-cmdlets/sqlserver/vlatest/Disable-SqlAlwaysOn.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
 keywords: powershell, cmdlet
 manager: jhubbard
-open_to_public_contributors: true
+open_to_public_contributors: True
 ms.service: sql-server
 ---
 
@@ -48,7 +48,7 @@ Disable-SqlAlwaysOn -ServerInstance <String> [-NoServiceRestart] [-Force] [-Cred
 ## DESCRIPTION
 The **Disable-SqlAlwaysOn** cmdlet disables the AlwaysOn vailability groups feature on a SQL Server instance.
 If the AlwaysOn availability groups feature is disabled while the SQL Server service is running, the database engine service must be restarted for the changes to complete.
-Unless you specify the **Force** parameter, the cmdlet prompts you to restart the service.
+Unless you specify the *Force* parameter, the cmdlet prompts you to restart the service.
 
 If the AlwaysOn availability groups feature is already disabled, this cmdlet makes no changes.
 
@@ -60,7 +60,7 @@ You must have Administrator permissions to execute this cmdlet.
 
 ### Example 1: Disable AlwaysOn availability groups at the specified path
 ```
-PS C:\>Disable-SqlAlwaysOn -Path "SQLSERVER:\Sql\Computer\Instance"
+PS C:\> Disable-SqlAlwaysOn -Path "SQLSERVER:\Sql\Computer\Instance"
 ```
 
 This command disables AlwaysOn availability groups on the instance of SQL Server located at the specified path.
@@ -68,7 +68,7 @@ This command requires restarting the server instance, and you will be prompted t
 
 ### Example 2: Disable AlwaysOn availability groups at the specified path and restart the server without confirmation
 ```
-PS C:\>Disable-SqlAlwaysOn -Path "SQLSERVER:\Sql\Computer\Instance" -Force
+PS C:\> Disable-SqlAlwaysOn -Path "SQLSERVER:\Sql\Computer\Instance" -Force
 ```
 
 This command disables AlwaysOn availability groups on the instance of SQL Server located at the specified path.
@@ -76,7 +76,7 @@ The *Force* option causes the server instance to be restarted without prompting 
 
 ### Example 3: Disable AlwaysOn availability groups for the specified server instance
 ```
-PS C:\>Disable-SqlAlwaysOn -ServerInstance "Computer\Instance"
+PS C:\> Disable-SqlAlwaysOn -ServerInstance "Computer\Instance"
 ```
 
 This command disables AlwaysOn availability groups on the instance of SQL Server named Computer\Instance.
@@ -84,7 +84,7 @@ This command requires restarting the instance and you will be prompted to confir
 
 ### Example 4: Disable AlwaysOn availability groups for the specified server instance using Windows authentication
 ```
-PS C:\>Disable-SqlAlwaysOn -ServerInstance "Computer\Instance" -Credential (Get-Credential "DOMAIN\Username")
+PS C:\> Disable-SqlAlwaysOn -ServerInstance "Computer\Instance" -Credential (Get-Credential "DOMAIN\Username")
 ```
 
 This command disables AlwaysOn availability groups on the instance of SQL Server named Computer\Instance using Windows authentication.
@@ -93,7 +93,7 @@ This change requires restarting the instance and you will also be prompted to co
 
 ### Example 5: Disable AlwaysOn availability groups at the specified path without restarting the server
 ```
-PS C:\>Disable-SqlAlwaysOn -Path "SQLSERVER:\Sql\Computer\Instance" -NoServiceRestart
+PS C:\> Disable-SqlAlwaysOn -Path "SQLSERVER:\Sql\Computer\Instance" -NoServiceRestart
 ```
 
 This command disables AlwaysOn availability groups on the instance of SQL Server located at the specified path, but the command does not restart the instance.
@@ -121,7 +121,7 @@ Accept wildcard characters: False
 ### -NoServiceRestart
 Indicates that the user is not prompted to restart the SQL Server service.
 You must manually restart the SQL Server service for changes to take effect.
-When this parameter is set, **Force** is ignored.
+When this parameter is set, *Force* is ignored.
 
 ```yaml
 Type: SwitchParameter
@@ -207,7 +207,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -223,7 +222,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -255,7 +254,7 @@ Accept wildcard characters: False
 ### -ServerInstance
 Specifies the name of the instance of the SQL Server where AlwaysOn is disabled.
 The format should be MACHINENAME\INSTANCE.
-Use the **Credential** parameter to change the AlwaysOn setting on a remote server.
+Use the *Credential* parameter to change the AlwaysOn setting on a remote server.
 
 ```yaml
 Type: String
@@ -283,5 +282,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## RELATED LINKS
 
 [Enable-SqlAlwaysOn](xref:sqlserver/vlatest/Enable-SqlAlwaysOn.md)
-
-

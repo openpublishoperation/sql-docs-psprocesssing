@@ -3,17 +3,17 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 7A23F6EA-3CD1-4B74-9AFD-7579374BC460
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 3/13/2017 4:14 PM
+ms.date: 3/13/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Get-SqlAgentJob.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Get-SqlAgentJob.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlserver/vlatest/Get-SqlAgentJob.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/6eefe64a0ce19459190f09768267a4c79f9a6af9/sqlserver-cmdlets/sqlserver/vlatest/Get-SqlAgentJob.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
 keywords: powershell, cmdlet
 manager: jhubbard
-open_to_public_contributors: true
+open_to_public_contributors: True
 ms.service: sql-server
 ---
 
@@ -57,7 +57,7 @@ This cmdlet supports the following modes of operation to get a collection of Job
 
 ### Example 1: Get all Job instances from the specified server instance
 ```
-PS C:\>Get-SqlAgent -ServerInstance MyServerInstance | Get-SqlAgentJob
+PS C:\> Get-SqlAgent -ServerInstance MyServerInstance | Get-SqlAgentJob
 Name                      Owner                Category                  Enabled    CurrentRunStatus     DateCreated               LastModified              JobID
 ----                      -----                --------                  -------    ----------------     -----------               ------------              -----
 MyJob1                    Owner                [Uncategorized (Local)]   True       Idle                 6/2/2016 10:21:44 AM      6/2/2016 10:21:44 AM      841255df-06e8-43ef-b798-3... 
@@ -69,7 +69,7 @@ This command gets all Job instances in the server instance named MyServerInstanc
 
 ### Example 2: Get a job instance by name from the specified server instance
 ```
-PS C:\>Get-SqlAgent -ServerInstance MyServerInstance | Get-SqlAgentJob -Name MyJob1
+PS C:\> Get-SqlAgent -ServerInstance MyServerInstance | Get-SqlAgentJob -Name MyJob1
 Name                      Owner                Category                  Enabled    CurrentRunStatus     DateCreated               LastModified              JobID
 ----                      -----                --------                  -------    ----------------     -----------               ------------              -----
 MyJob1                    Owner                [Uncategorized (Local)]   True       Idle                 6/2/2016 10:21:44 AM      6/2/2016 10:21:44 AM      841255df-06e8-43ef-b798-3...
@@ -232,5 +232,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Get-SqlAgentJobSchedule](xref:sqlserver/vlatest/Get-SqlAgentJobSchedule.md)
 
 [Get-SqlAgentJobStep](xref:sqlserver/vlatest/Get-SqlAgentJobStep.md)
-
-

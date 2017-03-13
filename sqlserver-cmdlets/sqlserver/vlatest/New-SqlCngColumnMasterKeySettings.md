@@ -3,17 +3,17 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: EB155EFC-6536-4A28-B811-D0682C50C485
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 3/13/2017 4:14 PM
+ms.date: 3/13/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/New-SqlCngColumnMasterKeySettings.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/New-SqlCngColumnMasterKeySettings.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlserver/vlatest/New-SqlCngColumnMasterKeySettings.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/6eefe64a0ce19459190f09768267a4c79f9a6af9/sqlserver-cmdlets/sqlserver/vlatest/New-SqlCngColumnMasterKeySettings.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
 keywords: powershell, cmdlet
 manager: jhubbard
-open_to_public_contributors: true
+open_to_public_contributors: True
 ms.service: sql-server
 ---
 
@@ -39,7 +39,7 @@ This cmdlet sets the **KeyStoreProviderName** property to contain the name of th
 
 ### Example 1: Create a SqlColumnMasterKeySettings object
 ```
-PS C:\>$CMKSettings = New-SqlCngColumnMasterKeySettings -CngProviderName "Microsoft Software Key Storage Provider" -KeyName "AlwaysEncryptedKey"
+PS C:\> $CMKSettings = New-SqlCngColumnMasterKeySettings -CngProviderName "Microsoft Software Key Storage Provider" -KeyName "AlwaysEncryptedKey"
 ```
 
 This command creates a **SqlColumnMasterKeySettings** object referencing a key in a key store encapsulated by a CNG provider named Microsoft Software Key Storage Provider.
@@ -132,5 +132,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Configure Always Encrypted using PowerShell](https://msdn.microsoft.com/library/mt755926.aspx)
 
 [SQL Server Cmdlets](xref:sqlserver/vlatest/SqlServer.md)
-
-

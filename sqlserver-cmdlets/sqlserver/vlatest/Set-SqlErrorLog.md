@@ -3,17 +3,17 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: EC6746BF-919B-47FE-8675-67257AB1A2CA
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 3/13/2017 4:14 PM
+ms.date: 3/13/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Set-SqlErrorLog.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Set-SqlErrorLog.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlserver/vlatest/Set-SqlErrorLog.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/6eefe64a0ce19459190f09768267a4c79f9a6af9/sqlserver-cmdlets/sqlserver/vlatest/Set-SqlErrorLog.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
 keywords: powershell, cmdlet
 manager: jhubbard
-open_to_public_contributors: true
+open_to_public_contributors: True
 ms.service: sql-server
 ---
 
@@ -56,14 +56,14 @@ This cmdlet supports the following modes of operation to set logs:
 
 ### Example 1: Set the maximum number or error logs
 ```
-PS C:\>Set-SqlErrorLog -ServerInstance "MyServer\MyInstance" -MaxLogCount 11 | Out-Null
+PS C:\> Set-SqlErrorLog -ServerInstance "MyServer\MyInstance" -MaxLogCount 11 | Out-Null
 ```
 
 This command sets the maximum number of error log files to 11.
 
 ### Example 2: Return the T-SQL script code to set the maximum number or error logs
 ```
-PS C:\>Set-SqlErrorLog -ServerInstance "MyServer\MyInstance" -MaxLogCount 11 -Script
+PS C:\> Set-SqlErrorLog -ServerInstance "MyServer\MyInstance" -MaxLogCount 11 -Script
 USE [master] 
 GO
 EXEC xp_instance_regwrite N'HKEY_LOCAL_MACHINE', N'Software\Microsoft\MSSQLServer\MSSQLServer', N'NumErrorLogs', REG_DWORD, 10
@@ -239,5 +239,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## RELATED LINKS
 
 [Get-SqlErrorLog](xref:sqlserver/vlatest/Get-SqlErrorLog.md)
-
-

@@ -3,17 +3,17 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: B67946FE-25EF-4D3F-99B3-A0A64349E478
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 3/13/2017 4:14 PM
+ms.date: 3/13/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Backup-SqlDatabase.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Backup-SqlDatabase.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlserver/vlatest/Backup-SqlDatabase.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/6eefe64a0ce19459190f09768267a4c79f9a6af9/sqlserver-cmdlets/sqlserver/vlatest/Backup-SqlDatabase.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
 keywords: powershell, cmdlet
 manager: jhubbard
-open_to_public_contributors: true
+open_to_public_contributors: True
 ms.service: sql-server
 ---
 
@@ -104,27 +104,27 @@ This includes full database backups, transaction log backups, and database file 
 This cmdlet is modeled after the **Microsoft.SqlServer.Management.Smo.Backup** class.
 The parameters on this class generally correspond to properties on that **Smo** object.
 
-To back up a database by server instance path and database name, specify the server instance path in the **Path** parameter and the database name in the **Database** parameter.
+To back up a database by server instance path and database name, specify the server instance path in the *Path* parameter and the database name in the *Database* parameter.
 
-To back up a database using an **Smo.Server** object and database name, specify the **Smo.Server** object in the **InputObject** parameter, either directly or by using the pipeline operator, and the database name in the **Database** parameter.
+To back up a database using an **Smo.Server** object and database name, specify the **Smo.Server** object in the *InputObject* parameter, either directly or by using the pipeline operator, and the database name in the *Database* parameter.
 
-To back up a database by server instance and database name, specify the server instance in the **ServerInstance** parameter and the database name in the **Database** parameter.
+To back up a database by server instance and database name, specify the server instance in the *ServerInstance* parameter and the database name in the *Database* parameter.
 
-To back up a database using an **Smo.Database** object, specify the **Smo.Database** object in the **DatabaseObject** parameter, either directly or by using the pipeline operator.
+To back up a database using an **Smo.Database** object, specify the **Smo.Database** object in the *DatabaseObject* parameter, either directly or by using the pipeline operator.
 
 By default this cmdlet performs a full database backup.
-Set the type of the backup by using the **BackupAction** parameter.
+Set the type of the backup by using the *BackupAction* parameter.
 
 By default the backup file is stored in the default server backup location under the name databasename.bak for full and/or file backups and under the name databasename.trn for log backups.
-To specify a different file name, use the **BackupFile** parameter.
+To specify a different file name, use the *BackupFile* parameter.
 
-To specify a backup file location and use an auto-generated file name, specify the location by using the **BackupContainer** parameter.
+To specify a backup file location and use an auto-generated file name, specify the location by using the *BackupContainer* parameter.
 
 ## EXAMPLES
 
 ### Example 1: Backup a complete database
 ```
-PS C:\>Backup-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB"
+PS C:\> Backup-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB"
 ```
 
 This command creates a complete database backup of the database named MainDB to the default backup location of the server instance Computer\Instance.
@@ -132,8 +132,8 @@ The backup file is named MainDB.bak.
 
 ### Example 2: Backup a database based on location
 ```
-PS C:\>Set-Location "SQLSERVER:\SQL\Computer\Instance" 
-PS SQLSERVER:\SQL\Computer\Instance>Backup-SqlDatabase -Database "MainDB"
+PS C:\> Set-Location "SQLSERVER:\SQL\Computer\Instance" 
+PS SQLSERVER:\SQL\Computer\Instance> Backup-SqlDatabase -Database "MainDB"
 ```
 
 This command creates a complete database backup of the database MainDB to the default backup location of the server instance Computer\Instance.
@@ -141,7 +141,7 @@ The current working directory is used to determine the server instance where the
 
 ### Example 3: Backup the transaction log
 ```
-PS C:\>Backup-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -BackupAction Log
+PS C:\> Backup-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -BackupAction Log
 ```
 
 This command creates a backup of the transaction log of the database MainDB to the default backup location of the server instance Computer\Instance.
@@ -149,7 +149,7 @@ The backup file is named MainDB.trn.
 
 ### Example 4: Backup a database and prompt for credentials
 ```
-PS C:\>Backup-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -Credential (Get-Credential "sa")
+PS C:\> Backup-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -Credential (Get-Credential "sa")
 ```
 
 This command creates a complete database backup of the database MainDB using the sa SQL Server login.
@@ -157,14 +157,14 @@ This command prompts you for a password to complete the authentication.
 
 ### Example 5: Backup a database to a network file share
 ```
-PS C:\>Backup-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -BackupFile "\\mainserver\databasebackup\MainDB.bak"
+PS C:\> Backup-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -BackupFile "\\mainserver\databasebackup\MainDB.bak"
 ```
 
 This command creates a complete database backup of the database MainDB to the file \\\\mainserver\databasebackup\MainDB.bak.
 
 ### Example 6: Backup all databases in a server instance
 ```
-PS C:\>Get-ChildItem "SQLSERVER:\SQL\Computer\Instance\Databases" | Backup-SqlDatabase
+PS C:\> Get-ChildItem "SQLSERVER:\SQL\Computer\Instance\Databases" | Backup-SqlDatabase
 ```
 
 This command backs up all databases on the server instance Computer\Instance to the default backup location.
@@ -172,8 +172,8 @@ The backup files are named \<database name\>.bak.
 
 ### Example 7: Backup all databases in a server instance to a network file share
 ```
-PS C:\>Set-Location "SQLSERVER:\SQL\Computer\Instance\Databases"
-PS SQLSERVER:\SQL\Computer\Instance\Databases>foreach($database in (Get-ChildItem)) {
+PS C:\> Set-Location "SQLSERVER:\SQL\Computer\Instance\Databases"
+PS SQLSERVER:\SQL\Computer\Instance\Databases> ForEach($database in (Get-ChildItem)) {
 >>> $dbName = $database.Name
 >>> Backup-SqlDatabase -Database $dbName -BackupFile "\\mainserver\databasebackup\$dbName.bak"
 >>> }
@@ -184,14 +184,14 @@ The backup files are named \<database name\>.bak.
 
 ### Example 8: Backup all files in secondary file groups
 ```
-PS C:\>Backup-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -BackupAction Files -DatabaseFileGroup "FileGroupJan","FileGroupFeb"
+PS C:\> Backup-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -BackupAction Files -DatabaseFileGroup "FileGroupJan","FileGroupFeb"
 ```
 
 This command creates a full file backup of every file in the secondary filegroups FileGroupJan and FileGroupFeb.
 
 ### Example 9: Create a differential backup
 ```
-PS C:\>Backup-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -Incremental
+PS C:\> Backup-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -Incremental
 ```
 
 This command creates a differential backup of the database MainDB to the default backup location of the server instance Computer\Instance.
@@ -199,37 +199,37 @@ The backup file is named MainDB.bak.
 
 ### Example 10: Create a backup to a tape drive
 ```
-PS C:\>$TapeDevice = New-Object Microsoft.Sqlserver.Management.Smo.BackupDeviceItem("\\.\tape0", "Tape")
-PS C:\>Backup-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -BackupDevice $TapeDevice
+PS C:\> $TapeDevice = New-Object Microsoft.Sqlserver.Management.Smo.BackupDeviceItem("\\.\tape0", "Tape")
+PS C:\> Backup-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -BackupDevice $TapeDevice
 ```
 
 This command creates a full backup of the database MainDB to the tape device \\\\.\tape0.
 To represent this device, the command constructs an instance of the **Microsoft.Sqlserver.Management.Smo.BackupDeviceItem** object.
 The constructor takes two arguments, the name of the backup device and the type of the backup device.
-This **BackupDeviceItem** object is passed to the **BackupDevice** parameter of the **Backup-SqlDatabase** cmdlet.
+This **BackupDeviceItem** object is passed to the *BackupDevice* parameter of the **Backup-SqlDatabase** cmdlet.
 
 ### Example 11: Backup a database to the Azure Blob Storage service
 ```
-PS C:\>Backup-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -BackupContainer "https://storageaccountname.blob.core.windows.net/containername" -SqlCredential "SQLCredentialName"
+PS C:\> Backup-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainDB" -BackupContainer "https://storageaccountname.blob.core.windows.net/containername" -SqlCredential "SQLCredentialName"
 ```
 
 This command creates a full backup of the database MainDB to the Windows Azure Blob Storage service.
-It uses **BackupContainer** to specify the location (URL) of the Windows Azure Blob container.
+It uses *BackupContainer* to specify the location (URL) of the Windows Azure Blob container.
 The name of the backup file is auto-generated.
-The **SqlCredential** parameter is used to specify the name of the SQL Server credential that stores the authentication information.
+The *SqlCredential* parameter is used to specify the name of the SQL Server credential that stores the authentication information.
 
 ### Example 12: Backup a database to the Azure Blob Storage service and specify the file name
 ```
-PS C:\>Backup-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainyDB" -BackupFile "https://storageaccountname.blob.core.windows.net/containername/MainDB.bak" -SqlCredential "SQLCredentialName"
+PS C:\> Backup-SqlDatabase -ServerInstance "Computer\Instance" -Database "MainyDB" -BackupFile "https://storageaccountname.blob.core.windows.net/containername/MainDB.bak" -SqlCredential "SQLCredentialName"
 ```
 
 This command creates a full backup of the database MainDB to the Windows Azure Blob Storage service.
-It uses the **BackupFile** parameter to specify the location (URL) and the backup file name.
-The **SqlCredential** parameter is used to specify the name of the SQL Server credential.
+It uses the *BackupFile* parameter to specify the location (URL) and the backup file name.
+The *SqlCredential* parameter is used to specify the name of the SQL Server credential.
 
 ### Example 13: Backup all databases to the Azure Blob Storage service
 ```
-PS C:\>Get-ChildItem "SQLSERVER:\SQL\Computer\Instance\Databases" | Backup-SqlDatabase -BackupContainer "https://storageaccountname.blob.core.windows.net/containername" -SqlCredential "SQLCredentialName"
+PS C:\> Get-ChildItem "SQLSERVER:\SQL\Computer\Instance\Databases" | Backup-SqlDatabase -BackupContainer "https://storageaccountname.blob.core.windows.net/containername" -SqlCredential "SQLCredentialName"
 ```
 
 This command backs up all databases on the server instance Computer\Instance to the Windows Azure Blob Storage service location by using the **BackupContainer** parameter.
@@ -237,8 +237,8 @@ The backup file names are auto generated.
 
 ### Example 14: Create an encrypted backup
 ```
-PS C:\>$EncryptionOption = New-SqlBackupEncryptionOption -Algorithm Aes256 -EncryptorType ServerCertificate -EncryptorName "BackupCert"
-PS C:\>Backup-SqlDatabase -ServerInstance "." -Database "MainDB" -BackupFile "MainDB.bak" -CompressionOption On -EncryptionOption $EncryptionOption
+PS C:\> $EncryptionOption = New-SqlBackupEncryptionOption -Algorithm Aes256 -EncryptorType ServerCertificate -EncryptorName "BackupCert"
+PS C:\> Backup-SqlDatabase -ServerInstance "." -Database "MainDB" -BackupFile "MainDB.bak" -CompressionOption On -EncryptionOption $EncryptionOption
 ```
 
 This example creates the encryption options and uses it as a parameter value in **Backup-SqlDatabase** to create an encrypted backup.
@@ -288,7 +288,7 @@ Valid values are:
 - Database.
 Backs up all the data files in the database.
 - Files.
-Backs up data files specified in the **DatabaseFile** or **DatabaseFileGroup** parameters. 
+Backs up data files specified in the *DatabaseFile* or *DatabaseFileGroup* parameters. 
 - Log.
 Backs up the transaction log.
 
@@ -536,8 +536,8 @@ Accept wildcard characters: False
 
 ### -Database
 Specifies the name of the database to back up.
-This parameter cannot be used with the **DatabaseObject** parameter.
-When this parameter is specified, the **Path**, **InputObject**, or **ServerInstance** parameters must also be specified.
+This parameter cannot be used with the *DatabaseObject* parameter.
+When this parameter is specified, the *Path*, *InputObject*, or *ServerInstance* parameters must also be specified.
 
 ```yaml
 Type: String
@@ -572,7 +572,7 @@ Accept wildcard characters: False
 Specifies the location and file name of the backup.
 This is an optional parameter.
 If not specified, the backups are stored in the default backup location of the server under the name databasename.bak for full and file backups, or databasename.trn for log backups.
-This parameter cannot be used with the **BackupDevice** or **BackupContainer** parameters.
+This parameter cannot be used with the *BackupDevice* or *BackupContainer* parameters.
 
 ```yaml
 Type: String[]
@@ -606,7 +606,7 @@ Accept wildcard characters: False
 
 ### -BackupDevice
 Specifies the devices where the backups are stored.
-This parameter cannot be used with the **BackupFile** parameter.
+This parameter cannot be used with the *BackupFile* parameter.
 Use this parameter if you are backing up to tape.
 
 ```yaml
@@ -721,7 +721,7 @@ Accept wildcard characters: False
 Indicates that the tail end of the log is not backed up.
 When restored, the database is in the restoring state.
 When not set, the tail end of the log is backed up.
-This only applies when the **BackupAction** parameter is set to Log.
+This only applies when the *BackupAction* parameter is set to Log.
 
 ```yaml
 Type: SwitchParameter
@@ -737,8 +737,8 @@ Accept wildcard characters: False
 
 ### -DatabaseFile
 Specifies one or more database files to back up.
-This parameter is only used when **BackupAction** is set to Files.
-When BackupAction is set to Files, either the **DatabaseFileGroups** or **DatabaseFiles** parameter must be specified.
+This parameter is only used when the *BackupAction* parameter is set to Files.
+When *BackupAction* is set to Files, either the *DatabaseFileGroups* or *DatabaseFiles* parameter must be specified.
 
 ```yaml
 Type: String[]
@@ -755,7 +755,7 @@ Accept wildcard characters: False
 ### -DatabaseFileGroup
 Specifies the database file groups targeted by the backup operation.
 This parameter is only used when **BackupAction** property is set to Files.
-When **BackupAction** parameter is set to Files, either the **DatabaseFileGroups** or **DatabaseFiles** parameter must be specified.
+When the *BackupAction* parameter is set to Files, either the *DatabaseFileGroups* or *DatabaseFiles* parameter must be specified.
 
 ```yaml
 Type: String[]
@@ -890,7 +890,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -906,7 +905,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -1014,5 +1013,3 @@ Specifies an **SMO.Server** object referring to the instance of SQL Server on wh
 ## RELATED LINKS
 
 [Restore-SqlDatabase](xref:sqlserver/vlatest/Restore-SqlDatabase.md)
-
-

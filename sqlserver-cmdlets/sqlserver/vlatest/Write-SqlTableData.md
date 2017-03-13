@@ -3,17 +3,17 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: BF158CE2-233C-4309-A7CD-702EA19B0FA5
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 3/13/2017 4:14 PM
+ms.date: 3/13/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Write-SqlTableData.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Write-SqlTableData.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlserver/vlatest/Write-SqlTableData.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/6eefe64a0ce19459190f09768267a4c79f9a6af9/sqlserver-cmdlets/sqlserver/vlatest/Write-SqlTableData.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
 keywords: powershell, cmdlet
 manager: jhubbard
-open_to_public_contributors: true
+open_to_public_contributors: True
 ms.service: sql-server
 ---
 
@@ -70,7 +70,7 @@ For example, strings are mapped to NVARCHAR(MAX).
 
 ### Example 1: Write information about processes to a table
 ```
-PS C:\>(Get-Process | Select-Object -Property Id,ProcessName,StartTime,UserProcessorTime,WorkingSet,Description) | Write-SqlTableData -ServerInstance "MyServer\MyInstance" -DatabaseName "MyDatabase" -SchemaName "dbo" -TableName "TaskManagerDump" -Force
+PS C:\> (Get-Process | Select-Object -Property Id,ProcessName,StartTime,UserProcessorTime,WorkingSet,Description) | Write-SqlTableData -ServerInstance "MyServer\MyInstance" -DatabaseName "MyDatabase" -SchemaName "dbo" -TableName "TaskManagerDump" -Force
 ```
 
 This example gets information about processes that run on a system and writes it to a table.
@@ -88,7 +88,7 @@ Because you specify the *Force* parameter, if the database, schema, and table do
 
 ### Example 2: Write data to a table
 ```
-PS C:\>cd SQLSERVER:\SQL\MyServer\MyInstance\Databases\MyDatabase\Tables
+PS C:\> cd SQLSERVER:\SQL\MyServer\MyInstance\Databases\MyDatabase\Tables
 PS SQLSERVER:\SQL\MyServer\MyInstance\Databases\MyDatabase\Tables> $Table = Write-SqlTableData -TableName "KeyValuePairs" -SchemaName "dbo" -InputData @{ cca=10; cac='Hello'; aac=1.2 } -PassThru
 PS SQLSERVER:\SQL\MyServer\MyInstance\Databases\MyDatabase\Tables> Read-SqlTableData -InputObject $Table
 WARNING: Using provider context. Server = MyServer\MyInstance, Database = [MyDatabase]. 
@@ -112,11 +112,11 @@ To suppress this message, specify the *SuppressProviderContextWarning* parameter
 This command specifies the *Passthru* parameter.
 Therefore, it returns a reference to the modified table, which is stored in the $Table variable.
 
-The final command displays the contents of the $Table variable by using the Read-SqlTableData cmdlet.
+The final command displays the contents of the $Table variable by using the [Read-SqlTableData](./Read-SqlTableData.md) cmdlet.
 
 ### Example 3: Import data from a file to a table
 ```
-PS C:\>(Import-Csv -Path ".\a.csv" -Header "Id","Name","Amount") | Write-SqlTableData -ServerInstance "MyServer\MyInstance" -DatabaseName "MyDatabase" -SchemaName "dbo" -TableName "CSVTable" -Force
+PS C:\> (Import-Csv -Path ".\a.csv" -Header "Id","Name","Amount") | Write-SqlTableData -ServerInstance "MyServer\MyInstance" -DatabaseName "MyDatabase" -SchemaName "dbo" -TableName "CSVTable" -Force
 PS C:\> Read-SqlTableData -ServerInstance "MyServer\MyInstance" -DatabaseName "MyDatabase" -SchemaName "dbo" -TableName "CSVTable"
 Id Name  Amount
 -- ----  ------
@@ -287,7 +287,7 @@ Accept wildcard characters: False
 ```
 
 ### -SchemaName
-Specifies the name of the schema for the table.
+
 
 If you run this cmdlet in the context of a database or a child item of a database, the cmdlet ignores this parameter value.
 Specify the *IgnoreProviderContext* parameter for the cmdlet to use the value of the *SchemaName* parameter anyway.
@@ -381,7 +381,7 @@ Accept wildcard characters: False
 
 ### -Credential
 Specifies a **PSCredential** object for the connection to SQL Server.
-To obtain a credential object, use the Get-Credential cmdlet.
+To obtain a credential object, use the **Get-Credential** cmdlet.
 For more information, type `Get-Help Get-Credential`.
 
 ```yaml
@@ -440,5 +440,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## RELATED LINKS
 
 [Read-SqlTableData](xref:sqlserver/vlatest/Read-SqlTableData.md)
-
-

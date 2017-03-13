@@ -3,17 +3,17 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 9A498878-903C-44D7-A0BD-6837BEED7738
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 3/13/2017 4:14 PM
+ms.date: 3/13/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/New-SqlCredential.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/New-SqlCredential.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlserver/vlatest/New-SqlCredential.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/6eefe64a0ce19459190f09768267a4c79f9a6af9/sqlserver-cmdlets/sqlserver/vlatest/New-SqlCredential.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
 keywords: powershell, cmdlet
 manager: jhubbard
-open_to_public_contributors: true
+open_to_public_contributors: True
 ms.service: sql-server
 ---
 
@@ -47,7 +47,7 @@ The SQL Server credential is required when backing up to or restoring from the W
 
 ### Example 1: Create a SQL credential for the current instance of SQL Server
 ```
-PS C:\>cd SQLServer:\SQL\Computer\Instance
+PS C:\> cd SQLServer:\SQL\Computer\Instance
 PS SQLServer:\SQL\Computer\Instance> New-SqlCredential -Name "MySqlCredential" -Identity "MyWindowsAzureStorageAccount" -Secret "P4ssw0rd"
 ```
 
@@ -57,7 +57,7 @@ The second command creates a SQL credential named MySqlCredential in the current
 
 ### Example 2: Create a SQL credential for all instances of SQL Server
 ```
-PS C:\>cd SQLServer:\SQL\Computer\Instance
+PS C:\> cd SQLServer:\SQL\Computer\Instance
 PS SQLServer:\SQL\Computer\Instance> $SecureString = ConvertTo-SecureString "P4ssw0rd" -AsPlainText -Force
 PS SQLServer:\SQL\Computer\Instance> $Instances = Get-ChildItem
 PS SQLServer:\SQL\Computer\Instance> $Instances | New-SqlCredential -Name "MySqlCredential" -Identity "MyWindowsAzureStorageAccount" -Secret $SecureString
@@ -207,7 +207,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -223,7 +222,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -268,5 +267,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Remove-SqlCredential](xref:sqlserver/vlatest/Remove-SqlCredential.md)
 
 [Set-SqlCredential](xref:sqlserver/vlatest/Set-SqlCredential.md)
-
-

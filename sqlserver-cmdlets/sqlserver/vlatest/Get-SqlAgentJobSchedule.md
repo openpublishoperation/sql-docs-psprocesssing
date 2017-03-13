@@ -3,17 +3,17 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 8C17C904-0782-4701-B3E6-560899F9B690
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 3/13/2017 4:14 PM
+ms.date: 3/13/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Get-SqlAgentJobSchedule.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Get-SqlAgentJobSchedule.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlserver/vlatest/Get-SqlAgentJobSchedule.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/6eefe64a0ce19459190f09768267a4c79f9a6af9/sqlserver-cmdlets/sqlserver/vlatest/Get-SqlAgentJobSchedule.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
 keywords: powershell, cmdlet
 manager: jhubbard
-open_to_public_contributors: true
+open_to_public_contributors: True
 ms.service: sql-server
 ---
 
@@ -50,7 +50,7 @@ This cmdlet supports the following modes of operation to get a collection of **J
 
 ### Example 1: Get all JobSchedule object instances in the specified server instance
 ```
-PS C:\>Get-SqlAgent -ServerInstance "MyServerInstance" | Get-SqlAgentJob | Get-SqlAgentJobSchedule
+PS C:\> Get-SqlAgent -ServerInstance "MyServerInstance" | Get-SqlAgentJob | Get-SqlAgentJobSchedule
 Name                           Jobs  Enabled    DateCreated               ActiveStartDate           ActiveEndDate             ID
 ----                           ----  -------    -----------               ---------------           -------------             --
 Schedule1                      1     False      6/2/2016 10:21:44 AM      6/14/2016 12:00:00 AM     12/31/9999 12:00:00 AM    10
@@ -62,7 +62,7 @@ This command gets all **JobSchedule** object instances in the Job Instances pass
 
 ### Example 2: Get a JobSchedule object instance in the specified server instance
 ```
-PS C:\>Get-SqlAgentJob -ServerInstance "MyServer" | Get-SqlAgentJobSchedule -Name "Schedule1"
+PS C:\> Get-SqlAgentJob -ServerInstance "MyServer" | Get-SqlAgentJobSchedule -Name "Schedule1"
 ```
 
 This command gets the **JobSchedule** object instance named Schedule1 from the Job instances passed by pipeline.
@@ -172,5 +172,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Get-SqlAgentJobHistory](xref:sqlserver/vlatest/Get-SqlAgentJobHistory.md)
 
 [Get-SqlAgentJobStep](xref:sqlserver/vlatest/Get-SqlAgentJobStep.md)
-
-

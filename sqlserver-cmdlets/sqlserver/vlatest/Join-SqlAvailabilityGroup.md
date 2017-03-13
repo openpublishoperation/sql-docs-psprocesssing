@@ -3,17 +3,17 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 907367D4-31EB-4339-9483-672FF9F6770D
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 3/13/2017 4:14 PM
+ms.date: 3/13/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Join-SqlAvailabilityGroup.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Join-SqlAvailabilityGroup.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlserver/vlatest/Join-SqlAvailabilityGroup.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/6eefe64a0ce19459190f09768267a4c79f9a6af9/sqlserver-cmdlets/sqlserver/vlatest/Join-SqlAvailabilityGroup.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
 keywords: powershell, cmdlet
 manager: jhubbard
-open_to_public_contributors: true
+open_to_public_contributors: True
 ms.service: sql-server
 ---
 
@@ -45,7 +45,7 @@ Run this cmdlet on an instance of SQL Server that hosts a secondary replica that
 
 ### Example 1: Join a secondary replica to an availability group
 ```
-PS C:\>Join-SqlAvailabilityGroup -Path "SQLSERVER:\SQL\SecondaryServer\InstanceName" -Name "MainAG"
+PS C:\> Join-SqlAvailabilityGroup -Path "SQLSERVER:\SQL\SecondaryServer\InstanceName" -Name "MainAG"
 ```
 
 This command joins a secondary replica to the availability group named MainAG.
@@ -53,7 +53,7 @@ This server instance must host a secondary replica in this availability group.
 
 ### Example 2: Create a script that joins a secondary replica to an availability group
 ```
-PS C:\>Join-SqlAvailabilityGroup -Path "SQLSERVER:\SQL\SecondaryServer\InstanceName" -Name "MainAG" -Script
+PS C:\> Join-SqlAvailabilityGroup -Path "SQLSERVER:\SQL\SecondaryServer\InstanceName" -Name "MainAG" -Script
 ```
 
 This command creates a Transact-SQL script that joins a secondary replica to the availability group named MainAG.
@@ -147,7 +147,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -163,7 +162,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -203,7 +202,7 @@ You can pass a server instance to this cmdlet.
 ## OUTPUTS
 
 ## NOTES
-* The high availability data recovery service must be enabled on the server instance. The availability replica specified by the **Path** parameter must exist.
+* The high availability data recovery service must be enabled on the server instance. The availability replica specified by the *Path* parameter must exist.
 
 ## RELATED LINKS
 
@@ -216,5 +215,3 @@ You can pass a server instance to this cmdlet.
 [Switch-SqlAvailabilityGroup](xref:sqlserver/vlatest/Switch-SqlAvailabilityGroup.md)
 
 [Test-SqlAvailabilityGroup](xref:sqlserver/vlatest/Test-SqlAvailabilityGroup.md)
-
-

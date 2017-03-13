@@ -3,17 +3,17 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: F0D82BA4-E3A3-48E6-B40F-A713C3810FF2
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 3/13/2017 4:14 PM
+ms.date: 3/13/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Stop-SqlInstance.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Stop-SqlInstance.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlserver/vlatest/Stop-SqlInstance.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/6eefe64a0ce19459190f09768267a4c79f9a6af9/sqlserver-cmdlets/sqlserver/vlatest/Stop-SqlInstance.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
 keywords: powershell, cmdlet
 manager: jhubbard
-open_to_public_contributors: true
+open_to_public_contributors: True
 ms.service: sql-server
 ---
 
@@ -62,7 +62,7 @@ This cmdlet supports the following modes of operation:
 
 ### Example 1: Stop an instance of SQL Server
 ```
-PS C:\>CD SQLSERVER:\SQL\Computer\Instance;
+PS C:\> CD SQLSERVER:\SQL\Computer\Instance;
 PS SQLSERVER:\SQL\Computer\Instance> Stop-SqlInstance -Credential $Credential -AcceptSelfSignedCertificate;
 ```
 
@@ -74,7 +74,7 @@ The self-signed certificate of the target computer is automatically accepted wit
 
 ### Example 2: Stop all instances of SQL Server on the specified computer
 ```
-PS C:\>Get-SqlInstance -Credential $Credential -MachineName "Computer006" | Stop-SqlInstance -Credential $Credential -AcceptSelfSignedCertificate;
+PS C:\> Get-SqlInstance -Credential $Credential -MachineName "Computer006" | Stop-SqlInstance -Credential $Credential -AcceptSelfSignedCertificate;
 ```
 
 This command retrieves all instances of SQL Server on the machine named Computer006 and stops all the instances.
@@ -204,7 +204,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -220,7 +219,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -278,5 +277,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Get-SqlInstance](xref:sqlserver/vlatest/Get-SqlInstance.md)
 
 [Start-SqlInstance](xref:sqlserver/vlatest/Start-SqlInstance.md)
-
-

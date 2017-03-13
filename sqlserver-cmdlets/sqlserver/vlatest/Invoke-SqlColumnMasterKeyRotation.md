@@ -3,17 +3,17 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: A61D60F7-B821-4C18-92A4-E52CD86B1AFA
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 3/13/2017 4:14 PM
+ms.date: 3/13/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Invoke-SqlColumnMasterKeyRotation.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Invoke-SqlColumnMasterKeyRotation.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlserver/vlatest/Invoke-SqlColumnMasterKeyRotation.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/6eefe64a0ce19459190f09768267a4c79f9a6af9/sqlserver-cmdlets/sqlserver/vlatest/Invoke-SqlColumnMasterKeyRotation.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
 keywords: powershell, cmdlet
 manager: jhubbard
-open_to_public_contributors: true
+open_to_public_contributors: True
 ms.service: sql-server
 ---
 
@@ -48,7 +48,7 @@ As a result, each impacted column encryption key contains two encrypted values: 
 
 ### Example 1: Initiate the process of rotating the column master key
 ```
-PS C:\>Invoke-SqlColumnMasterKey -SourceColumnMasterKeyName "CMK1" -TargetColumnMasterKeyName "CMK2"
+PS C:\> Invoke-SqlColumnMasterKey -SourceColumnMasterKeyName "CMK1" -TargetColumnMasterKeyName "CMK2"
 ```
 
 This command initiates the process of rotating the column master key named CMK1, and replacing it with the column master key named CMK2.
@@ -184,5 +184,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Configure Always Encrypted using PowerShell](https://msdn.microsoft.com/library/mt755926.aspx)
 
 [Complete-SqlColumnMasterKeyRotation](xref:sqlserver/vlatest/Complete-SqlColumnMasterKeyRotation.md)
-
-

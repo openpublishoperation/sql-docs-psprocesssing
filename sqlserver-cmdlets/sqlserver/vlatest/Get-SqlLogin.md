@@ -3,17 +3,17 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: C1EA6377-55CF-4B3A-B89A-EB68BDFFFDE0
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 3/13/2017 4:14 PM
+ms.date: 3/13/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Get-SqlLogin.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Get-SqlLogin.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlserver/vlatest/Get-SqlLogin.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/6eefe64a0ce19459190f09768267a4c79f9a6af9/sqlserver-cmdlets/sqlserver/vlatest/Get-SqlLogin.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
 keywords: powershell, cmdlet
 manager: jhubbard
-open_to_public_contributors: true
+open_to_public_contributors: True
 ms.service: sql-server
 ---
 
@@ -54,7 +54,7 @@ If you specify the name of the **Login** object, the cmdlet removes that specifi
 
 ### Example 1: Get all Login objects for an instance
 ```
-PS C:\>Get-SqlLogin -ServerInstance "MyServerInstance"
+PS C:\> Get-SqlLogin -ServerInstance "MyServerInstance"
 Name                                          Login Type    Created
 ----                                          ----------    -------
 ##MS_PolicyEventProcessingLogin##             SqlLogin      4/30/2016 12:46 AM
@@ -72,7 +72,7 @@ This command returns all **Login** objects in the instance of SQL Server named M
 
 ### Example 2: Get Login objects that match a regular expression
 ```
-PS C:\>Get-SqlLogin -ServerInstance "MyServerInstance" -LoginName "\bNT.*" -RegEx
+PS C:\> Get-SqlLogin -ServerInstance "MyServerInstance" -LoginName "\bNT.*" -RegEx
 Name                                          Login Type    Created
 ----                                          ----------    -------
 NT AUTHORITY\SYSTEM                           WindowsUser   6/16/2016 10:29 AM
@@ -316,7 +316,7 @@ Accept wildcard characters: False
 
 ### -Credential
 Specifies a **PSCredential** object for the connection to SQL Server.
-To obtain a credential object, use the Get-Credential cmdlet.
+To obtain a credential object, use the **Get-Credential** cmdlet.
 For more information, type `Get-Help Get-Credential`.
 
 ```yaml
@@ -362,5 +362,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Add-SqlLogin](xref:sqlserver/vlatest/Add-SqlLogin.md)
 
 [Remove-SqlLogin](xref:sqlserver/vlatest/Remove-SqlLogin.md)
-
-

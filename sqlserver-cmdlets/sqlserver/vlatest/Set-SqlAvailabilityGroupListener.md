@@ -3,17 +3,17 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 42BB2AC3-905C-4306-B504-464DCFCEE599
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 3/13/2017 4:14 PM
+ms.date: 3/13/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Set-SqlAvailabilityGroupListener.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Set-SqlAvailabilityGroupListener.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlserver/vlatest/Set-SqlAvailabilityGroupListener.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/6eefe64a0ce19459190f09768267a4c79f9a6af9/sqlserver-cmdlets/sqlserver/vlatest/Set-SqlAvailabilityGroupListener.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
 keywords: powershell, cmdlet
 manager: jhubbard
-open_to_public_contributors: true
+open_to_public_contributors: True
 ms.service: sql-server
 ---
 
@@ -46,7 +46,7 @@ Run this cmdlet on the server instance that hosts the primary replica.
 
 ### Example 1: Modify a listener for an availability group
 ```
-PS C:\>Set-SqlAvailabilityGroupListener -Port 1535 -Path "SQLSERVER:\Sql\PrimaryServer\InstanceName\AvailabilityGroups\MainAG\AvailabilityGroupListeners\MainListener"
+PS C:\> Set-SqlAvailabilityGroupListener -Port 1535 -Path "SQLSERVER:\Sql\PrimaryServer\InstanceName\AvailabilityGroups\MainAG\AvailabilityGroupListeners\MainListener"
 ```
 
 This command sets the port number for the availability group listener named MainListener to be 1535.
@@ -54,7 +54,7 @@ This port is used to listen for connections to the listener.
 
 ### Example 2: Create a script that modifies a listener
 ```
-PS C:\>Set-SqlAvailabilityGroupListener -Port 1535 -Script -Path "SQLSERVER:\Sql\PrimaryServer\InstanceName\AvailabilityGroups\MainAG\AvailabilityGroupListeners\MainListener"
+PS C:\> Set-SqlAvailabilityGroupListener -Port 1535 -Script -Path "SQLSERVER:\Sql\PrimaryServer\InstanceName\AvailabilityGroups\MainAG\AvailabilityGroupListeners\MainListener"
 ```
 
 This command generates the Transact-SQL script that sets the port number for the availability group listener named MainListener to 1535.
@@ -150,7 +150,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -166,7 +165,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -211,5 +210,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Add-SqlAvailabilityGroupListenerStaticIp](xref:sqlserver/vlatest/Add-SqlAvailabilityGroupListenerStaticIp.md)
 
 [New-SqlAvailabilityGroupListener](xref:sqlserver/vlatest/New-SqlAvailabilityGroupListener.md)
-
-

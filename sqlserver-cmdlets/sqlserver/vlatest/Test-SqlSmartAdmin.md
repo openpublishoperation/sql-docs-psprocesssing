@@ -3,17 +3,17 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 7BFFA8FD-620D-4539-AA23-9CB8468B3B14
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 3/13/2017 4:14 PM
+ms.date: 3/13/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Test-SqlSmartAdmin.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Test-SqlSmartAdmin.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlserver/vlatest/Test-SqlSmartAdmin.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/6eefe64a0ce19459190f09768267a4c79f9a6af9/sqlserver-cmdlets/sqlserver/vlatest/Test-SqlSmartAdmin.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
 keywords: powershell, cmdlet
 manager: jhubbard
-open_to_public_contributors: true
+open_to_public_contributors: True
 ms.service: sql-server
 ---
 
@@ -50,7 +50,7 @@ This cmdlet supports the following modes of operation to return the object:
 
 ### Example 1: Test the status of the SQL Server Smart Admin
 ```
-PS C:\>cd SQLSERVER:\SQL\Computer\MyInstance 
+PS C:\> cd SQLSERVER:\SQL\Computer\MyInstance 
 PS SQLSERVER:\SQL\Computer\MyInstance> Get-SqlSmartAdmin | Test-SqlSmartAdmin
 ```
 
@@ -60,7 +60,7 @@ The second command tests the the health of Smart Admin by evaluating SQL Server 
 
 ### Example 2: Evaluate the test results of the SQL Server Smart Admin
 ```
-PS C:\>cd SQLSERVER:\SQL\Computer\MyInstance
+PS C:\> cd SQLSERVER:\SQL\Computer\MyInstance
 PS SQLSERVER:\SQL\Computer\MyInstance> $PolicyResults = Get-SqlSmartAdmin | Test-SqlSmartAdmin 
 PS SQLSERVER:\SQL\Computer\MyInstance> $PolicyResults.PolicyEvaluationDetails | select Name, Category, Result, Expression|f1
 ```
@@ -73,7 +73,7 @@ The third command evaluates the results of the SQL Server Smart Admin stored in 
 
 ### Example 3: Output the status of the SQL Server Smart Admin
 ```
-PS C:\>PS SQLSERVER:\SQL\COMPUTER\DEFAULT> (Get-SqlSmartAdmin ).EnumHealthStatus()
+PS C:\> PS SQLSERVER:\SQL\COMPUTER\DEFAULT> (Get-SqlSmartAdmin ).EnumHealthStatus()
 number_of_storage_connectivity_errors: 0 
 number_of_sql_errors: 2 
 number_of_invalid_credential_errors: 0 
@@ -191,7 +191,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -207,7 +206,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -223,7 +222,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Specifies an array of **SmartAdmin** objects.
-To get this object, use the Get-SqlSmartAdmin cmdlet.
+To get this object, use the **Get-SqlSmartAdmin** cmdlet.
 
 ```yaml
 Type: SmartAdmin[]
@@ -256,5 +255,3 @@ This cmdlet outputs the results from the evaluation of the policies.
 [Get-SqlSmartAdmin](xref:sqlserver/vlatest/Get-SqlSmartAdmin.md)
 
 [Set-SqlSmartAdmin](xref:sqlserver/vlatest/Set-SqlSmartAdmin.md)
-
-

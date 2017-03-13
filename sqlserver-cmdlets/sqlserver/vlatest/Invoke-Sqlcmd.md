@@ -3,17 +3,17 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: CEC02D90-7B4E-4973-AE57-30708B0F680A
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 3/13/2017 4:14 PM
+ms.date: 3/13/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Invoke-Sqlcmd.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Invoke-Sqlcmd.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlserver/vlatest/Invoke-Sqlcmd.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/6eefe64a0ce19459190f09768267a4c79f9a6af9/sqlserver-cmdlets/sqlserver/vlatest/Invoke-Sqlcmd.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
 keywords: powershell, cmdlet
 manager: jhubbard
-open_to_public_contributors: true
+open_to_public_contributors: True
 ms.service: sql-server
 ---
 
@@ -65,7 +65,7 @@ You can display SQL Server message output, such as those that result from the SQ
 
 ### Example 1: Connect to a named instance and run a script
 ```
-PS C:\>Invoke-Sqlcmd -Query "SELECT GETDATE() AS TimeOfQuery;" -ServerInstance "MyComputer\MainInstance"
+PS C:\> Invoke-Sqlcmd -Query "SELECT GETDATE() AS TimeOfQuery;" -ServerInstance "MyComputer\MainInstance"
  TimeOfQuery
  -----------
  5/13/2010 8:49:43 PM
@@ -75,7 +75,7 @@ This command connects to a named instance of the SQL Database Engine on a comput
 
 ### Example 2: Invoke commands in a script file and save the output in a text file
 ```
-PS C:\>Invoke-Sqlcmd -InputFile "C:\ScriptFolder\TestSqlCmd.sql" | Out-File -FilePath "C:\ScriptFolder\TestSqlCmd.rpt"
+PS C:\> Invoke-Sqlcmd -InputFile "C:\ScriptFolder\TestSqlCmd.sql" | Out-File -FilePath "C:\ScriptFolder\TestSqlCmd.rpt"
 Output sent to TestSqlCmd.rpt.
 ```
 
@@ -84,8 +84,8 @@ The output file may contain proprietary information, so you should secure the ou
 
 ### Example 3: Invoke a script and pass in variable values from a string
 ```
-PS C:\>$StringArray = "MYVAR1='String1'", "MYVAR2='String2'"
-PS C:\>Invoke-Sqlcmd -Query "SELECT `$(MYVAR1) AS Var1, `$(MYVAR2) AS Var2;" -Variable $StringArray
+PS C:\> $StringArray = "MYVAR1='String1'", "MYVAR2='String2'"
+PS C:\> Invoke-Sqlcmd -Query "SELECT `$(MYVAR1) AS Var1, `$(MYVAR2) AS Var2;" -Variable $StringArray
 Var1     Var2
 ----     ----
 String1  String2
@@ -97,8 +97,8 @@ The $ signs in the SELECT statement that identify the SQLCMD variables are escap
 
 ### Example 4: Invoke a script and pass in variables from the SQL database engine
 ```
-PS C:\>Set-Location "SQLSERVER:\SQL\MyComputer\MainInstance"
-PS C:\>Invoke-Sqlcmd -Query "SELECT SERVERPROPERTY('MachineName') AS ComputerName;" -ServerInstance (Get-Item .)
+PS C:\> Set-Location "SQLSERVER:\SQL\MyComputer\MainInstance"
+PS C:\> Invoke-Sqlcmd -Query "SELECT SERVERPROPERTY('MachineName') AS ComputerName;" -ServerInstance (Get-Item .)
  ComputerName
  ------------
  MyComputer
@@ -109,7 +109,7 @@ Then it calls **Get-Item** to retrieve a SQL Management Object **Server** object
 
 ### Example 5: Run a query and display verbose output
 ```
-PS C:\>Invoke-Sqlcmd -Query "PRINT N'abc'" -Verbose
+PS C:\> Invoke-Sqlcmd -Query "PRINT N'abc'" -Verbose
 VERBOSE: abc
 ```
 
@@ -117,7 +117,7 @@ This command uses the Windows PowerShell*Verbose* parameter to return the messag
 
 ### Example 6: Invoke a command using a positional string as input
 ```
-PS C:\>Invoke-Sqlcmd "SELECT DB_NAME() AS DatabaseName;"
+PS C:\> Invoke-Sqlcmd "SELECT DB_NAME() AS DatabaseName;"
  WARNING: Using provider context. Server = MyComputer, Database = AdventureWorks2014. 
 
  DatabaseName
@@ -130,7 +130,7 @@ It also demonstrates how  **Invoke-Sqlcmd** uses the current path to set the dat
 
 ### Example 7: Capture data into a DataSet object
 ```
-PS C:\>$DS = Invoke-Sqlcmd -ServerInstance "MyComputer" -Query "SELECT  ID, Item FROM MyDB.dbo.MyTable" -As DataSet $DS.Tables[0].Rows | %{ echo "{ $($_['ID']), $($_['Item']) }" }
+PS C:\> $DS = Invoke-Sqlcmd -ServerInstance "MyComputer" -Query "SELECT  ID, Item FROM MyDB.dbo.MyTable" -As DataSet $DS.Tables[0].Rows | %{ echo "{ $($_['ID']), $($_['Item']) }" }
 { 10, AAA }
 { 20, BBB }
 { 30, CCC }
@@ -162,7 +162,7 @@ Each table can be processed individually, based on its own schema.
 
 ### Example 9: Gain full control of a connection
 ```
-PS C:\>Invoke-Sqlcmd -Query "SELECT COUNT(*) AS Count FROM MyTable" -ConnectionString "Data Source=MYSERVER;Initial Catalog=MyDatabase;Integrated Security=True;ApplicationIntent=ReadOnly"
+PS C:\> Invoke-Sqlcmd -Query "SELECT COUNT(*) AS Count FROM MyTable" -ConnectionString "Data Source=MYSERVER;Initial Catalog=MyDatabase;Integrated Security=True;ApplicationIntent=ReadOnly"
 Count
 -----
 127432
@@ -686,5 +686,3 @@ Formatted table
 ## RELATED LINKS
 
 [SQL Server Cmdlets](xref:sqlserver/vlatest/SqlServer.md)
-
-

@@ -3,17 +3,17 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: B8007141-926D-4E64-9ABA-EFA5DA2CF447
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 3/13/2017 4:14 PM
+ms.date: 3/13/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Read-SqlViewData.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Read-SqlViewData.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlserver/vlatest/Read-SqlViewData.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/6eefe64a0ce19459190f09768267a4c79f9a6af9/sqlserver-cmdlets/sqlserver/vlatest/Read-SqlViewData.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
 keywords: powershell, cmdlet
 manager: jhubbard
-open_to_public_contributors: true
+open_to_public_contributors: True
 ms.service: sql-server
 ---
 
@@ -68,7 +68,7 @@ A collection of **System.Data.DateRow** objects.
 
 ### Example 1: Get two rows from a view
 ```
-PS C:\>Read-SqlViewData -ServerInstance "MyServer\MyInstance" -DatabaseName "MyDatabase" -SchemaName "dbo" -ViewName "MyView" -TopN 2
+PS C:\> Read-SqlViewData -ServerInstance "MyServer\MyInstance" -DatabaseName "MyDatabase" -SchemaName "dbo" -ViewName "MyView" -TopN 2
 Id Name   Amount
 -- ----   ------
 10 AAAAA  -1.2
@@ -80,7 +80,7 @@ The *TopN* parameter specifies the number of rows.
 
 ### Example 2: Display a whole table
 ```
-PS C:\>cd SQLSERVER:\sql\MyServer\MyInstance\Databases\MyDatabase\Views\dbo.MyView
+PS C:\> cd SQLSERVER:\sql\MyServer\MyInstance\Databases\MyDatabase\Views\dbo.MyView
 PS SQLSERVER:\sql\MyServer\MyInstance\Databases\MyDatabase\Views\dbo.MyView> Read-SqlViewData
 Id Name Amount
 -- ---- ------
@@ -99,7 +99,7 @@ Because the command uses its context, it does not specify any parameters.
 
 ### Example 3: Display selected sorted columns
 ```
-PS C:\>cd SQLSERVER:\sql\MyServer\MyInstance\Databases\MyDatabase\Views\dbo.MyView
+PS C:\> cd SQLSERVER:\sql\MyServer\MyInstance\Databases\MyDatabase\Views\dbo.MyView
 PS SQLSERVER:\sql\MyServer\MyInstance\Databases\MyDatabase\Views\dbo.MyView> Read-SqlViewData -TopN 3 -ColumnName "Id","Name" -ColumnOrder "Id","Name" -ColumnOrderType DESC,ASC
 Id Name
 -- ----
@@ -368,7 +368,7 @@ Accept wildcard characters: False
 
 ### -Credential
 Specifies a **PSCredential** object for the connection to SQL Server.
-To obtain a credential object, use the Get-Credential cmdlet.
+To obtain a credential object, use the **Get-Credential** cmdlet.
 For more information, type `Get-Help Get-Credential`.
 
 ```yaml
@@ -425,5 +425,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
-

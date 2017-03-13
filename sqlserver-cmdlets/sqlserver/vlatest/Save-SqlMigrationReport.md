@@ -3,17 +3,17 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 6719F4B4-3C72-490C-AA4D-307C4B5B9F5D
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 3/13/2017 4:14 PM
+ms.date: 3/13/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Save-SqlMigrationReport.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Save-SqlMigrationReport.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlserver/vlatest/Save-SqlMigrationReport.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/6eefe64a0ce19459190f09768267a4c79f9a6af9/sqlserver-cmdlets/sqlserver/vlatest/Save-SqlMigrationReport.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
 keywords: powershell, cmdlet
 manager: jhubbard
-open_to_public_contributors: true
+open_to_public_contributors: True
 ms.service: sql-server
 ---
 
@@ -34,11 +34,6 @@ Save-SqlMigrationReport [-Server <String>] [-Database <String>] [-Schema <String
 
 ## EXAMPLES
 
-### 1:
-```
-
-```
-
 ## PARAMETERS
 
 ### -Server
@@ -57,7 +52,9 @@ Accept wildcard characters: False
 ```
 
 ### -Database
-
+Specifies an array of user databases.
+This cmdlet adds or joins  the databases that this parameter specifies to the availability group.
+The databases that you specify must reside on the local instance of SQL Server.
 
 ```yaml
 Type: String
@@ -72,7 +69,7 @@ Accept wildcard characters: False
 ```
 
 ### -Schema
-
+Specifies the name of the schema for the table.
 
 ```yaml
 Type: String
@@ -87,7 +84,10 @@ Accept wildcard characters: False
 ```
 
 ### -Username
-
+Specifies the login ID for making a SQL Server Authentication connection to an instance of the Database Engine.
+The password must be specified through the *Password* parameter.
+If *Username* and *Password* are not specified, this cmdlet attempts a Windows Authentication connection using the Windows account running the Windows PowerShell session.
+When possible, use Windows Authentication.
 
 ```yaml
 Type: String
@@ -102,6 +102,14 @@ Accept wildcard characters: False
 ```
 
 ### -Password
+Specifies the password for the SQL Server Authentication login ID that was specified in the *Username* parameter.
+Passwords are case-sensitive.
+When possible, use Windows Authentication.
+Do not use a blank password, when possible use a strong password.
+
+If you specify the *Password* parameter followed by your password, the password is visible to anyone who can see your monitor.
+If you code *Password* followed by your password in a .ps1 script, anyone reading the script file will see your password.
+Assign the appropriate NTFS permissions to the file to prevent other users from being able to read the file.
 
 
 ```yaml
@@ -132,7 +140,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-
+Specifies the migration report group.
 
 ```yaml
 Type: SqlSmoObject
@@ -225,5 +233,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
-

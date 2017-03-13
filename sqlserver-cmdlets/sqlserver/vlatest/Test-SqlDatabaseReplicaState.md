@@ -3,17 +3,17 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: CCE374F5-0640-4740-8B41-3FA2FA7678E7
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 3/13/2017 4:14 PM
+ms.date: 3/13/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Test-SqlDatabaseReplicaState.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Test-SqlDatabaseReplicaState.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlserver/vlatest/Test-SqlDatabaseReplicaState.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/6eefe64a0ce19459190f09768267a4c79f9a6af9/sqlserver-cmdlets/sqlserver/vlatest/Test-SqlDatabaseReplicaState.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
 keywords: powershell, cmdlet
 manager: jhubbard
-open_to_public_contributors: true
+open_to_public_contributors: True
 ms.service: sql-server
 ---
 
@@ -46,29 +46,29 @@ You must have CONNECT, VIEW SERVER STATE, and VIEW ANY DEFINITION permissions to
 
 ### Example 1: Evaluate the health of an availability database
 ```
-PS C:\>$Path = "SQLSERVER:\Sql\Computer\Instance\AvailabilityGroups\MainAg\DatabaseReplicaStates\MainReplica.MainDatabase"
-PS C:>Test-SqlDatabaseReplicaState -Path $Path
+PS C:\> $Path = "SQLSERVER:\Sql\Computer\Instance\AvailabilityGroups\MainAg\DatabaseReplicaStates\MainReplica.MainDatabase"
+PS C:\> Test-SqlDatabaseReplicaState -Path $Path
 ```
 
 This command evaluates the health of the availability database named MainDatabase on the availability replica MainReplica in the availability group MainAg and outputs a brief summary.
 
 ### Example 2: Evaluate the health of all availability databases in an availability group
 ```
-PS C:\>Get-ChildItem "SQLSERVER:\Sql\Computer\Instance\AvailabilityGroups\MainAg\DatabaseReplicaStates" | Test-SqlDatabaseReplicaState
+PS C:\> Get-ChildItem "SQLSERVER:\Sql\Computer\Instance\AvailabilityGroups\MainAg\DatabaseReplicaStates" | Test-SqlDatabaseReplicaState
 ```
 
 This command evaluates the health of all availability databases in the MainAg availability group and outputs a brief summary for each database.
 
 ### Example 3: Evaluate the health of all availability databases in an availability group showing PBM evaluation results
 ```
-PS C:\>Get-ChildItem "SQLSERVER:\Sql\Computer\Instance\AvailabilityGroups\MainAg\DatabaseReplicaStates" | Test-SqlDatabaseReplicaState -ShowPolicyDetails
+PS C:\> Get-ChildItem "SQLSERVER:\Sql\Computer\Instance\AvailabilityGroups\MainAg\DatabaseReplicaStates" | Test-SqlDatabaseReplicaState -ShowPolicyDetails
 ```
 
 This command evaluates the health of all availability databases in the MainAg availability group and outputs the evaluation results for each PBM policy that was executed.
 
 ### Example 4: Evaluate the health of all availability databases in an availability group and include user-defined policies
 ```
-PS C:\>Get-ChildItem "SQLSERVER:\Sql\Computer\Instance\AvailabilityGroups\MainAg\DatabaseReplicaStates" | Test-SqlDatabaseReplicaState -AllowUserPolicies
+PS C:\> Get-ChildItem "SQLSERVER:\Sql\Computer\Instance\AvailabilityGroups\MainAg\DatabaseReplicaStates" | Test-SqlDatabaseReplicaState -AllowUserPolicies
 ```
 
 This command evaluates the health of all availability databases in the MainAg availability group.
@@ -76,7 +76,7 @@ User-defined policies are included in this evaluation.
 
 ### Example 5: Show all availability databases in an error health state
 ```
-PS C:\>Get-ChildItem "SQLSERVER:\Sql\Computer\Instance\AvailabilityGroups\MainAg\DatabaseReplicaStates" | Test-SqlDatabaseReplicaState | Where-Object { $_.HealthState -eq "Error" }
+PS C:\> Get-ChildItem "SQLSERVER:\Sql\Computer\Instance\AvailabilityGroups\MainAg\DatabaseReplicaStates" | Test-SqlDatabaseReplicaState | Where-Object { $_.HealthState -eq "Error" }
 ```
 
 This command shows all availability databases with a health state of "Error" in the MainAg availability group.
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -NoRefresh
-Indicates that this cmdlet will not manually refresh the objects specified by the **Path** or **InputObject** parameters.
+Indicates that this cmdlet will not manually refresh the objects specified by the *Path* or *InputObject* parameters.
 
 ```yaml
 Type: SwitchParameter
@@ -187,7 +187,6 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
@@ -203,7 +202,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
-Prompts you for confirmation before running the cmdlet.Prompts you for confirmation before running the cmdlet.
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -253,5 +252,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Resume-SqlAvailabilityDatabase](xref:sqlserver/vlatest/Resume-SqlAvailabilityDatabase.md)
 
 [Suspend-SqlAvailabilityDatabase](xref:sqlserver/vlatest/Suspend-SqlAvailabilityDatabase.md)
-
-

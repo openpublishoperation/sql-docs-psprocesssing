@@ -3,17 +3,17 @@ external help file: Microsoft.SqlServer.Management.PSSnapins.dll-Help.xml
 online version: 
 schema: 2.0.0
 ms.assetid: 94CC05EC-8323-4D77-B640-3BFBC18D7260
-updated_at: 12/8/2016 7:20 PM
-ms.date: 12/8/2016
+updated_at: 3/13/2017 4:14 PM
+ms.date: 3/13/2017
 content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Get-SqlErrorLog.md
 original_content_git_url: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/master/sqlserver-cmdlets/sqlserver/vlatest/Get-SqlErrorLog.md
-gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/b925b18b49186ab91cfeb5201e061d569d0eeae2/sqlserver-cmdlets/sqlserver/vlatest/Get-SqlErrorLog.md
+gitcommit: https://github.com/MicrosoftDocs/sql-docs-powershell/blob/6eefe64a0ce19459190f09768267a4c79f9a6af9/sqlserver-cmdlets/sqlserver/vlatest/Get-SqlErrorLog.md
 ms.topic: reference
 author: stevestein
 ms.author: sstein
 keywords: powershell, cmdlet
 manager: jhubbard
-open_to_public_contributors: true
+open_to_public_contributors: True
 ms.service: sql-server
 ---
 
@@ -58,7 +58,7 @@ This cmdlet supports the following modes of operation to get an error log:
 
 ### Example 1: Get all logs generated in a specific time frame that have a search word
 ```
-PS C:\>cd SQLSERVER:\SQL\MyServer\MyInstance
+PS C:\> cd SQLSERVER:\SQL\MyServer\MyInstance
 PS SQLSERVER:\SQL\MyServer\MyInstance> Get-SqlErrorLog -Since Yesterday  | Where-Object { $_.Text -match 'Error' } | Format-Table
 Date                 Source Text                                  ArchiveNo ServerInstance
 ----                 ------ ----                                  --------- --------------
@@ -71,7 +71,7 @@ The second command gets all the SQL Server logs generated in the last 24 hours a
 
 ### Example 2: Get all logs generated in a specific time frame
 ```
-PS C:\>cd SQLSERVER:\SQL\MyServer\MyInstance
+PS C:\> cd SQLSERVER:\SQL\MyServer\MyInstance
 PS SQLSERVER:\SQL\MyServer\MyInstance> Get-SqlErrorLog -Timespan '05:30:00' | Format-Table
 Date                  Source  Text
 ----                  ------  ----
@@ -86,7 +86,7 @@ The second command gets all the logs generated in the past five hours and a half
 
 ### Example 3: Get all logs generated in a specific time frame sorted ascending and grouped
 ```
-PS C:\>cd SQLSERVER:\SQL\MyServer
+PS C:\> cd SQLSERVER:\SQL\MyServer
 PS SQLSERVER:\SQL\MyServer> ls | Get-SqlErrorLog -After '2016-05-10' -Before '2016-06-18' -Ascending | ? { $_.Text -match 'Login failed' } | Group-Object -Property ServerInstance
 Count Name                      Group
 ----- ----                      -----
@@ -98,7 +98,7 @@ The first command changes the directory to the SQL Server instance.
 
 The second command gets all the error logs generated after 2016/06/10 and before 2016/06/18 for each SQL instance named MyServer.
 The command gets error logs that have text that matches Login failed.
-Logs are sorted ascending and eventually grouped by the ServerInstance property.
+Logs are sorted ascending and eventually grouped by the **ServerInstance** property.
 
 ## PARAMETERS
 
@@ -336,5 +336,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## RELATED LINKS
 
 [Set-SqlErrorLog](xref:sqlserver/vlatest/Set-SqlErrorLog.md)
-
-
