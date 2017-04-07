@@ -20,7 +20,6 @@
         ],
         "exclude": [
           "**/obj/**",
-          "sqlserver/**",
           "**/includes/**"
         ]
       }
