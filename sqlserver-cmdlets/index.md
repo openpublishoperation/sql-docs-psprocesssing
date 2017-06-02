@@ -13,4 +13,4 @@ The new version of SQL Server PowerShell included with SSMS does not update the 
 Module | Description
 ------ | -----------
 [SQLPS](/powershell/sqlserver/sqlps/vlatest/sqlps) | Module that is included with SQL Server 2016. This module is through product updates.
-[SQLServer](/powershell/sqlserver/sqlserver-module/vlatest/sqlps)| Module that is included with the monthly SSMS releases. 
+[SQLServer](/powershell/sqlserver/sqlserver/vlatest/sqlserver)| Module that is included with the monthly SSMS releases. 
