@@ -6,7 +6,9 @@ The SQL PowerShell module that is included with SSMS has changed from **SQLPS** 
 
 The motivation for these changes is that the tooling components are being moved to be "application local" and not share any components with the SQL Server engine. This is an important step to enable monthly tooling updates while not negatively impacting the components setup and updated by the SQL Server setup program. 
 
-**NOTE:** The modules that you import must be installed on the local computer or a remote computer. If **Import-Module** fails with the following message: *The specified module 'SqlServer' was not loaded because no valid module file was found in any module directory*, then [download the SQLServer module](https://docs.microsoft.com/sql/ssms/download-sql-server-ps-module).
+> [!Note]
+
+> The modules that you import must be installed on the local computer or a remote computer. If **Import-Module** fails with the  following message: *The specified module 'SqlServer' was not loaded because no valid module file was found in any module directory*, then [download the SQLServer module](https://docs.microsoft.com/sql/ssms/download-sql-server-ps-module).
 
 SSMS has been updated to integrate with SQLTOOLSPS.exe rather than SQLPS.exe. If you start Windows PowerShell from in SSMS, it starts Windows PowerShell and configures the session to include the new SQL Server module. We recommend that you avoid using these EXE wrappers. They exist for legacy reasons in SSMS and are likely to be removed in a future monthly update. 
 
